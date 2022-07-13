@@ -1,1 +1,35 @@
 
+.searchForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchForm__h1 {
+    all: unset;
+    font-size: 60px;
+    font-family: 'Roboto Slab';
+    line-height: 64px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.searchForm__span {
+    all: unset;
+    font-size: 18px;
+    font-family: 'Roboto';
+    line-height: 24px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.searchForm__input{
+    height: 64px;
+    width: 608px;
+}
+
+.searchForm__btn{
+    all: unset;
+    background-color:  #2F71E5;
+    
+}
