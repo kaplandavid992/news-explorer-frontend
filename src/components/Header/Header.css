@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(196, 196, 196, 0.01);
+    box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+    padding: 30px 104px 26px;
+}
+
+.header__logo {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #FFFFFF;
+    font-family: 'Roboto Slab';
+    margin-top: 11px;
+    cursor: pointer;
+}
+
+.header__right-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+    

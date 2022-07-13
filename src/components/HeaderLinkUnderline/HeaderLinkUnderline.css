@@ -1,0 +1,13 @@
+.header__nav-link-underline {
+    height: 3px;
+    background-color: #FFFFFF;
+    overflow: auto;
+    z-index: 5;
+    position: relative;
+    top: 37px;
+    display: none;
+}
+
+.header__nav-link-underline_active {
+    display: block;
+}

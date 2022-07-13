@@ -1,0 +1,16 @@
+.header__button {
+    all: unset;
+    cursor: pointer;
+    width: 152px;
+    padding: 12px;
+    border: 1px solid #FFFFFF;
+    border-radius: 100px;
+    margin-left: 42px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    background-color: none;
+    color: #FFFFFF;
+}
