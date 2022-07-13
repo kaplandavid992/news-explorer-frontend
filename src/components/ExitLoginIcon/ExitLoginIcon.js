@@ -1,6 +1,12 @@
+import { Link } from 'react-router-dom';
 
 function ExitLoginIcon() {
+  function logOut(){
+    console.log('change login state , use context to reach app login hook');
+  }
+
   return (
+    <Link to='/' onClick={logOut}>
     <svg
       className="exitLoginIcon"  
       width="18"
@@ -16,6 +22,7 @@ function ExitLoginIcon() {
         fill="white"
       />
     </svg>
+    </Link>
   );
 }
 

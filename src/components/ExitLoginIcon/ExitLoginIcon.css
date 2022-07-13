@@ -1,4 +1,5 @@
 .exitLoginIcon {
     position: absolute;
+    cursor: pointer;
    /* path fill black for saved article more */
 }

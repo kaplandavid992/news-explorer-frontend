@@ -3,7 +3,7 @@ import HeaderLink from "../HeaderLink/HeaderLink";
 import "./Header.css";
 
 function Header() {
-    const loggedIn=true; //api
+    const loggedIn=true; //api -context from app 
   return (
     <header className="header">
       <span className="header__logo">NewsExplorer</span>
