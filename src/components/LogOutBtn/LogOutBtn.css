@@ -1,0 +1,23 @@
+.log-out-btn {
+    all: unset;
+    cursor: pointer;
+    width: 112px;
+    padding: 12px 34px;
+    border: 1px solid #ffffff;
+    border-radius: 100px;
+    margin-left: 34px;
+    
+    background-color: none;
+    color: #ffffff;
+  }
+
+  .log-out-btn-txt{
+    all:unset;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    position: relative;
+    left: -17px;
+  }
+  

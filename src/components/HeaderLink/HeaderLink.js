@@ -9,7 +9,7 @@ function HeaderLink({ to, text, sidePadding }) {
       <Link to={to} className="header__nav-link" style={{ paddingRight:sidePadding , paddingLeft:sidePadding, marginLeft:marginLeft }}>
         {text}
       </Link>
-      <HeaderLinkUnderline to={to}/>
+      <HeaderLinkUnderline to={to} marginLeft={marginLeft}/>
     </div>
   );
 }
