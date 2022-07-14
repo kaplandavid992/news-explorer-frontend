@@ -11,7 +11,7 @@ function SearchForm() {
 
       <form>
         <input className='searchForm__input' placeholder="Enter topic"></input>
-        <button className="searchForm__btn"></button>
+        <button className="searchForm__btn" type='submit'>Search</button>
       </form>
     </div>
   );

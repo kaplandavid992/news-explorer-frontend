@@ -1,14 +1,15 @@
-import { Link } from 'react-router-dom';
-import SearchForm from '../SearchForm/SearchForm';
+import SearchForm from "../SearchForm/SearchForm";
+import About from "../About/About";
+import Footer from "../Footer/Footer";
 
 function Main() {
-    return (
-        <>
-        <p>this is main component</p>
-        <Link to='saved-news'> saved news page </Link>
-        <SearchForm />
-        </>
-    )
+  return (
+    <>
+  <SearchForm />
+  <About />
+  <Footer />
+  </>
+  );
 }
 
 export default Main;
