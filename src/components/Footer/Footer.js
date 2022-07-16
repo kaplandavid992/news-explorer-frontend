@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className="footer">
       <span className="footer__copyright">
-        © 2021 Supersite, Powered by News API
+        © 2022 Supersite, Powered by News API
       </span>
 
       <div className="footer__right-side-group">
@@ -21,8 +21,10 @@ function Footer() {
       </div>
 
       <div className="footer__social-icons-wrapper">
-        <img className="footer__social-icon" src={githubIcon} alt='github icon' />
-        <img className="footer__social-icon" src={fbIcon} alt='facebook icon'/>
+        <a href="https://github.com/kaplandavid992">
+        <img className="footer__social-icon" src={githubIcon} alt='github icon' /></a>
+        <a href="https://www.facebook.com/Practicum100IL/">
+        <img className="footer__social-icon" src={fbIcon} alt='facebook icon'/></a>
       </div>
       </div>
     </footer>

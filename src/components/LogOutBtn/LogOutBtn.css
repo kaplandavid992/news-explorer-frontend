@@ -1,14 +1,13 @@
 .log-out-btn {
     all: unset;
     cursor: pointer;
-    width: 112px;
+    width: fit-content;
     padding: 12px 34px;
-    border: 1px solid #ffffff;
+    border: 1px solid;
     border-radius: 100px;
     margin-left: 34px;
-    
+    margin-right: 12px;
     background-color: none;
-    color: #ffffff;
   }
 
   .log-out-btn-txt{

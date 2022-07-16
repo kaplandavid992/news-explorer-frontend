@@ -27,6 +27,7 @@
 .footer__social-icon {
   height: 19.71px;
   width: 20.21px;
+  cursor: pointer;
 }
 
 .footer__social-icons-wrapper {

@@ -1,0 +1,13 @@
+.show-more-btn {
+  all: unset;
+  width: 288px;
+  height: 64px;
+  border-radius: 100px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  background-color: #E8E8E8;
+}
