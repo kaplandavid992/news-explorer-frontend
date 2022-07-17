@@ -10,7 +10,7 @@ function Header() {
     <header className="header">
       <Link to='/' className="header__logo">NewsExplorer</Link>
       <div className="header__right-group">
-         <HeaderLink to="/" text="Home" sidePadding='12px' active={true} color='#FFFFFF'/>
+         <HeaderLink to="/" text="Home" sidePadding='10px' active={true} color='#FFFFFF'/>
          { loggedIn? <HeaderLink to="/saved-news" text="Saved articles" sidePadding='32px' color='#FFFFFF' active={false}/>:null} 
          { loggedIn? <LogOutBtn color='#FFFFFF' /> : <SignInBtn /> }
       </div>

@@ -1,20 +1,18 @@
-import './SavedNews.css';
+import './MainSearchResults.css';
 import ShowMoreBtn from '../ShowMoreBtn/ShowMoreBtn';
 import NewsCardList from '../NewsCardList/NewsCardList';
-import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
 import TitleH2 from '../TitleH2/TitleH2';
 
-function SavedNews() { // prop {newsCards}
+function MainSearchResults() { // prop {newsCards}
     return (
         <>
-        <SavedNewsHeader />
-        <div className=''>
+        <section className='main_results_section'>
             <TitleH2 text='Search results' />
             <NewsCardList />
             <ShowMoreBtn />
-        </div>
+        </section>
         </>
     )
 }
 
-export default SavedNews;
+export default MainSearchResults;

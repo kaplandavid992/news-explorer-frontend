@@ -1,0 +1,14 @@
+.news__list {
+  display: flex;
+  list-style: none;
+  flex-flow: row wrap;
+  flex: 0 0 100%;
+  column-gap: 16px;
+  row-gap: 16px;
+  margin-top: 64px;
+  margin-bottom: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  position: relative;
+}
