@@ -18,24 +18,31 @@
   padding: 8px 22px 8px;
 }
 
-.hover-trash-info {
-  visibility: hidden;
+.hover-info {
+  /* visibility: hidden; */
   background-color: #ffffff;
   font-family: Roboto;
   font-size: 12px;
   font-weight: 500;
   height: 27px;
   line-height: 14.06px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: center;
   color: #000000;
   position: absolute;
   border-radius: 10px;
-  padding-left: 26px;
-  padding-right: 26px;
   padding-top: 13px;
   top: 24px;
   right: 69px;
+}
+
+.hover-info_trash {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.hover-info_save {
+  padding-left: 26px;
+  padding-right: 26px;
 }
 
 .news-card__img {
@@ -87,3 +94,5 @@
   letter-spacing: 0px;
   text-align: left;
 }
+
+

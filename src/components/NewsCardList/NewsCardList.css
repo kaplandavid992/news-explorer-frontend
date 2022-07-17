@@ -5,10 +5,11 @@
   flex: 0 0 100%;
   column-gap: 16px;
   row-gap: 16px;
-  margin-top: 64px;
-  margin-bottom: 48px;
+  margin-top: 62px;
+  margin-bottom: 62px; 
   margin-left: auto;
   margin-right: auto;
   padding: 0;
   position: relative;
+  background-color:  #F5F6F7;
 }
