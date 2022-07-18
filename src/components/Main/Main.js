@@ -2,12 +2,53 @@ import SearchForm from "../SearchForm/SearchForm";
 import About from "../About/About";
 import Header from "../Header/Header";
 import MainSearchResults from "../MainSearchResults/MainSearchResults";
+import SignUpPopup from "../SignUpPopup/SignUpPopup";
+import SignInPopup from "../SignInPopup/SignInPopup";
+import { useEffect, useState } from "react";
 import "./Main.css";
 
 function Main() {
+
+  const [isSignInPopupOpen, setIsSignInPopupOpen] = useState(false);
+  const [isSignUpPopupOpen, setIsSignUpPopupOpen] = useState(false);
+  const [isPopupMsgOpen, setIsPopupMsgOpen] = useState(false);
+  
+
+  function closeAllPopups() {
+    setIsSignInPopupOpen(false);
+    setIsSignUpPopupOpen(false);
+  }
+
+  useEffect(() => {
+    const exitEsc = (e) => {
+      const keyEsc = e.key === "Escape";
+      if (keyEsc) {
+        closeAllPopups();
+      }
+    };
+    document.addEventListener("keydown", exitEsc);
+    return () => document.removeEventListener("keydown", exitEsc);
+  }, []);
+
+  useEffect(() => {
+    const exitClickOutSideModal = (e) => {
+      if (e.target.classList.contains("popup_active")) {
+        closeAllPopups();
+      }
+    };
+    document.addEventListener("click", exitClickOutSideModal);
+    return () => document.removeEventListener("click", exitClickOutSideModal);
+  }, []);
+
   return (
     <section className="main">
-      <Header />
+      <SignUpPopup isOpen={isSignUpPopupOpen} onClose={closeAllPopups} onSignUp={null}
+      openSignInPopup={setIsSignInPopupOpen}
+      />
+      <SignInPopup isOpen={isSignInPopupOpen} onClose={closeAllPopups} onSignIn={null} 
+      openSignUpPopup={setIsSignUpPopupOpen}
+      />
+      <Header openSignInPopup={setIsSignInPopupOpen}/>
       <SearchForm />
       <MainSearchResults />
       <About />
