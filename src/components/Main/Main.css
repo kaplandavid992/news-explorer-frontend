@@ -3,3 +3,10 @@
     background-repeat: no-repeat;
     background-size: 100% 543px;
 }
+
+@media screen and (max-width: 768px) {
+    .main {
+        background-image: url('../../images/georgia-de-768.png');
+        background-size: 100% 400px;
+    }
+  }
