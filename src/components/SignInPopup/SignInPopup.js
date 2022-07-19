@@ -59,7 +59,7 @@ function SignInPopup({ isOpen, onClose, onSignIn, openSignUpPopup }) {
       <label for="password" className="popup__form-label">Password</label>
         <input
           id="password"
-          type="text"
+          type="password"
           className="popup__form-input"
           placeholder="Enter password"
           name="form__password"

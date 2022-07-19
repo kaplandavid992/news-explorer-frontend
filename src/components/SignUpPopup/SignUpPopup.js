@@ -22,12 +22,12 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
   }
 
   function handleSubmit(e) {
-    e.preventDefault();
-    onSignUp({
-      email,
-      password,
-      username
-    });
+     e.preventDefault();
+     //api registration success need to add(  {email,
+    //   password,
+    //   username })
+     onClose();
+    onSignUp(true);
   }
 
 //   useEffect(() => {
@@ -65,7 +65,7 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
       <label for="password" className="popup__form-label">Password</label>
         <input
           id="password"
-          type="text"
+          type="password"
           className="popup__form-input"
           placeholder="Enter password"
           name="form__password"

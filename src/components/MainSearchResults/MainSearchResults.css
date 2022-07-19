@@ -1,9 +1,13 @@
-.main_results_section {
-    display: flex;
+.main-results-section {
+    display: none;
     background-color: #F5F6F7;
     flex-direction: column;
     padding-left: 104px;
     padding-right: 104px;
     padding-top: 80px;
     padding-bottom: 80px;
+}
+
+.main-results-section_active {
+    display: flex;
 }

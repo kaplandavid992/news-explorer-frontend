@@ -12,7 +12,7 @@ function Main() {
 
   const [isSignInPopupOpen, setIsSignInPopupOpen] = useState(false);
   const [isSignUpPopupOpen, setIsSignUpPopupOpen] = useState(false);
-  const [isIsMsgPopupOpen, setIsMsgPopupOpen] = useState(true);
+  const [isIsMsgPopupOpen, setIsMsgPopupOpen] = useState(false);
   
 
   function closeAllPopups() {
@@ -44,7 +44,7 @@ function Main() {
 
   return (
     <section className="main">
-      <SignUpPopup isOpen={isSignUpPopupOpen} onClose={closeAllPopups} onSignUp={null}
+      <SignUpPopup isOpen={isSignUpPopupOpen} onClose={closeAllPopups} onSignUp={setIsMsgPopupOpen}
       openSignInPopup={setIsSignInPopupOpen}
       />
       <SignInPopup isOpen={isSignInPopupOpen} onClose={closeAllPopups} onSignIn={null} 
@@ -55,7 +55,7 @@ function Main() {
       />
       <Header openSignInPopup={setIsSignInPopupOpen}/>
       <SearchForm />
-      <MainSearchResults />
+      <MainSearchResults /> 
       <About />
     </section>
   );

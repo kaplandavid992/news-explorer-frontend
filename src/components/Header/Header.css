@@ -24,5 +24,16 @@
 }
 
 
+@media screen and (max-width: 768px) {
+    .header {
+      height: 66px;
+      padding: 0 40px 0;
+    }
+
+    .header__logo{
+        margin-top: 23px;
+        margin-bottom: 19px;
+    }
+  }
 
     

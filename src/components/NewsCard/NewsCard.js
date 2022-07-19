@@ -17,11 +17,11 @@ function NewsCard({
     <div className="news-card">
       {loggedIn ? <><span className="news-card-category">{category}</span>
       <span className="hover-info hover-info_trash">Remove from saved</span>
-      <ActionIcon icon={trashIcon}/>
+      <ActionIcon icon={trashIcon} />
         </> :
       <>
       <span className="hover-info hover-info_save">Sign in to save articles</span>
-      <ActionIcon icon={saveArticleIcon} /> </>} 
+      <ActionIcon icon={saveArticleIcon}  /> </>} 
 
       <img className="news-card__img" src={hardCodeDogImg} />
       <div className="news-card__text-block">

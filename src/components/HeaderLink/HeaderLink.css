@@ -1,14 +1,24 @@
 .header__nav-link {
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 24px;
-    font-family: 'Roboto';
-    padding-top: 11px;
-    cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  font-family: "Roboto";
+  padding-top: 11px;
+  cursor: pointer;
 }
 
 .header__nav-link-wrapper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .header__nav-link {
+    padding: 0;
+    font-size: 16px;
+    letter-spacing: 0px;
+    text-align: center;
+  }
 }
