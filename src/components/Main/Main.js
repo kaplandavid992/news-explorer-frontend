@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import MainSearchResults from "../MainSearchResults/MainSearchResults";
 import SignUpPopup from "../SignUpPopup/SignUpPopup";
 import SignInPopup from "../SignInPopup/SignInPopup";
+import MessagePopup from "../MessagePopup/MessagePopup";
 import { useEffect, useState } from "react";
 import "./Main.css";
 
@@ -11,12 +12,13 @@ function Main() {
 
   const [isSignInPopupOpen, setIsSignInPopupOpen] = useState(false);
   const [isSignUpPopupOpen, setIsSignUpPopupOpen] = useState(false);
-  const [isPopupMsgOpen, setIsPopupMsgOpen] = useState(false);
+  const [isIsMsgPopupOpen, setIsMsgPopupOpen] = useState(true);
   
 
   function closeAllPopups() {
     setIsSignInPopupOpen(false);
     setIsSignUpPopupOpen(false);
+    setIsMsgPopupOpen(false);
   }
 
   useEffect(() => {
@@ -47,6 +49,9 @@ function Main() {
       />
       <SignInPopup isOpen={isSignInPopupOpen} onClose={closeAllPopups} onSignIn={null} 
       openSignUpPopup={setIsSignUpPopupOpen}
+      />
+      <MessagePopup isOpen={isIsMsgPopupOpen} onClose={closeAllPopups}
+      title='Registration successfully completed!' openSignInPopup={setIsSignInPopupOpen}
       />
       <Header openSignInPopup={setIsSignInPopupOpen}/>
       <SearchForm />
