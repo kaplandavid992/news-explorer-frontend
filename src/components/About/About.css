@@ -34,3 +34,29 @@ text-align: left;
     margin-top: 80px;
 }
 
+@media screen and (max-width: 768px) {
+    .about {
+        margin-left: 40px;
+    }
+    
+    .about__text-block {
+        max-width: 424px;
+        margin-top: 40px;
+        margin-left: 32px;
+        margin-right: 40px;
+    }
+    
+    .about__paragraph {
+        margin-top: 16px;
+        margin-bottom: 61px;
+    }
+    
+    .about__image {
+        height: 232px;
+        width: 232px;
+        margin-bottom: 61px;
+        margin-top: 61px;
+    }
+    
+    
+}

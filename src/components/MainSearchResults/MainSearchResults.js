@@ -8,7 +8,7 @@ import { useState } from "react";
 
 function MainSearchResults() {
   // prop {newsCards}
-  const [searchStatus, setSearchStatus] = useState("");
+  const [searchStatus, setSearchStatus] = useState("pending");
   // api get search status and update setSearchStatus
   const active = searchStatus ? "main-results-section_active" : "";
   return (

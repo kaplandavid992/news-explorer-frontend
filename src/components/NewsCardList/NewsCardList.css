@@ -13,3 +13,12 @@
   position: relative;
   background-color:  #F5F6F7;
 }
+
+@media screen and (max-width: 768px) {
+  .news__list {
+    column-gap: 8px;
+    row-gap: 8px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+}

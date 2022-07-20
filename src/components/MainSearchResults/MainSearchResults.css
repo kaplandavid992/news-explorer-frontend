@@ -11,3 +11,9 @@
 .main-results-section_active {
     display: flex;
 }
+
+@media screen and (max-width: 768px) {
+    .main-results-section {
+        padding: 40px;
+    }
+}

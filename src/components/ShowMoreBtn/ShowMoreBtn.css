@@ -16,5 +16,12 @@
 }
 
 .show-more-btn:hover {
-  background-color: #E8E8E8;
+  background-color: #e8e8e8;
+}
+
+@media screen and (max-width: 768px) {
+  .show-more-btn {
+    width: 240px;
+    height: 56px;
+  }
 }
