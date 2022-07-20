@@ -19,3 +19,14 @@
     left: -17px;
   }
   
+  @media screen and (max-width: 768px) {
+     .log-out-btn{
+      font-size: 16px;
+      letter-spacing: 0px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      margin-left: 16px;
+      margin-top: 14px;
+      margin-bottom: 12px;
+    }
+  }

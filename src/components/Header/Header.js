@@ -5,7 +5,7 @@ import "./Header.css";
 import { Link } from 'react-router-dom';
 
 function Header({openSignInPopup}) {
-    const loggedIn=false; //api -context from app 
+    const loggedIn=true; //api -context from app 
   return (
     <header className="header">
       <Link to='/' className="header__logo">NewsExplorer</Link>

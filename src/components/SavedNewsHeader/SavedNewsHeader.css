@@ -24,5 +24,14 @@
 }
 
 
+@media screen and (max-width: 768px) {
+    .savedNewsHeader {
+      height: 66px;
+      padding: 0 40px 0;
+    }
 
-    
+    .savedNewsHeader__logo{
+        margin-top: 23px;
+        margin-bottom: 19px;
+    }
+  }
