@@ -13,8 +13,7 @@ function Header({ openSignInPopup }) {
   const [expandedMenu, setExpandedMenu] = useState(false);
   const menuActive = expandedMenu ? "" : "header__menu-icon_active";
   const exitActive = expandedMenu ? "header__menu-icon_active" : "";
-  // const expandedActive = expandedMenu ? 'header__right-group_vertical' :'';
-
+  
   return (
     <>
       <header className="header header_expanded-menu">

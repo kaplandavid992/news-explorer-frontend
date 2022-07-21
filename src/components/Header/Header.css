@@ -80,12 +80,14 @@
         z-index: 4;
         flex-direction: column;
         position: absolute;
-        top:72px;
-        left:16px;
+        width: 100%;
+        /* top:72px;
+        left:16px; */
+        background-color: #1A1B22;
     }
 
     .header__right-group_vertical-wrappper{
-        background-color: #1A1B22;
+        
         position: relative;
     }
   }

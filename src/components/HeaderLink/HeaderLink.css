@@ -16,7 +16,7 @@
 
 @media screen and (max-width: 768px) {
   .header__nav-link {
-    padding: 0;
+     padding: 0 !important; 
     font-size: 16px;
     letter-spacing: 0px;
     text-align: center;
@@ -27,11 +27,15 @@
   .header__nav-link {
     line-height: 56px;
     padding-top: 16px;
+    text-align: left;
   }
   
   .header__nav-link-wrapper {
     display: flex;
     flex-direction: column;
     position: relative;
+    margin-left: 16px;
+    margin-top: 16px;
+    margin-bottom: 22px;
   }
 }
