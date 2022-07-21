@@ -1,4 +1,7 @@
 import "./SearchForm.css";
+import HeaderLink from '../HeaderLink/HeaderLink';
+import SignInBtn from '../SignInBtn/SignInBtn';
+import LogOutBtn from '../LogOutBtn/LogOutBtn';
 
 function SearchForm() {
   return (

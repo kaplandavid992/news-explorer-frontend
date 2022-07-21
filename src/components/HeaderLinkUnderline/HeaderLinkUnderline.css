@@ -14,3 +14,8 @@
       top: 19px;
     }
   }
+
+  @media screen and (max-width: 320px) {
+    .header__nav-link-underline {
+    display: none;}
+  }

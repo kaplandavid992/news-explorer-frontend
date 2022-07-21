@@ -25,3 +25,9 @@
     height: 56px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .show-more-btn {
+    width: 288px;
+  }
+}

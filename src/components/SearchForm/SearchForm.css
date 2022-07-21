@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 80px;
+
 }
 
 .searchForm {
@@ -114,6 +115,7 @@
 
 
 @media screen and (max-width: 320px) {
+  
   .searchFormSection {
   margin-bottom: 0;
   width: 320px;

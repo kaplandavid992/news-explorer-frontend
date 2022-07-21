@@ -12,7 +12,7 @@ function App() {
           <Route exact path="/" element={<Main />}/>
           <Route exact path="/saved-news" element={<SavedNews />}/> 
         </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

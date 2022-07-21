@@ -1,62 +1,85 @@
 .about {
-    display: flex;
-    flex-direction: row;
-    margin-left: 104px;
-    
+  display: flex;
+  flex-direction: row;
+  margin-left: 104px;
 }
 
 .about__text-block {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin-top: 131px;
-    margin-left: 56px;
-    margin-right: 104px;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin-top: 131px;
+  margin-left: 56px;
+  margin-right: 104px;
 }
 
 .about__paragraph {
-    all:unset;
-    margin-top: 24px;
-    font-family: Roboto;
-font-size: 18px;
-font-weight: 400;
-line-height: 24px;
-letter-spacing: 0px;
-text-align: left;
-
+  all: unset;
+  margin-top: 24px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
 }
 
 .about__image {
-    height: 464px;
-    width: 464px;
-    border-radius: 1000px;
-    margin-bottom: 80px;
-    margin-top: 80px;
+  height: 464px;
+  width: 464px;
+  border-radius: 1000px;
+  margin-bottom: 80px;
+  margin-top: 80px;
 }
 
 @media screen and (max-width: 768px) {
-    .about {
-        margin-left: 40px;
-    }
-    
-    .about__text-block {
-        max-width: 424px;
-        margin-top: 40px;
-        margin-left: 32px;
-        margin-right: 40px;
-    }
-    
-    .about__paragraph {
-        margin-top: 16px;
-        margin-bottom: 61px;
-    }
-    
-    .about__image {
-        height: 232px;
-        width: 232px;
-        margin-bottom: 61px;
-        margin-top: 61px;
-    }
-    
-    
+  .about {
+    margin-left: 40px;
+  }
+
+  .about__text-block {
+    max-width: 424px;
+    margin-top: 40px;
+    margin-left: 32px;
+    margin-right: 40px;
+  }
+
+  .about__paragraph {
+    margin-top: 16px;
+    margin-bottom: 61px;
+  }
+
+  .about__image {
+    height: 232px;
+    width: 232px;
+    margin-bottom: 61px;
+    margin-top: 61px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about {
+    margin-left: 16px;
+    margin-right: 16px;
+    flex-direction: column;
+  }
+
+  .about__text-block {
+    width: 288px;
+    margin: 0;
+  }
+
+  .about__paragraph {
+    margin-top: 16px;
+    margin-bottom: 128px;
+  }
+
+  .about__image {
+    height: 272px;
+    width: 272px;
+    margin-bottom: 24px;
+    margin-top: 32px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 }

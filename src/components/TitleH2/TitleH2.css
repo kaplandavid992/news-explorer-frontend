@@ -12,6 +12,12 @@
   .title__h2 {
     font-size: 30px;
     line-height: 34px;
-    max-width: 336px;
+    /* max-width: 336px; */
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .title__h2 {
+    line-height: 40px;
   }
 }

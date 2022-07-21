@@ -55,8 +55,8 @@ function Main() {
       /> */}
       <Header openSignInPopup={setIsSignInPopupOpen}/>
       <SearchForm />
-      {/* <MainSearchResults /> 
-      <About />  */}
+      <MainSearchResults /> 
+      <About />  
     </section>
   );
 }

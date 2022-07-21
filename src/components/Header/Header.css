@@ -47,6 +47,11 @@
       padding-right: 0;
     }
 
+    .header_expanded-menu {
+        background-color: #1A1B22;
+        position: relative;
+    }
+
     .header__logo{
         margin-top: 16px;
         margin-bottom: 16px;
@@ -55,6 +60,7 @@
     .header__right-group {
         display: none;
     }
+
     .header__mobile-icons {
         display: flex;
     }
@@ -67,6 +73,20 @@
     }
     .header__menu-icon_active{
         display: flex;
+    }
+
+    .header__right-group_vertical {
+        display: flex;
+        z-index: 4;
+        flex-direction: column;
+        position: absolute;
+        top:72px;
+        left:16px;
+    }
+
+    .header__right-group_vertical-wrappper{
+        background-color: #1A1B22;
+        position: relative;
     }
   }
     
