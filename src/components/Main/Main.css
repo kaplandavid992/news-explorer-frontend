@@ -10,3 +10,11 @@
         background-size: 100% 400px;
     }
   }
+
+  @media screen and (max-width: 320px) {
+    .main {
+        background-image: url('../../images/georgia320.png');
+        background-size: 100% 536px;
+    }
+  }
+

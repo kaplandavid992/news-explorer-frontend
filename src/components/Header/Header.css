@@ -7,6 +7,10 @@
     padding: 30px 104px 26px;
 }
 
+.header__mobile-icons {
+    display: none;
+}
+
 .header__logo {
     all:unset;
     font-size: 20px;
@@ -36,4 +40,33 @@
     }
   }
 
+  @media screen and (max-width: 320px) {
+    .header {
+      height: 56px;
+      padding-left: 16px;
+      padding-right: 0;
+    }
+
+    .header__logo{
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .header__right-group {
+        display: none;
+    }
+    .header__mobile-icons {
+        display: flex;
+    }
+    .header__menu-icon{
+        display: none;
+        height: 24px;
+        width: 24px;
+        margin-top: 16px;
+        margin-right: 16px;
+    }
+    .header__menu-icon_active{
+        display: flex;
+    }
+  }
     

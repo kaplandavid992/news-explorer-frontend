@@ -44,7 +44,7 @@ function Main() {
 
   return (
     <section className="main">
-      <SignUpPopup isOpen={isSignUpPopupOpen} onClose={closeAllPopups} onSignUp={setIsMsgPopupOpen}
+      {/* <SignUpPopup isOpen={isSignUpPopupOpen} onClose={closeAllPopups} onSignUp={setIsMsgPopupOpen}
       openSignInPopup={setIsSignInPopupOpen}
       />
       <SignInPopup isOpen={isSignInPopupOpen} onClose={closeAllPopups} onSignIn={null} 
@@ -52,11 +52,11 @@ function Main() {
       />
       <MessagePopup isOpen={isIsMsgPopupOpen} onClose={closeAllPopups}
       title='Registration successfully completed!' openSignInPopup={setIsSignInPopupOpen}
-      />
+      /> */}
       <Header openSignInPopup={setIsSignInPopupOpen}/>
       <SearchForm />
-      <MainSearchResults /> 
-      <About />
+      {/* <MainSearchResults /> 
+      <About />  */}
     </section>
   );
 }

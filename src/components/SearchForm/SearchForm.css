@@ -110,3 +110,46 @@
   }
 
 }
+
+
+
+@media screen and (max-width: 320px) {
+  .searchFormSection {
+  margin-bottom: 0;
+  width: 320px;
+}
+
+.searchForm {
+  width: 288px;
+  flex-direction: column;
+
+}
+
+.searchForm__h1 {
+  font-size: 36px;
+  line-height: 40px;
+  margin-top: 30px;
+  margin-bottom: 16px;
+  width: 285px;
+  margin-left: 19px;
+  margin-right: 16px;
+}
+
+.searchForm__span {
+  margin-bottom: 122px;
+  width: 288px;
+}
+
+.searchForm__input {
+  height: 56px;
+}
+
+.searchForm__btn {
+  height: 56px;
+  width: 288px;
+  position: static;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+}

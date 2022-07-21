@@ -10,8 +10,10 @@ function SearchForm() {
       </span>
 
       <form className="searchForm">
-        <input className='searchForm__input' placeholder="Enter topic" />
-          <button className="searchForm__btn" type='submit'>Search</button>
+        <input className="searchForm__input" placeholder="Enter topic" />
+        <button className="searchForm__btn" type="submit">
+          Search
+        </button>
       </form>
     </div>
   );
