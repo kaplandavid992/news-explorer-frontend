@@ -68,6 +68,7 @@ function Header({ openSignInPopup, anyPopUpOpen }) {
             }}
           />
         </div>
+        
       </header>
 
       {expandedMenu ? (
@@ -94,7 +95,8 @@ function Header({ openSignInPopup, anyPopUpOpen }) {
           ) : (
             <SignInBtn openSignInPopup={openSignInPopup} />
           )}
-        </div>
+        </div> 
+        <div className="header__right-group_vertical-remainder"></div>
         </div>
       ) : null}
     </>
