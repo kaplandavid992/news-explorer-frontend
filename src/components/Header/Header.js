@@ -8,21 +8,24 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-function Header({ openSignInPopup }) {
-  const loggedIn = true; //api -context from app
+function Header({ openSignInPopup, anyPopUpOpen }) {
+  const loggedIn = false; //api -context from app
   const [expandedMenu, setExpandedMenu] = useState(false);
-  const menuActive = expandedMenu ? "" : "header__menu-icon_active";
-  const exitActive = expandedMenu ? "header__menu-icon_active" : "";
+  const condition = expandedMenu && !anyPopUpOpen();
+  const menuActive = condition ? "" : "header__menu-icon_active";
+  const exitActive = condition ? "header__menu-icon_active" : "";
+  const headerExpandedClass = condition ? "header_expanded-menu" : "";
+  const popupOpenModifierClass = anyPopUpOpen() ? 'header-items_hider' : "";
   
   return (
     <>
-      <header className="header header_expanded-menu">
-        <Link to="/" className="header__logo">
+      <header className={`header ${headerExpandedClass}`}>
+        <Link to="/" className={`header__logo ${popupOpenModifierClass}`} >
           NewsExplorer
         </Link>
 
         {!expandedMenu ? (
-          <div className="header__right-group">
+          <div className='header__right-group'>
             <HeaderLink
               to="/"
               text="Home"
@@ -47,7 +50,7 @@ function Header({ openSignInPopup }) {
           </div>
         ) : null}
 
-        <div className="header__mobile-icons">
+        <div className={`header__mobile-icons ${popupOpenModifierClass}`}>
           <img
             className={`header__menu-icon ${menuActive}`}
             src={menu}
@@ -68,7 +71,7 @@ function Header({ openSignInPopup }) {
       </header>
 
       {expandedMenu ? (
-        <div className="header__right-group_vertical-wrappper">
+        <div className={`header__right-group_vertical-wrappper ${popupOpenModifierClass}`}>
         <div className="header__right-group header__right-group_vertical">
           <HeaderLink
             to="/"

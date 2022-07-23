@@ -12,8 +12,13 @@ function Main() {
 
   const [isSignInPopupOpen, setIsSignInPopupOpen] = useState(false);
   const [isSignUpPopupOpen, setIsSignUpPopupOpen] = useState(false);
-  const [isIsMsgPopupOpen, setIsMsgPopupOpen] = useState(false);
+  const [isMsgPopupOpen, setIsMsgPopupOpen] = useState(false);
   
+  function anyPopUpOpen(){
+    const popups = [isSignInPopupOpen, isSignUpPopupOpen, isMsgPopupOpen];
+    const areOpen = element => element;
+    return popups.some(areOpen) ? true : false;
+  }
 
   function closeAllPopups() {
     setIsSignInPopupOpen(false);
@@ -44,16 +49,16 @@ function Main() {
 
   return (
     <section className="main">
-      {/* <SignUpPopup isOpen={isSignUpPopupOpen} onClose={closeAllPopups} onSignUp={setIsMsgPopupOpen}
+      <SignUpPopup isOpen={isSignUpPopupOpen} onClose={closeAllPopups} onSignUp={setIsMsgPopupOpen}
       openSignInPopup={setIsSignInPopupOpen}
       />
       <SignInPopup isOpen={isSignInPopupOpen} onClose={closeAllPopups} onSignIn={null} 
       openSignUpPopup={setIsSignUpPopupOpen}
       />
-      <MessagePopup isOpen={isIsMsgPopupOpen} onClose={closeAllPopups}
+      <MessagePopup isOpen={isMsgPopupOpen} onClose={closeAllPopups}
       title='Registration successfully completed!' openSignInPopup={setIsSignInPopupOpen}
-      /> */}
-      <Header openSignInPopup={setIsSignInPopupOpen}/>
+      />
+      <Header openSignInPopup={setIsSignInPopupOpen} anyPopUpOpen={anyPopUpOpen}/>
       <SearchForm />
       <MainSearchResults /> 
       <About />  

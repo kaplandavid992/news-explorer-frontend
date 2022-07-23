@@ -64,8 +64,8 @@
 
 .popup__form-submit-btn {
   all: unset;
-  background-color:  #E6E8EB;
-  color: #B6BCBF;
+  background-color: #e6e8eb;
+  color: #b6bcbf;
   font-family: Roboto;
   font-size: 18px;
   font-weight: 500;
@@ -80,8 +80,8 @@
 }
 
 .popup__form-submit-btn_active {
-background-color:  #2F71E5;
-color:#ffffff;
+  background-color: #2f71e5;
+  color: #ffffff;
 }
 
 .popup__form-submit-btn:hover {
@@ -106,6 +106,27 @@ color:#ffffff;
   cursor: pointer;
 }
 
-.bottom-text-wrapper{
-    text-align: center;
+.bottom-text-wrapper {
+  text-align: center;
+}
+
+@media screen and (max-width: 320px) {
+  .popup {
+    height: auto;
+    margin-top: 56px;
+  }
+  .popup__window {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .popup__exit-btn {
+    top: -40px;
+    left: 280px;
+  }
+
+  .popup__exit-icon {
+    width: 24px;
+  }
 }
