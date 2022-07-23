@@ -27,7 +27,15 @@
   .news__list {
     column-gap: 8px;
     row-gap: 10px;
-    margin-top: 58px;
     margin-bottom: 21px;
   }
+
+  .top-margin-mobile-home {
+    margin-top: 58px;
+  }
+
+  .top-margin-mobile-savedNews {
+    margin-top: 24px;
+  }
+
 }

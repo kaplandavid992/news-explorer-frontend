@@ -2,11 +2,11 @@ import "./NewsCardList.css";
 import NewsCard from '../NewsCard/NewsCard';
 
 function NewsCardList() { // prop items amonut returned
-  
+   const mobileTopMargin = window.location.pathname === '/' ? 'top-margin-mobile-home' : 'top-margin-mobile-savedNews';
   return (
     // <ul className="news__list">
     //   {newsCards.map((newsCard) => (
-      <ul className="news__list">
+      <ul className={`news__list ${mobileTopMargin}`}>
         <NewsCard 
         loggedIn={true} 
         date='November 4, 2020'
