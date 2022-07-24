@@ -9,8 +9,8 @@ function SavedNews() {
   // prop {newsCards}
   return (
     <>
-      <SavedNewsHeader /> 
-      <div className="saved-news-wrapper">
+      <SavedNewsHeader />  
+       <div className="saved-news-wrapper">
         <div className="titles-container">
           <span className="saved-art-title">Saved articles</span>
           <TitleH2 text="Elise, you have 5 saved articles" />
@@ -25,7 +25,7 @@ function SavedNews() {
         <div className="news-list-wrapper">
         <NewsCardList />
         </div>
-      </div>
+      </div> 
     </>
   );
 }

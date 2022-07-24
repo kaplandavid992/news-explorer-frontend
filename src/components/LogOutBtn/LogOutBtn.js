@@ -9,7 +9,7 @@ function LogOutBtn({color}) {
     
   return (
     <>
-      <button className="log-out-btn" onClick={logOut} style={{borderColor: color}}>
+      <button className="log-out-btn" onClick={logOut}>
         <span className="log-out-btn-txt" style={{color:color}}>{currentUser}</span>
         <ExitLoginIcon color={color}/>
       </button>

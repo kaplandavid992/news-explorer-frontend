@@ -42,17 +42,21 @@
 @media screen and (max-width: 320px) {
   .header {
     height: 56px;
-    padding-left: 16px;
+    padding-left: 0;
     padding-right: 0;
   }
 
   .header_expanded-menu {
     background-color: #1a1b22;
+    position: fixed;
+    z-index: 11;
+    width: 100%;
   }
 
   .header__logo {
     margin-top: 16px;
     margin-bottom: 16px;
+    margin-left: 16px;
   }
 
   .header__right-group {
@@ -80,6 +84,7 @@
     position: fixed;
     width: 100%;
     background-color: #1a1b22;
+    margin-top: 51px;
   }
 
   .header__right-group_vertical-wrappper {

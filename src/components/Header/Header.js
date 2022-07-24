@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Header({ openSignInPopup, anyPopUpOpen }) {
-  const loggedIn = false; //api -context from app
+  const loggedIn = true; //api -context from app
   const [expandedMenu, setExpandedMenu] = useState(false);
   const condition = expandedMenu && !anyPopUpOpen();
   const menuActive = condition ? "" : "header__menu-icon_active";
