@@ -1,9 +1,7 @@
 import "./NewsCard.css";
-import saveArticleIcon from "../../images/saveArtIcon.png";
-import trashIcon from "../../images/trashIcon.png";
 import hardCodeDogImg from "../../images/dogCard.png";
 import MediaSource from "../MediaSource/MediaSource";
-import ActionIcon from "../ActionIcon/ActionIcon";
+
 
 function NewsCard({
   loggedIn,
@@ -15,13 +13,15 @@ function NewsCard({
 }) {
   return (
     <div className="news-card">
-      {loggedIn ? <><span className="news-card-category">{category}</span>
+
+      { loggedIn ? <><span className="news-card-category">{category}</span>
+      <icon className="trash-icon white-container" />
       <span className="hover-info hover-info_trash">Remove from saved</span>
-      <ActionIcon icon={trashIcon} />
-        </> :
+        </>  :
       <>
+      <icon className="save-icon white-container" />
       <span className="hover-info hover-info_save">Sign in to save articles</span>
-      <ActionIcon icon={saveArticleIcon}  /> </>} 
+       </>}
 
       <img className="news-card__img" src={hardCodeDogImg} />
       <div className="news-card__text-block">
@@ -29,7 +29,9 @@ function NewsCard({
         <h3 className="text-block-title">{titleText}</h3>
         <p className="text-block-paragraph">{paragraphText}</p>
         <MediaSource name={mediaSourceName} />
+        
       </div>
+      
     </div>
   );
 }

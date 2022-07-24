@@ -27,7 +27,7 @@
   justify-content: space-between;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 815px) {
   .header {
     height: 66px;
     padding: 0 40px 0;

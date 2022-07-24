@@ -3,6 +3,45 @@
   position: relative;
 }
 
+.white-container {
+  height: 40px;
+  background-color: #ffffff;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.trash-icon{
+  background-image: url('../../images/trashIcon.png');
+  background-repeat: no-repeat;
+  background-position: 13px 11px;
+  width: 18px;
+  height: 19px;
+  padding: 11px 13px 10px; 
+  top: 24px;
+  left: 336px;
+}
+
+.trash-icon:hover{
+  background-image: url('../../images/trashIconBlack.png');
+}
+
+.save-icon{
+  background-image: url('../../images/saveArtIcon.png');
+  background-repeat: no-repeat;
+  background-position: 13px 11px;
+  width: 14px;
+  height: 19px;
+  padding: 11px 13px 10px; 
+  top: 24px;
+  left: 336px;
+}
+
+.save-icon:hover {
+  background-image: url('../../images/saveArtIconBlack.png');
+}
+
+
+
 .news-card-category {
   background-color: #ffffff;
   font-family: Roboto;
@@ -19,7 +58,7 @@
 }
 
 .hover-info {
-  /* visibility: hidden; */
+  display: none;
   background-color: #ffffff;
   font-family: Roboto;
   font-size: 12px;
@@ -35,6 +74,15 @@
   top: 24px;
   right: 69px;
 }
+
+.save-icon:hover + .hover-info { 
+  display: flex
+}
+
+.trash-icon:hover + .hover-info { 
+  display: flex
+}
+
 
 .hover-info_trash {
   padding-left: 20px;

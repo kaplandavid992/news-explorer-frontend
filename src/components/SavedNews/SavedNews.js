@@ -22,9 +22,9 @@ function SavedNews() {
             </span>
           </p>
         </div>
-        <div className="news-list-wrapper">
+        <section className="news-list-wrapper"> 
         <NewsCardList />
-        </div>
+        </section> 
       </div> 
     </>
   );
