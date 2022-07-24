@@ -16,7 +16,8 @@ function Header({ openSignInPopup, anyPopUpOpen }) {
   const exitActive = condition ? "header__menu-icon_active" : "";
   const headerExpandedClass = condition ? "header_expanded-menu" : "";
   const popupOpenModifierClass = anyPopUpOpen() ? 'header-items_hider' : "";
-  
+  const handleLogOut = () => {alert('log out')}
+
   return (
     <>
       <header className={`header ${headerExpandedClass}`}>
@@ -43,7 +44,7 @@ function Header({ openSignInPopup, anyPopUpOpen }) {
               />
             ) : null}
             {loggedIn ? (
-              <LogOutBtn color="#FFFFFF" />
+              <LogOutBtn color="#FFFFFF" onClick={handleLogOut}/>
             ) : (
               <SignInBtn openSignInPopup={openSignInPopup} />
             )}
@@ -91,7 +92,7 @@ function Header({ openSignInPopup, anyPopUpOpen }) {
             />
           ) : null}
           {loggedIn ? (
-            <LogOutBtn color="#FFFFFF" />
+            <LogOutBtn color="#FFFFFF" onClick={handleLogOut}/>
           ) : (
             <SignInBtn openSignInPopup={openSignInPopup} />
           )}

@@ -2,14 +2,10 @@ import ExitLoginIcon from "../ExitLoginIcon/ExitLoginIcon";
 import "./LogOutBtn.css";
 
 const currentUser = "currentUser"; //get from api actual
-function LogOutBtn({color}) {
-    function logOut(){
-        console.log('change login state , use context to reach app login hook');
-      }
-    
+function LogOutBtn({color, onClick}) {
   return (
     <>
-      <button className="log-out-btn" onClick={logOut}>
+      <button className="log-out-btn" onClick={onClick}>
         <span className="log-out-btn-txt" style={{color:color}}>{currentUser}</span>
         <ExitLoginIcon color={color}/>
       </button>
