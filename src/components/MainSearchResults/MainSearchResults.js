@@ -8,6 +8,7 @@ import { useState } from "react";
 
 function MainSearchResults() {
   // prop {newsCards}
+  const handleShowMore = () => {alert('show more')}
   const [searchStatus, setSearchStatus] = useState("results");
   // api get search status and update setSearchStatus
   const active = searchStatus ? "main-results-section_active" : "";
@@ -21,7 +22,7 @@ function MainSearchResults() {
         <>
           <TitleH2 text="Search results" />
           <NewsCardList />
-          <ShowMoreBtn />
+          <ShowMoreBtn onClick={handleShowMore}/>
         </>
       ) : null}
     </section>

@@ -3,14 +3,12 @@ import NewsCardList from "../NewsCardList/NewsCardList";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import TitleH2 from "../TitleH2/TitleH2";
 
-
-
 function SavedNews() {
   // prop {newsCards}
   return (
     <>
-      <SavedNewsHeader />  
-       <div className="saved-news-wrapper">
+      <SavedNewsHeader />
+      <section className="saved-news-wrapper">
         <div className="titles-container">
           <span className="saved-art-title">Saved articles</span>
           <TitleH2 text="Elise, you have 5 saved articles" />
@@ -22,10 +20,10 @@ function SavedNews() {
             </span>
           </p>
         </div>
-        <section className="news-list-wrapper"> 
+      </section>
+      <section className="news-list-wrapper">
         <NewsCardList />
-        </section> 
-      </div> 
+      </section>
     </>
   );
 }

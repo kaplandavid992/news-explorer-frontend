@@ -1,8 +1,8 @@
 import './ShowMoreBtn.css';
 
-function ShowMoreBtn(){
+function ShowMoreBtn({onClick}){
     return (
-        <button className='show-more-btn'>Show more</button>
+        <button className='show-more-btn' onClick={onClick}>Show more</button>
     )
 }
 

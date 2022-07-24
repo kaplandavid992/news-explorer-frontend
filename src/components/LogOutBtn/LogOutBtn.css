@@ -21,7 +21,6 @@
   
   @media screen and (max-width: 815px) {
      .log-out-btn{
-      
       font-size: 16px;
       letter-spacing: 0px;
       padding-top: 8px;
@@ -42,13 +41,15 @@
   @media screen and (max-width: 320px) {
     .log-out-btn{
      font-size: 18px;
-      width: 288px;
+       width: 288px; 
      padding-top: 16px;
      padding-bottom: 16px;
      margin-left: 16px;
-     margin-right: 16px;
+      margin-right: 16px; 
      margin-bottom: 24px;
      margin-top: 0;
+     padding-left: 0px;
+     padding-right: 0px;
    }
 
   

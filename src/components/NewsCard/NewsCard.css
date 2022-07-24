@@ -40,8 +40,6 @@
   background-image: url('../../images/saveArtIconBlack.png');
 }
 
-
-
 .news-card-category {
   background-color: #ffffff;
   font-family: Roboto;
@@ -153,8 +151,6 @@
   cursor: pointer;
   border-radius: 10px;
   width: 40px;
-  /* display: flex;
-  justify-content: center; */
 }
 
 .action-icon-img {
@@ -163,9 +159,7 @@
   margin-top: 11px;
 }
 
-/* .action-icon-container:hover .action-icon-img {
-   background-image: url();
-}  */
+
 
 @media screen and (max-width: 768px) {
   .news-card {
@@ -183,7 +177,20 @@
     padding: 8px 20px 8px;
   }
 
-  .hover-info {
+  .trash-icon {
+    left: 173px;
+    top:8px;
+  }
+  .save-icon {
+    right: 173px;
+    top:8px;
+  }
+
+  .save-icon:hover + .hover-info {
+    display: none;
+  }
+
+  .trash-icon:hover + .hover-info {
     display: none;
   }
 
@@ -214,8 +221,6 @@
   .action-icon-container {
      top: 8px;
      right: 8px;
-    /* margin-top: 11px;
-    margin-bottom: 10px; */
   }
   
   .action-icon-img { 
@@ -257,17 +262,13 @@
   }
   
 
-  .action-icon-container {
-     top: 16px;
-     right: 16px;
-    /* margin-top: 11px;
-    margin-bottom: 10px; */
+  .trash-icon {
+    left: 230px;
+    top:16px;
   }
-  
-  .action-icon-img { 
-    width: 18px;
-    height: 19px;
-    margin-top: 11px;
+  .save-icon {
+    right: 230px;
+    top:16px;
   }
 }
 
