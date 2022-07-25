@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 80px;
-
 }
 
 .searchForm {
@@ -15,7 +14,7 @@
 .searchForm__h1 {
   all: unset;
   font-size: 60px;
-  font-family: "Roboto Slab";
+  font-family: Roboto Slab, Helvetica, sans-serif;
   line-height: 64px;
   font-weight: 400;
   color: #ffffff;
@@ -26,7 +25,7 @@
 .searchForm__span {
   all: unset;
   font-size: 18px;
-  font-family: "Roboto";
+  font-family: Roboto, Helvetica, sans-serif;
   line-height: 24px;
   font-weight: 400;
   color: #ffffff;
@@ -43,7 +42,7 @@
   font-weight: 400;
   font-size: 16px;
   color: #1a1b22;
-  font-family: "Roboto";
+  font-family: Roboto, Helvetica, sans-serif;
   line-height: 22px;
   text-indent: 21px;
 }
@@ -52,7 +51,7 @@
   font-weight: 400;
   font-size: 16px;
   color: #b6bcbf;
-  font-family: "Roboto";
+  font-family: Roboto, Helvetica, sans-serif;
   line-height: 22px;
 }
 
@@ -66,7 +65,7 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
-  font-family: "Roboto";
+  font-family: Roboto, Helvetica, sans-serif;
   text-align: center;
   cursor: pointer;
   position: absolute;
@@ -75,6 +74,13 @@
   top: 2px;
   transform: translateX(px);
   transform: translateY(-2px);
+}
+
+.searchForm__btn:hover {
+  background-color: #347eff;
+}
+.searchForm__btn_active {
+  background-color: #2a65cc;
 }
 
 @media screen and (max-width: 768px) {
@@ -109,49 +115,43 @@
     height: 59px;
     margin-bottom: 48px;
   }
-
 }
-
-
 
 @media screen and (max-width: 320px) {
-  
   .searchFormSection {
-  margin-bottom: 0;
-  width: 320px;
-}
+    margin-bottom: 0;
+    width: 320px;
+  }
 
-.searchForm {
-  width: 288px;
-  flex-direction: column;
+  .searchForm {
+    width: 288px;
+    flex-direction: column;
+  }
 
-}
+  .searchForm__h1 {
+    font-size: 36px;
+    line-height: 40px;
+    margin-top: 30px;
+    margin-bottom: 16px;
+    width: 285px;
+    margin-left: 19px;
+    margin-right: 16px;
+  }
 
-.searchForm__h1 {
-  font-size: 36px;
-  line-height: 40px;
-  margin-top: 30px;
-  margin-bottom: 16px;
-  width: 285px;
-  margin-left: 19px;
-  margin-right: 16px;
-}
+  .searchForm__span {
+    margin-bottom: 122px;
+    width: 288px;
+  }
 
-.searchForm__span {
-  margin-bottom: 122px;
-  width: 288px;
-}
+  .searchForm__input {
+    height: 56px;
+  }
 
-.searchForm__input {
-  height: 56px;
-}
-
-.searchForm__btn {
-  height: 56px;
-  width: 288px;
-  position: static;
-  margin-top: 16px;
-  margin-bottom: 32px;
-}
-
+  .searchForm__btn {
+    height: 56px;
+    width: 288px;
+    position: static;
+    margin-top: 16px;
+    margin-bottom: 32px;
+  }
 }

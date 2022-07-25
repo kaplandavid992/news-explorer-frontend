@@ -20,15 +20,15 @@ function NewsCard({
   return (
     <div className="news-card">
       { loggedIn ? <><span className="news-card-category">{category}</span>
-      <icon className="trash-icon white-container" onClick={handleDeleteCard}/>
+      <i className="trash-icon white-container" onClick={handleDeleteCard}/>
       <span className="hover-info hover-info_trash">Remove from saved</span>
         </>  :
       <>
-      <icon className="save-icon white-container" onClick={handleSaveCard}/>
+      <i className="save-icon white-container" onClick={handleSaveCard}/>
       <span className="hover-info hover-info_save">Sign in to save articles</span>
        </>}
 
-      <img className="news-card__img" src={hardCodeDogImg} />
+      <img className="news-card__img" src={hardCodeDogImg} alt='dog in forest'/>
       <div className="news-card__text-block">
         <span className="text-block-date">{date}</span>
         <h3 className="text-block-title">{titleText}</h3>

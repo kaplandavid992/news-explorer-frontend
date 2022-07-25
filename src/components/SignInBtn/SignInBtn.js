@@ -1,8 +1,8 @@
 import "./SignInBtn.css";
 
-function SignInBtn({openSignInPopup}) {
+function SignInBtn({setIsSignInPopupOpen}) {
   return (
-    <button className="sign-in-btn" onClick={openSignInPopup}>
+    <button className="sign-in-btn" onClick={setIsSignInPopupOpen}>
       Sign in 
     </button>
   );

@@ -1,66 +1,58 @@
 .log-out-btn {
-    all: unset;
-    cursor: pointer;
-    width: fit-content;
-    padding: 12px 34px;
-    border: 1px solid #D1D2D6;
-    border-radius: 100px;
-    margin-left: 34px;
-    background-color: none;
-  }
+  all: unset;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  width: fit-content;
+  height: 48px;
+  align-items: center; 
+  padding-left: 19px;
+  padding-right: 17.59px;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  font-family: Roboto, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  position: relative;
+  color: #ffffff;
+}
 
-  .log-out-btn-txt{
-    all:unset;
-    font-family: "Roboto";
-    font-weight: 500;
+.log-out-btn_light {
+  border-color: #d1d2d6;
+  color: #1a1b22;
+}
+
+.log-out-btn_light:hover {
+  border-color: #1a1b22;
+}
+
+.spaceFiller {
+  height: 1px;
+  background-color: inherit;
+  width: 19px;
+}
+
+@media screen and (max-width: 815px) {
+  .log-out-btn {
+    font-size: 16px;
+    letter-spacing: 0px;
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 15.59px;
+    margin-top: 14px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .log-out-btn {
     font-size: 18px;
-    line-height: 24px;
-    position: relative;
-    left: -17px;
+    width: 257.4px;
+    margin-top: 0;
+    height: 56px;
+    margin-bottom: 0;
   }
-  
-  @media screen and (max-width: 815px) {
-     .log-out-btn{
-      font-size: 16px;
-      letter-spacing: 0px;
-      padding-top: 8px;
-      padding-bottom: 8px;
-     padding-left: 15px;
-     padding-right: 19px;
-      margin-top: 14px;
-      margin-bottom: 12px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .log-out-btn-txt{
-      font-size: 16px;
-    }
-  }
-
-  @media screen and (max-width: 320px) {
-    .log-out-btn{
-     font-size: 18px;
-       width: 288px; 
-     padding-top: 16px;
-     padding-bottom: 16px;
-     margin-left: 16px;
-      margin-right: 16px; 
-     margin-bottom: 24px;
-     margin-top: 0;
-     padding-left: 0px;
-     padding-right: 0px;
-   }
-
-  
-
-  .log-out-btn-txt{
-    all:unset;
-    font-family: "Roboto";
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 24px;
-    position: relative;
-    left: -17px;
-  }
- }
+}

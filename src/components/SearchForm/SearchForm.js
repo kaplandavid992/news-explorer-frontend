@@ -1,9 +1,22 @@
+import { useState } from "react";
 import "./SearchForm.css";
-import HeaderLink from '../HeaderLink/HeaderLink';
-import SignInBtn from '../SignInBtn/SignInBtn';
-import LogOutBtn from '../LogOutBtn/LogOutBtn';
 
 function SearchForm() {
+  const [search, setSearch] = useState('');
+  const [btnActiveClass, setBtnActiveClass] = useState('');
+  function onSearchInputChange(e) {
+    
+    //api send search
+    if(e.target.value.length > 1 && !btnActiveClass){setBtnActiveClass('searchForm__btn_active')}
+    else if(e.target.value.length < 2 && btnActiveClass){setBtnActiveClass('')};
+    setSearch(e.target.value);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    //api send 'search'
+  }
+  
   return (
     <div className="searchFormSection">
       <h1 className="searchForm__h1">What's going on in the world?</h1>
@@ -12,9 +25,9 @@ function SearchForm() {
         account.
       </span>
 
-      <form className="searchForm">
-        <input className="searchForm__input" placeholder="Enter topic" />
-        <button className="searchForm__btn" type="submit">
+      <form className="searchForm" onSubmit={handleSubmit}>
+        <input className="searchForm__input" placeholder="Enter topic" onChange={onSearchInputChange}/>
+        <button className={`searchForm__btn ${btnActiveClass}`} type="submit">
           Search
         </button>
       </form>

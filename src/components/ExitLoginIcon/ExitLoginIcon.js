@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import './ExitLoginIcon.css';
 
-function ExitLoginIcon({color}) {
+function ExitLoginIcon({theme}) {
+  const color = theme === 'light' ? '#1A1B22' : '#ffffff';
   return (
     <Link to='/'>
     <svg  

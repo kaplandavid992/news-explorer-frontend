@@ -1,4 +1,4 @@
-import exitIcon from "../../images/exit_icon.png";
+import exitIcon from "../../images/exit_icon.svg";
 import React from 'react';
 import './PopupWithForm.css';
    

@@ -1,6 +1,6 @@
 import '../PopupWithForm/PopupWithForm.css';
 import "./MessagePopup.css";
-import exitIcon from "../../images/exit_icon.png";
+import exitIcon from "../../images/exit_icon.svg";
 
 function MessagePopup({ isOpen, onClose, openSignInPopup, title }) {
   const isOpenClass = isOpen ? "popup_active" : "";
@@ -28,13 +28,13 @@ function MessagePopup({ isOpen, onClose, openSignInPopup, title }) {
           <h2 className="popup__form-header">{title}</h2>
           <div className="bottom-text-wrapper_left">
             <span className="bottom-text">
-              <a
+              <button
                 className="bottom-text bottom-text_link"
-                href="#"
+                
                 onClick={closeCurrentOpenSignInPopup}
               >
                 Sign in
-              </a>
+              </button>
             </span>
           </div>
         </div>

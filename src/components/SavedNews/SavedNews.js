@@ -1,13 +1,22 @@
 import "./SavedNews.css";
 import NewsCardList from "../NewsCardList/NewsCardList";
-import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
+import Header from "../Header/Header";
 import TitleH2 from "../TitleH2/TitleH2";
+import { useNavigate } from "react-router-dom";
 
-function SavedNews() {
-  // prop {newsCards}
+function SavedNews({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen }) {
+  const navigate = useNavigate();
+   if(!loggedIn){navigate('/') };
+
   return (
     <>
-      <SavedNewsHeader />
+      <Header
+        loggedIn={loggedIn}
+        setLoggedIn={setLoggedIn}
+        theme="light"
+        setIsSignInPopupOpen={setIsSignInPopupOpen}
+        anyPopUpOpen={anyPopUpOpen}
+      />
       <section className="saved-news-wrapper">
         <div className="titles-container">
           <span className="saved-art-title">Saved articles</span>

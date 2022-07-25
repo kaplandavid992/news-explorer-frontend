@@ -1,7 +1,7 @@
 import LogOutBtn from "../LogOutBtn/LogOutBtn";
 import HeaderLink from "../HeaderLink/HeaderLink";
 import "./SavedNewsHeader.css";
-import menuIcon from '../../images/menu-black.png'
+import menuIcon from '../../images/menuBlack.svg'
 import exitMenuBlack from "../../images/close.svg";
 import { Link } from 'react-router-dom';
 import { useState } from "react";
