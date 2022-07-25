@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  width: 430px;
+  width: 358px;
   border-radius: 10px;
   padding: 34px 36px 28px;
 }
@@ -72,21 +72,22 @@
   line-height: 24px;
   letter-spacing: 0px;
   text-align: center;
-  height: 46px;
+  height: 64px;
   border-radius: 100px;
   text-align: center;
-  width: 100%;
+  width: 360px;
   margin-bottom: 16px;
+  cursor: not-allowed;
 }
 
 .popup__form-submit-btn_active {
   background-color: #2f71e5;
   color: #ffffff;
+  cursor: pointer;
 }
 
-.popup__form-submit-btn:hover {
-  opacity: 0.8;
-  cursor: pointer;
+.popup__form-submit-btn_active:hover {
+  background-color:  #347EFF;
 }
 
 .bottom-text {

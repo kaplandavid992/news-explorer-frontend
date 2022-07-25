@@ -40,7 +40,7 @@ function SignInPopup({ isOpen, onClose, onSignIn, openSignUpPopup }) {
       buttonText="Sign in"
       openOtherSignPopup={openSignUpPopup}
     >
-      <div className="popup__form-control">
+   
       <label for="email" className="popup__form-label">Email</label>
         <input
           id="email"
@@ -54,8 +54,8 @@ function SignInPopup({ isOpen, onClose, onSignIn, openSignUpPopup }) {
           onChange={onEmailChange}
         />
         <p className="popup__form-errorMsg" id="inputEmail-error" />
-      </div>
-      <div className="popup__form-control">
+      
+      
       <label for="password" className="popup__form-label">Password</label>
         <input
           id="password"
@@ -68,7 +68,7 @@ function SignInPopup({ isOpen, onClose, onSignIn, openSignUpPopup }) {
           onChange={onPasswordChange}
         />
         <p className="popup__form-errorMsg" id="inputPassword-error" />
-      </div>
+      
     </PopupWithForm>
   );
 }

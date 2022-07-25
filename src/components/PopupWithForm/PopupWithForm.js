@@ -13,6 +13,7 @@ function PopupWithForm({
       openOtherSignPopup
     }) {
       const isOpenClass = isOpen ? "popup_active" : "";
+      const submitBtnActiveClass = false ? 'popup__form-submit-btn_active' :''; // inputs valid
       const closeOpenOpenOtherSignPopup = () => {
         onClose();
         openOtherSignPopup(true);
@@ -42,7 +43,7 @@ function PopupWithForm({
               <h2 className="popup__form-header">{title}</h2>
               {children}
               <button
-                className="popup__form-submit-btn"
+                className={`popup__form-submit-btn ${submitBtnActiveClass}`}
                 type="submit"
                 aria-label=""
               >
