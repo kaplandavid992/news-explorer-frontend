@@ -20,7 +20,7 @@ function MainSearchResults() {
         <NotFound />
       ) : searchStatus === "results" ? (
         <>
-          <TitleH2 text="Search results" />
+          <TitleH2 text="Search results" width='712px'/>
           <NewsCardList />
           <ShowMoreBtn onClick={handleShowMore}/>
         </>

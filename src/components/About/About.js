@@ -7,7 +7,7 @@ function About() {
     <section className="about">
       <img src={authorImage}  className='about__image' alt="Image of author" />
       <div className="about__text-block">
-        <TitleH2 text='About the author' />
+        <TitleH2 text='About the author' width='600px'/>
         <p className="about__paragraph">
           Hi I'm David Kaplan, a Full Stack Web Developer. Graduate of Practicum by Yandex Web Development program. 
           The course was an 8-month (2022) intensive program designed to train talents to be successful Web Developers.

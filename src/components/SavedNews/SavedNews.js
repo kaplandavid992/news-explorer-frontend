@@ -20,7 +20,7 @@ function SavedNews({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen }
       <section className="saved-news-wrapper">
         <div className="titles-container">
           <span className="saved-art-title">Saved articles</span>
-          <TitleH2 text="Elise, you have 5 saved articles" />
+          <TitleH2 width='530px' text="Elise, you have 5 saved articles" />
           <p className="keywords-title">
             By keywords:
             <span className="keywords-title keywords-title_content">

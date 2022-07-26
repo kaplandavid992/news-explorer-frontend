@@ -10,16 +10,16 @@ function Main({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen}) {
   return (
     <section className="main">
      
-      <Header
+       <Header
         loggedIn={loggedIn}
         setLoggedIn={setLoggedIn}
         theme="dark"
         setIsSignInPopupOpen={setIsSignInPopupOpen}
         anyPopUpOpen={anyPopUpOpen}
-      />
-      <SearchForm />
-      <MainSearchResults />
-      <About />
+      /> 
+      {/* <SearchForm /> */}
+      {/* <MainSearchResults />  */}
+      {/* <About /> */}
     </section>
   );
 }

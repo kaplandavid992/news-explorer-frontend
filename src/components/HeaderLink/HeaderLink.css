@@ -5,8 +5,11 @@
   line-height: 24px;
   font-family: Roboto, Helvetica, sans-serif;
   padding-top: 30px;
+  padding-bottom: 23px;
   cursor: pointer;
   color: #ffffff;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .header__nav-link_light {
@@ -19,19 +22,21 @@
   justify-content: space-between;
   position: relative;
   height: 100%;
+  
 }
 
-/* .header__nav-link-underline {
+ /* .header__nav-link-underline {
   justify-self: flex-end;
-} */
+}  */
 
 @media screen and (max-width: 815px) {
   .header__nav-link {
-    padding: 0 !important;
+    padding-top: 22px;
+    padding-bottom: 17px;
     font-size: 16px;
     letter-spacing: 0px;
     text-align: center;
-    margin-left: 16px;
+    margin-left: 0px;
   }
 }
 

@@ -32,7 +32,7 @@ function Header({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen, the
   return (
     <>
       <header className={`header ${headerExpandedClass} ${headerLightBg}`}>
-        <Link to="/" className={`header__logo ${popupOpenModifierClass} ${logoLightTheme}`} >
+        {/* <Link to="/" className={`header__logo ${popupOpenModifierClass} ${logoLightTheme}`} >
           NewsExplorer
         </Link>
 
@@ -79,7 +79,7 @@ function Header({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen, the
               setExpandedMenu(false);
             }}
           />
-        </div>
+        </div> */}
         
       </header>
 
