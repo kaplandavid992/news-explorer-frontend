@@ -4,7 +4,7 @@
   flex-direction: row;
   cursor: pointer;
   width: fit-content;
-  height: 48px;
+  /* height: 48px; */
   align-items: center; 
   padding-left: 19px;
   padding-right: 17.59px;

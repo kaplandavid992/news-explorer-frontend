@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 80px;
+  margin-top: 80px;
 }
 
 .searchForm {
@@ -18,8 +19,10 @@
   line-height: 64px;
   font-weight: 400;
   color: #ffffff;
-  margin-top: 80px;
+  
   margin-bottom: 32px;
+  width: 608px;
+  text-align: left;
 }
 
 .searchForm__span {
@@ -33,10 +36,12 @@
 }
 
 .searchForm__input {
-  height: 62px;
-  width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 64px;
+  width: 608px;
   border-radius: 100px;
-  border-inline: 1px solid #d1d2d6;
+  border-inline: 1px solid #d1d2d6; 
   border-width: 1px;
   outline: none;
   font-weight: 400;
@@ -44,7 +49,7 @@
   color: #1a1b22;
   font-family: Roboto, Helvetica, sans-serif;
   line-height: 22px;
-  text-indent: 21px;
+  text-indent: 21px; 
 }
 
 ::placeholder {
@@ -58,7 +63,7 @@
 .searchForm__btn {
   all: unset;
   background-color: #2f71e5;
-  height: 65.39px;
+  height: 64px;
   width: 168px;
   border-radius: 100px;
   color: #ffffff;
@@ -69,9 +74,9 @@
   text-align: center;
   cursor: pointer;
   position: absolute;
-  top: 0;
-  right: -7px;
-  top: 2px;
+  
+  right: -3px;
+    top: 3px;
   transform: translateX(px);
   transform: translateY(-2px);
 }

@@ -49,11 +49,11 @@
   padding-top: 8px;
 }
 
-input:first-of-type {
+.popup__form-input:first-of-type {
   padding-bottom: 10px;
 }
 
-input:last-of-type {
+.popup__form-input:last-of-type {
   margin-bottom: 39px;
 }
 
@@ -66,6 +66,6 @@ input:last-of-type {
   font-style: normal;
 }
 
-label:first-of-type {
+.popup__form-label:first-of-type {
   margin-top: 0;
 }

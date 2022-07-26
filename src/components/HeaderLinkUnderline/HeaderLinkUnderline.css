@@ -1,10 +1,11 @@
-.header__nav-link-underline {
+/* .header__nav-link-underline {
     height: 3px;
-    position: relative;
+    position: absolute;
     top: 33px;
     display: none;
     background-color: #ffffff;
-}
+    
+} */
 
 .header__nav-link-underline_light {
   background-color: #1A1B22;
