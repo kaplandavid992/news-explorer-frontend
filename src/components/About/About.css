@@ -1,27 +1,42 @@
 .about {
   display: flex;
   flex-direction: row;
-  margin-left: 104px;
 }
 
+
+
 .about__text-block {
-  display: flex;
   flex-direction: column;
-  max-width: 600px;
   margin-top: 131px;
   margin-left: 56px;
-  margin-right: 104px;
+  margin-right: 216px;
+}
+
+.about__h2Title {
+  all: unset;
+  display: block;
+  font-family: Roboto Slab, Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 46px;
+  letter-spacing: 0px;
+  text-align: left;
+  width: 600px;
+  margin-bottom: 24px;
 }
 
 .about__paragraph {
   all: unset;
-  margin-top: 24px;
+  display: flex;
   font-family: Roboto, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
+  width: 600px; 
   letter-spacing: 0px;
   text-align: left;
+  flex-direction: row;
+  flex-flow: row wrap;
 }
 
 .about__image {
@@ -30,23 +45,31 @@
   border-radius: 1000px;
   margin-bottom: 80px;
   margin-top: 80px;
+  margin-left: 104px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 815px) {
   .about {
     margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .about__h2Title {
+    font-size: 30px;
+    line-height: 34px;
+    width: 424px;
   }
 
   .about__text-block {
-    max-width: 424px;
     margin-top: 40px;
     margin-left: 32px;
-    margin-right: 40px;
+    margin-right: 0;
   }
 
   .about__paragraph {
     margin-top: 16px;
     margin-bottom: 61px;
+    width: 424px;
   }
 
   .about__image {
@@ -54,24 +77,26 @@
     width: 232px;
     margin-bottom: 61px;
     margin-top: 61px;
+    margin-left: 0;
   }
 }
 
 @media screen and (max-width: 320px) {
   .about {
-    margin-left: 16px;
-    margin-right: 16px;
+    margin: 0;
     flex-direction: column;
   }
 
   .about__text-block {
-    width: 288px;
-    margin: 0;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 0;
   }
 
   .about__paragraph {
     margin-top: 16px;
     margin-bottom: 128px;
+    width: 288px;
   }
 
   .about__image {
@@ -79,7 +104,11 @@
     width: 272px;
     margin-bottom: 24px;
     margin-top: 32px;
-    padding-left: 8px;
-    padding-right: 8px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about__h2Title {
+    width: 288px;
   }
 }

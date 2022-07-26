@@ -4,7 +4,6 @@
   justify-content: space-between; 
   border-bottom: 1px solid rgba(196, 196, 196, 0.01);
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
-  padding: 0px 104px 0px;
   height: 80px;
 }
 
@@ -34,6 +33,7 @@
   cursor: pointer;
   padding-top: 30px;
   width: 200px;
+  padding-left: 104px;
   padding-bottom: 26px;
 }
 
@@ -44,17 +44,22 @@
 .header__right-group {
   display: flex;
   justify-content: space-between;
+  padding-right: 104px;
 }
 
 @media screen and (max-width: 815px) {
   .header {
     height: 66px;
-    padding: 0 40px 0;
   }
 
   .header__logo {
     padding-top: 23px;
     padding-bottom: 19px;
+    padding-left: 40px;
+  }
+
+  .header__right-group {
+    padding-right: 40px;
   }
 }
 

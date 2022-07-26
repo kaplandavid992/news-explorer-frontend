@@ -19,7 +19,7 @@
   background-color: #e8e8e8;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 815px) {
   .show-more-btn {
     width: 240px;
     height: 56px;

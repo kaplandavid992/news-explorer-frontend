@@ -10,29 +10,29 @@ function SavedNews({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen }
 
   return (
     <>
-      <Header
+       <Header
         loggedIn={loggedIn}
         setLoggedIn={setLoggedIn}
         theme="light"
         setIsSignInPopupOpen={setIsSignInPopupOpen}
         anyPopUpOpen={anyPopUpOpen}
-      />
-      <section className="saved-news-wrapper">
+      /> 
+       <section className="saved-news-wrapper">
         <div className="titles-container">
           <span className="saved-art-title">Saved articles</span>
-          <TitleH2 width='530px' text="Elise, you have 5 saved articles" />
-          <p className="keywords-title">
+          <h2 className="saved-news__h2title">Elise, you have 5 saved articles</h2>
+           <p className="keywords-title">
             By keywords:
             <span className="keywords-title keywords-title_content">
               {" "}
               Nature, Yellowstone, and 2 other
             </span>
-          </p>
+          </p> 
         </div>
       </section>
       <section className="news-list-wrapper">
         <NewsCardList />
-      </section>
+      </section>  
     </>
   );
 }

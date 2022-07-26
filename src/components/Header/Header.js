@@ -17,6 +17,7 @@ function Header({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen, the
   const exitActive = condition ? "header__menu-icon_active" : "";
   const headerExpandedClass = condition ? "header_expanded-menu" : "";
   const popupOpenModifierClass = anyPopUpOpen() ? 'header-items_hider' : "";
+
   const handleLogOut = () => {
     setLoggedIn(false);
     setIsSignInPopupOpen(true);
@@ -28,11 +29,11 @@ function Header({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen, the
   const remainderLight = theme === 'light' ? 'header__right-group_vertical-remainder_light':'';
   const menuIcon = theme === 'light' ? menuLightTheme : menu;
   const exitIcon = theme === 'light' ?  exitMenuLightTheme : exitMenu;
-
+  
   return (
     <>
       <header className={`header ${headerExpandedClass} ${headerLightBg}`}>
-        {/* <Link to="/" className={`header__logo ${popupOpenModifierClass} ${logoLightTheme}`} >
+        <Link to="/" className={`header__logo ${popupOpenModifierClass} ${logoLightTheme}`} >
           NewsExplorer
         </Link>
 
@@ -79,8 +80,8 @@ function Header({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen, the
               setExpandedMenu(false);
             }}
           />
-        </div> */}
-        
+        </div> 
+         
       </header>
 
       {expandedMenu ? (
