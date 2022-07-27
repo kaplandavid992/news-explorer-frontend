@@ -44,7 +44,6 @@
   background-image: url("../../images/saveArtIconBlack.svg");
 }
 
-
 .news-card-category {
   background-color: #ffffff;
   font-family: Roboto, Helvetica, sans-serif;
@@ -146,23 +145,6 @@
   text-align: left;
 }
 
-/* .action-icon-container {
-  background-color: #ffffff;
-  height: 40px;
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  cursor: pointer;
-  border-radius: 10px;
-  width: 40px;
-}
-
-.action-icon-img {
-  width: 18px;
-  height: 19px;
-  margin-top: 11px;
-} */
-
 @media screen and (max-width: 815px) {
   .news-card {
     width: 224px;
@@ -184,7 +166,7 @@
     top: 8px;
   }
   .save-icon {
-    left:173px;
+    left: 173px;
     top: 8px;
   }
 
@@ -279,7 +261,7 @@
     top: 16px;
   }
   .save-icon {
-    right: 230px;
+    left: 230px;
     top: 16px;
   }
 }

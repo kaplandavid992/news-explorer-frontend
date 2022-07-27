@@ -90,7 +90,7 @@
   background-color:  #347EFF;
 }
 
-.bottom-text {
+.popup__bottom-text {
   all: unset;
   font-family: Inter, Helvetica, sans-serif;
   font-size: 14px;
@@ -101,13 +101,13 @@
   text-align: center;
 }
 
-.bottom-text_link {
+.popup__bottom-text_link {
   color: #2f71e5;
   text-decoration: none;
   cursor: pointer;
 }
 
-.bottom-text-wrapper {
+.popup__bottom-text-wrapper {
   text-align: center;
 }
 
@@ -133,5 +133,9 @@
 
   .popup__form-submit-btn {
     width: 288px;
+  }
+
+  .popup {
+    background: none;
   }
 }

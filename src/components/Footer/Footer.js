@@ -6,9 +6,9 @@ import "./Footer.css";
 function Footer() {
   return (
     <footer className="footer">
-      <title className="footer__copyright">
+      <span className="footer__copyright">
         © 2022 Supersite, Powered by News API
-      </title>
+      </span>
 
       <div className="footer__right-side-group">
       <div className="footer__links-wrapper">
