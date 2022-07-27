@@ -6,7 +6,7 @@ import SearchPending from "../SearchPending/SearchPending";
 import NotFound from "../NotFound/NotFound";
 import { useState } from "react";
 
-function MainSearchResults() {
+function MainSearchResults({loggedIn}) {
   // prop {newsCards}
   const handleShowMore = () => {alert('show more')}
   const [searchStatus, setSearchStatus] = useState("results");
@@ -21,7 +21,7 @@ function MainSearchResults() {
       ) : searchStatus === "results" ? (
         <>
           <h2 className="main-results-section__h2title">Search results</h2>
-          <NewsCardList />
+          <NewsCardList loggedIn={loggedIn}/>
           <ShowMoreBtn onClick={handleShowMore}/>
         </>
       ) : null}

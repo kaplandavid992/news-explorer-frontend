@@ -1,6 +1,7 @@
 import "./NewsCard.css";
 import hardCodeDogImg from "../../images/dogCard.png";
 import MediaSource from "../MediaSource/MediaSource";
+import { useState } from "react";
 
 function NewsCard({
   loggedIn,
@@ -11,9 +12,11 @@ function NewsCard({
   category,
 }) {
 
-  const handleSaveCard=()=>{
-    alert('save clicked');
+  const [saveIconSelected, setSaveIconSelected] = useState('');
+  const handleToggleSaveCard=()=>{
+    !saveIconSelected ? setSaveIconSelected('') : setSaveIconSelected ('save-icon_selected');
   }
+
   const handleDeleteCard=()=>{
     alert('delete clicked');
   }
@@ -24,7 +27,7 @@ function NewsCard({
       <span className="hover-info hover-info_trash">Remove from saved</span>
         </>  :
       <>
-      <i className="save-icon white-container" onClick={handleSaveCard}/>
+      <i className={`save-icon ${saveIconSelected} white-container`} onClick={handleToggleSaveCard}/>
       <span className="hover-info hover-info_save">Sign in to save articles</span>
        </>}
 

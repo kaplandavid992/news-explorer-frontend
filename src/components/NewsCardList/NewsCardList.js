@@ -1,14 +1,14 @@
 import "./NewsCardList.css";
 import NewsCard from '../NewsCard/NewsCard';
 
-function NewsCardList() { // prop items amonut returned
+function NewsCardList({loggedIn}) { // prop items amonut returned
    const mobileTopMargin = window.location.pathname === '/' ? 'top-margin-mobile-home' : 'top-margin-mobile-savedNews';
   return (
     // <ul className="news__list">
     //   {newsCards.map((newsCard) => (
       <ul className={`news__list ${mobileTopMargin}`}>
         <NewsCard 
-        loggedIn={true} 
+        loggedIn={loggedIn} 
         date='November 4, 2020'
          titleText="Everyone Needs a Special 'Sit Spot' in Nature"
          paragraphText="Ever since I read Richard 
@@ -24,7 +24,7 @@ function NewsCardList() { // prop items amonut returned
         category='Nature'
         />
 <NewsCard 
-        loggedIn={true} 
+        loggedIn={loggedIn}  
         date='November 4, 2020'
          titleText="Everyone Needs a Special 'Sit Spot' in Nature"
          paragraphText="Ever since I read Richard 
@@ -40,7 +40,7 @@ function NewsCardList() { // prop items amonut returned
         category='Nature'
         />
         <NewsCard 
-        loggedIn={true} 
+        loggedIn={loggedIn} 
         date='November 4, 2020'
          titleText="Everyone Needs a Special 'Sit Spot' in Nature"
          paragraphText="Ever since I read Richard 

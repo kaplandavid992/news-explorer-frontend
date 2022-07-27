@@ -15,7 +15,7 @@ function Main({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen }) {
         anyPopUpOpen={anyPopUpOpen}
       /> 
        <SearchForm /> 
-      <MainSearchResults /> 
+      <MainSearchResults loggedIn={loggedIn}/> 
       <About />  
     </section>
   );
