@@ -16,7 +16,7 @@ function Header({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen, the
   const menuActive = condition ? "" : "header__menu-icon_active";
   const exitActive = condition ? "header__menu-icon_active" : "";
   const headerExpandedClass = condition ? "header_expanded-menu" : "";
-  const popupOpenModifierClass = anyPopUpOpen() ? 'header-items_hider' : "";
+  const popupOpenModifierClass = anyPopUpOpen() ? 'header__items-hider' : "";
 
   const handleLogOut = () => {
     setLoggedIn(false);

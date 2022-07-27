@@ -3,7 +3,7 @@ import notFoundImage from "../../images/not-found_v1.svg";
 
 function NotFound() {
   return (
-    <div className="not-found-wrap">
+    <div className="not-found">
       <img
         src={notFoundImage}
         alt="sad smiley icon"

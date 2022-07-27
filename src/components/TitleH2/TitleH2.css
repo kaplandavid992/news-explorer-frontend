@@ -1,4 +1,4 @@
-.title__h2 {
+.title-h2 {
   all: unset;
   font-family: Roboto Slab, Helvetica, sans-serif;
   font-size: 40px;
@@ -9,14 +9,14 @@
 }
 
 @media screen and (max-width: 815px) {
-  .title__h2 {
+  .title-h2 {
     font-size: 30px;
     line-height: 34px;
   }
 }
 
 @media screen and (max-width: 570px) {
-  .title__h2 {
+  .title-h2 {
     width: 288px !important;
   }
 }

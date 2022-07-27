@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className="footer">
       <span className="footer__copyright">
-        © 2022 Supersite, Powered by News API
+        © {new Date().getFullYear()} Supersite, Powered by News API
       </span>
 
       <div className="footer__right-side-group">

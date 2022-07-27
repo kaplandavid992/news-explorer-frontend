@@ -139,7 +139,7 @@
     background-color: #ffffff;
   }
 
-  .header-items_hider {
+  .header__items-hider {
     display: none;
   }
 }

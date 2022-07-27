@@ -1,4 +1,4 @@
-.news__list {
+.news-list {
   display: flex;
   list-style: none;
   flex-flow: row wrap;
@@ -15,7 +15,7 @@
 }
 
 @media screen and (max-width: 815px) {
-  .news__list {
+  .news-list {
     column-gap: 8px;
     row-gap: 8px;
     margin-top: 32px;
@@ -25,18 +25,18 @@
 }
 
 @media screen and (max-width: 570px) {
-  .news__list {
+  .news-list {
     column-gap: 8px;
     row-gap: 10px;
     margin-bottom: 21px;
     flex-flow: wrap;
   }
 
-  .top-margin-mobile-home {
+  .news-list__top-margin-mobile-home {
     margin-top: 58px;
   }
 
-  .top-margin-mobile-savedNews {
+  .news-list__top-margin-mobile-savedNews {
     margin-top: 24px;
   }
 }

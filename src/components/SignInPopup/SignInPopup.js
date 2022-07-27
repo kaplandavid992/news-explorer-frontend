@@ -41,9 +41,9 @@ function SignInPopup({ isOpen, onClose, onSignIn, openSignUpPopup }) {
       openOtherSignPopup={openSignUpPopup}
     >
    
-      <label for="email" className="popup__form-label">Email</label>
+      <label htmlFor="loginEmail" className="popup__form-label">Email</label>
         <input
-          id="email"
+          id="loginEmail"
           type="text"
           className="popup__form-input"
           placeholder="Enter email"
@@ -56,9 +56,9 @@ function SignInPopup({ isOpen, onClose, onSignIn, openSignUpPopup }) {
         <p className="popup__form-errorMsg" id="inputEmail-error" />
       
       
-      <label for="password" className="popup__form-label">Password</label>
+      <label htmlFor="loginPassword" className="popup__form-label">Password</label>
         <input
-          id="password"
+          id="loginPassword"
           type="password"
           className="popup__form-input"
           placeholder="Enter password"

@@ -1,29 +1,29 @@
-.header__nav-link-underline {
+.header-nav-link-underline {
     justify-self: flex-end;
     display: none;
      background-image: url('../../images/homeUnder.svg'); 
      height: 3px;
 } 
 
-.header__nav-link-underline_light {
+.header-nav-link-underline_light {
   background-image: url('../../images/saveUnderBlack.svg'); 
 }
 
-.header__nav-link-underline_active {
+.header-nav-link-underline_active {
     display: block;
 }
 
 @media screen and (max-width: 815px) {
-    .header__nav-link-underline {
+    .header-nav-link-underline {
       background-image: url('../../images/homeUnderTablet.svg'); 
     }
   }
 
-  .header__nav-link-underline_light {
+  .header-nav-link-underline_light {
     background-image: url('../../images/saveUnderTablet.svg');
   }
 
   @media screen and (max-width: 570px) {
-    .header__nav-link-underline {
+    .header-nav-link-underline {
     display: none;}
   }

@@ -13,7 +13,7 @@
   font-family: Inter, Helvetica, sans-serif;
 }
 
-.errorMsg_emailNotAvail {
+.popup__errorMsg_emailNotAvail {
   visibility: visible;
   width: 200px;
   left: 115px;
@@ -71,7 +71,7 @@
 }
 
 @media screen and (max-width: 570px) {
-  .errorMsg_emailNotAvail {
+  .popup__errorMsg_emailNotAvail {
     left: 61px;
     top: 319px;
   }

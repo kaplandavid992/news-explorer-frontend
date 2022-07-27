@@ -23,6 +23,7 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
 
   function handleSubmit(e) {
      e.preventDefault();
+     alert(email, password, username)
      //api registration success need to add(  {email,
     //   password,
     //   username })
@@ -47,9 +48,9 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
       openOtherSignPopup={openSignInPopup}
     >
       
-      <label for="email" className="popup__form-label">Email</label>
+      <label htmlFor="signinEmail" className="popup__form-label">Email</label>
         <input
-          id="email"
+          id="signinEmail"
           type="text"
           className="popup__form-input"
           placeholder="Enter email"
@@ -62,9 +63,9 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
         <p className="popup__form-errorMsg" id="inputEmail-error" />
       
       
-      <label for="password" className="popup__form-label">Password</label>
+      <label htmlFor="signinPassword" className="popup__form-label">Password</label>
         <input
-          id="password"
+          id="signinPassword"
           type="password"
           className="popup__form-input"
           placeholder="Enter password"
@@ -76,9 +77,9 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
         <p className="popup__form-errorMsg" id="inputPassword-error" />
       
       
-      <label for="username" className="popup__form-label">Username</label>
+      <label htmlFor="signinUsername" className="popup__form-label">Username</label>
         <input
-          id="username"
+          id="signinUsername"
           type="text"
           className="popup__form-input"
           placeholder="Enter your username"
@@ -89,7 +90,7 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
         />
         <p className="popup__form-errorMsg" id="inputUsername-error" />
       
-      <p className="popup__form-errorMsg errorMsg_emailNotAvail" id="inputUsername-error" >
+      <p className="popup__form-errorMsg popup__errorMsg_emailNotAvail" id="inputUsername-error" >
       This email is not available
       </p>
     </PopupWithForm>

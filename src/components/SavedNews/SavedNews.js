@@ -1,7 +1,6 @@
 import "./SavedNews.css";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import Header from "../Header/Header";
-import TitleH2 from "../TitleH2/TitleH2";
 import { useNavigate } from "react-router-dom";
 
 function SavedNews({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen }) {
@@ -17,13 +16,13 @@ function SavedNews({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen }
         setIsSignInPopupOpen={setIsSignInPopupOpen}
         anyPopUpOpen={anyPopUpOpen}
       /> 
-       <section className="saved-news-wrapper">
-        <div className="titles-container">
-          <span className="saved-art-title">Saved articles</span>
+       <section className="saved-news">
+        <div className="saved-news__titles">
+          <span className="saved-news__saved-art-title">Saved articles</span>
           <h2 className="saved-news__h2title">Elise, you have 5 saved articles</h2>
-           <p className="keywords-title">
+           <p className="saved-news__keywords-title">
             By keywords:
-            <span className="keywords-title keywords-title_content">
+            <span className="saved-news__keywords-title saved-news__keywords-title_content">
               {" "}
               Nature, Yellowstone, and 2 other
             </span>

@@ -4,13 +4,13 @@ import "./HeaderLink.css";
 
 function HeaderLink({ to, text, sidePadding, theme }) {
   const marginLeft = text === "Saved articles" ? "16" : "0";
-  const linkLightThemeColor = theme === "light" ? "header__nav-link_light" : "";
+  const linkLightThemeColor = theme === "light" ? "header-nav-link_light" : "";
 
   return (
-    <div className="header__nav-link-wrapper">
+    <div className="header-nav-link__wrapper">
       <Link
         to={to}
-        className={`header__nav-link ${linkLightThemeColor}`}
+        className={`header-nav-link ${linkLightThemeColor}`}
         style={{
           paddingRight: sidePadding,
           paddingLeft: sidePadding,
