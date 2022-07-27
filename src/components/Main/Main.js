@@ -6,7 +6,7 @@ import "./Main.css";
 
 function Main({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen }) {
   return (
-    <section className="main">
+    <main className="main">
        <Header
         loggedIn={loggedIn}
         setLoggedIn={setLoggedIn}
@@ -17,7 +17,7 @@ function Main({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen }) {
        <SearchForm /> 
       <MainSearchResults loggedIn={loggedIn}/> 
       <About />  
-    </section>
+    </main>
   );
 }
 

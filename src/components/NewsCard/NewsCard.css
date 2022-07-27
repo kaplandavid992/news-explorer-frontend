@@ -146,7 +146,7 @@
   text-align: left;
 }
 
-.action-icon-container {
+/* .action-icon-container {
   background-color: #ffffff;
   height: 40px;
   position: absolute;
@@ -161,7 +161,7 @@
   width: 18px;
   height: 19px;
   margin-top: 11px;
-}
+} */
 
 @media screen and (max-width: 815px) {
   .news-card {
@@ -184,7 +184,7 @@
     top: 8px;
   }
   .save-icon {
-    right: 173px;
+    left:173px;
     top: 8px;
   }
 
