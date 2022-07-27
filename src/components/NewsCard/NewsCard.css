@@ -232,7 +232,7 @@
 
 
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 570px) {
   .news-card {
     width: 288px;
   }

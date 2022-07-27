@@ -111,17 +111,17 @@
   text-align: center;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 570px) {
   .popup {
     height: auto;
     margin-top: 56px;
   }
   .popup__window {
     height: 100vh;
+    width: 288px;
+    padding: 16px 16px 0px;
   }
-}
 
-@media screen and (max-width: 320px) {
   .popup__exit-btn {
     top: -40px;
     left: 280px;
@@ -129,5 +129,9 @@
 
   .popup__exit-icon {
     width: 24px;
+  }
+
+  .popup__form-submit-btn {
+    width: 288px;
   }
 }

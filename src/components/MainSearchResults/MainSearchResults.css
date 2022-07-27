@@ -35,12 +35,20 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 570px) {
   .main-results-section {
     padding: 32px 16px 24px;
+    align-items: center;
   }
 
   .main-results-section__h2title {
     width: 288px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .main-results-section__h2title {
+    text-align:left;
   }
 }

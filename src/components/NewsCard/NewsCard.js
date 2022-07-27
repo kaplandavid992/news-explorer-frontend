@@ -18,7 +18,7 @@ function NewsCard({
     alert('delete clicked');
   }
   return (
-    <div className="news-card">
+    <li className="news-card">
       { loggedIn ? <><span className="news-card-category">{category}</span>
       <i className="trash-icon white-container" onClick={handleDeleteCard}/>
       <span className="hover-info hover-info_trash">Remove from saved</span>
@@ -37,7 +37,7 @@ function NewsCard({
         
       </div>
       
-    </div>
+    </li>
   );
 }
 

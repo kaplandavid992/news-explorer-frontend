@@ -23,7 +23,7 @@
     background-image: url('../../images/saveUnderTablet.svg');
   }
 
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 570px) {
     .header__nav-link-underline {
     display: none;}
   }

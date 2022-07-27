@@ -50,12 +50,13 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 570px) {
   .log-out-btn {
     font-size: 18px;
     width: 257.4px;
     margin-top: 0;
     height: 56px;
     margin-bottom: 0;
+    margin-left: 0;
   }
 }

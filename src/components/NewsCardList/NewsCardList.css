@@ -20,14 +20,18 @@
     row-gap: 8px;
     margin-top: 32px;
     margin-bottom: 32px;
+    align-items: center;
+  justify-content: center;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 570px) {
   .news__list {
     column-gap: 8px;
     row-gap: 10px;
     margin-bottom: 21px;
+    flex-flow: wrap;
+    
   }
 
   .top-margin-mobile-home {
@@ -37,5 +41,4 @@
   .top-margin-mobile-savedNews {
     margin-top: 24px;
   }
-
 }

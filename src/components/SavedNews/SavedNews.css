@@ -86,7 +86,7 @@
 
 
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 570px) {
   .news-list-wrapper {
     padding-left: 0;
   }
