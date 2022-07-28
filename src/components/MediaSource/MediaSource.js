@@ -1,7 +1,7 @@
 import "./MediaSource.css";
 
 function MediaSource({ name }) {
-  return <title className="media-source">{name}</title>;
+  return <cite className="media-source">{name}</cite>;
 }
 
 export default MediaSource;

@@ -6,9 +6,9 @@ import "./Footer.css";
 function Footer() {
   return (
     <footer className="footer">
-      <span className="footer__copyright">
+      <p className="footer__copyright">
         © {new Date().getFullYear()} Supersite, Powered by News API
-      </span>
+      </p>
 
       <div className="footer__right-side-group">
       <div className="footer__links-wrapper">

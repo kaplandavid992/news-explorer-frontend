@@ -15,7 +15,7 @@ function Header({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen, the
   const condition = expandedMenu && !anyPopUpOpen();
   const menuActive = condition ? "" : "header__menu-icon_active";
   const exitActive = condition ? "header__menu-icon_active" : "";
-  const headerExpandedClass = condition ? "header_expanded-menu" : "";
+  const headerExpandedClass = condition ? "header_layout_vertical" : "";
   const popupOpenModifierClass = anyPopUpOpen() ? 'header__items-hider' : "";
 
   const handleLogOut = () => {
@@ -23,10 +23,10 @@ function Header({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen, the
     setIsSignInPopupOpen(true);
   }
 
-  const headerLightBg = theme === 'light'  ? 'header_background-light' :'';
+  const headerLightBg = theme === 'light'  ? 'header_background_light' :'';
   const logoLightTheme = theme === 'light' ? 'header__logo_light': '';
-  const verticalGroupLight = theme === 'light' ? 'header__right-group_vertical_light': '';
-  const remainderLight = theme === 'light' ? 'header__right-group_vertical-remainder_light':'';
+  const verticalGroupLight = theme === 'light' ? 'header__right-group_links_vertical-light': '';
+  const remainderLight = theme === 'light' ? 'header__right-group_links_vertical-remainder-light':'';
   const menuIcon = theme === 'light' ? menuLightTheme : menu;
   const exitIcon = theme === 'light' ?  exitMenuLightTheme : exitMenu;
   
@@ -85,8 +85,8 @@ function Header({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen, the
       </header>
 
       {expandedMenu ? (
-        <div className={`header__right-group_vertical-wrappper ${popupOpenModifierClass}`}>
-        <div className={`header__right-group header__right-group_vertical ${verticalGroupLight}`}>
+        <div className={`header__right-group_links_vertical-wrappper ${popupOpenModifierClass}`}>
+        <div className={`header__right-group header__right-group_links_vertical ${verticalGroupLight}`}>
           <HeaderLink
             theme={theme}
             to="/"
@@ -109,7 +109,7 @@ function Header({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen, the
             <SignInBtn setIsSignInPopupOpen={setIsSignInPopupOpen} />
           )}
         </div> 
-        <div className={`header__right-group_vertical-remainder ${remainderLight}`} ></div>
+        <div className={`header__right-group_links_vertical-remainder ${remainderLight}`} ></div>
         </div>
       ) : null}
     </>

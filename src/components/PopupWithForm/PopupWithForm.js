@@ -50,10 +50,9 @@ function PopupWithForm({
                 {buttonText}
               </button>
               <div className="popup__bottom-text-wrapper">
-              <span className="popup__bottom-text">or <a className="popup__bottom-text popup__bottom-text_link" 
-              href='#' 
+              <span className="popup__bottom-text">or <button className="popup__bottom-text popup__bottom-text_type_link" 
               onClick={closeOpenOpenOtherSignPopup}>
-                Sign { buttonText.includes('up') ? 'in' : 'up'}</a>
+                Sign { buttonText.includes('up') ? 'in' : 'up'}</button>
               </span>
               </div>
             </form>

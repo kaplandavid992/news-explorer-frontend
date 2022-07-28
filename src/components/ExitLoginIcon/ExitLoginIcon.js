@@ -6,7 +6,7 @@ function ExitLoginIcon({theme}) {
   return (
     <Link to='/'>
     <svg  
-      className="exitLoginIcon"
+      className="exit-login-icon"
       width="18"
       height="16"
       viewBox="0 0 18 16"

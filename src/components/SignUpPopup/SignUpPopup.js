@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import '../SignInPopup/SignInPopup.css';
+import '../SignUpPopup/SignUpPopup.css';
 // import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
 
 function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
@@ -60,7 +61,7 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
           minLength="3"
           onChange={onEmailChange}
         />
-        <p className="popup__form-errorMsg" id="inputEmail-error" />
+        <p className="popup__form-error" id="inputEmail-error" />
       
       
       <label htmlFor="signinPassword" className="popup__form-label">Password</label>
@@ -74,7 +75,7 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
           minLength="8"
           onChange={onPasswordChange}
         />
-        <p className="popup__form-errorMsg" id="inputPassword-error" />
+        <p className="popup__form-error" id="inputPassword-error" />
       
       
       <label htmlFor="signinUsername" className="popup__form-label">Username</label>
@@ -88,9 +89,9 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
           minLength="2"
           onChange={onUsernameChange}
         />
-        <p className="popup__form-errorMsg" id="inputUsername-error" />
+        <p className="popup__form-error" id="inputUsername-error" />
       
-      <p className="popup__form-errorMsg popup__errorMsg_emailNotAvail" id="inputUsername-error" >
+      <p className="popup__form-error popup__error_email_not-avail" id="inputUsername-error" >
       This email is not available
       </p>
     </PopupWithForm>

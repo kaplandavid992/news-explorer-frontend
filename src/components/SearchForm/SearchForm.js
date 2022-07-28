@@ -7,7 +7,7 @@ function SearchForm() {
   function onSearchInputChange(e) {
     
     //api send search
-    if(e.target.value.length > 0 && !btnActiveClass){setBtnActiveClass('searchForm__btn_active')}
+    if(e.target.value.length > 0 && !btnActiveClass){setBtnActiveClass('search-section__form__btn_active')}
     else if(e.target.value.length < 1 && btnActiveClass){setBtnActiveClass('')};
     setSearch(e.target.value);
   }
@@ -15,23 +15,24 @@ function SearchForm() {
   function handleSubmit(e) {
     e.preventDefault();
     //api send 'search'
+    alert(search);
   }
   
   return (
-    <div className="searchFormSection">
-      <h1 className="searchForm__title">What's going on in the world?</h1>
-      <span className="searchForm__span">
+    <section className="search-section">
+      <h1 className="search-section__title">What's going on in the world?</h1>
+      <p className="search-section__subtitle">
         Find the latest news on any topic and save them in your personal
         account.
-      </span>
+      </p>
 
-      <form className="searchForm" onSubmit={handleSubmit}>
-        <input className="searchForm__input" placeholder="Enter topic" onChange={onSearchInputChange}/>
-        <button className={`searchForm__btn ${btnActiveClass}`} type="submit">
+      <form className="search-section__form" onSubmit={handleSubmit}>
+        <input className="search-section__form__input" placeholder="Enter topic" onChange={onSearchInputChange}/>
+        <button className={`search-section__form__btn ${btnActiveClass}`} type="submit">
           Search
         </button>
       </form>
-    </div>
+    </section>
   );
 }
 

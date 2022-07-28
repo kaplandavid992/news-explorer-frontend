@@ -3,7 +3,7 @@ import { useState } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 // import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
 
-function SignInPopup({ isOpen, onClose, onSignIn, openSignUpPopup }) {
+function SignInPopup({ isOpen, onClose, openSignUpPopup }) { //onSignin --add
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 //   const currentUser = useContext(CurrentUserContext);
@@ -18,10 +18,10 @@ function SignInPopup({ isOpen, onClose, onSignIn, openSignUpPopup }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    onSignIn({
+    alert(
       email,
       password
-    });
+    );
   }
 
 //   useEffect(() => {
@@ -53,7 +53,7 @@ function SignInPopup({ isOpen, onClose, onSignIn, openSignUpPopup }) {
           minLength="3"
           onChange={onEmailChange}
         />
-        <p className="popup__form-errorMsg" id="inputEmail-error" />
+        <p className="popup__form-error" id="inputEmail-error" />
       
       
       <label htmlFor="loginPassword" className="popup__form-label">Password</label>
@@ -67,7 +67,7 @@ function SignInPopup({ isOpen, onClose, onSignIn, openSignUpPopup }) {
           minLength="8"
           onChange={onPasswordChange}
         />
-        <p className="popup__form-errorMsg" id="inputPassword-error" />
+        <p className="popup__form-error" id="inputPassword-error" />
       
     </PopupWithForm>
   );

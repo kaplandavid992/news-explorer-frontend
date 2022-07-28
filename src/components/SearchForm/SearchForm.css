@@ -1,4 +1,4 @@
-.searchFormSection {
+.search-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,12 +6,12 @@
   margin-right: 416px;
 }
 
-.searchForm {
+.search-section__form {
   flex-direction: row;
   position: relative;
 }
 
-.searchForm__title {
+.search-section__title {
   all: unset;
   font-size: 60px;
   font-family: "Roboto Slab", Helvetica, sans-serif;
@@ -24,7 +24,7 @@
   text-align: left;
 }
 
-.searchForm__span {
+.search-section__subtitle {
   all: unset;
   font-size: 18px;
   font-family: Roboto, Helvetica, sans-serif;
@@ -35,7 +35,7 @@
   margin-bottom: 88px;
 }
 
-.searchForm__input {
+.search-section__form__input {
   box-sizing: border-box; 
   border-radius: 100px;
   border: 1px solid #D1D2D6;
@@ -52,7 +52,7 @@
   outline: none;
 }
 
-.searchForm__input::placeholder {
+.search-section__form__input::placeholder {
   font-weight: 400;
   font-size: 16px;
   color: #b6bcbf;
@@ -60,7 +60,7 @@
   line-height: 22px;
 }
 
-.searchForm__btn {
+.search-section__form__btn {
   all: unset;
   background-color: #2f71e5;
   height: 64px;
@@ -79,21 +79,21 @@
   box-shadow: 0px 5px 15px 0px #0E1A3933;
 }
 
-.searchForm__btn:hover {
+.search-section__form__btn:hover {
   background-color: #347eff;
 }
-.searchForm__btn_active {
+.search-section__form__btn_active {
   background-color: #2a65cc;
 }
 
 @media screen and (max-width: 815px) {
-  .searchFormSection {
+  .search-section {
     margin:0;
   }
-  .searchForm {
+  .search-section__form {
     width: 448px;
   }
-  .searchForm__title {
+  .search-section__title {
     font-size: 36px;
     line-height: 40px;
     letter-spacing: 0px;
@@ -105,17 +105,17 @@
     width: 385px;
   }
 
-  .searchForm__span {
+  .search-section__subtitle {
     margin-bottom: 48px;
     width: 452px;
   }
-  .searchForm__input {
+  .search-section__form__input {
     height: 56px;
     width: 448px;
     margin-bottom: 48px;
   }
 
-  .searchForm__btn {
+  .search-section__form__btn {
     height: 56px;
     width: 168px;
     position: absolute;
@@ -125,18 +125,18 @@
 }
 
 @media screen and (max-width: 570px) {
-  .searchFormSection {
+  .search-section {
     width: 320px;
     margin-left: auto;
   margin-right: auto;
   }
 
-  .searchForm {
+  .search-section__form {
     width: 288px;
     flex-direction: column;
   }
 
-  .searchForm__title {
+  .search-section__title {
     font-size: 36px;
     line-height: 40px;
     margin-top: 30px;
@@ -146,18 +146,18 @@
     margin-right: 16px;
   }
 
-  .searchForm__span {
+  .search-section__subtitle {
     margin-bottom: 122px;
     width: 288px;
   }
 
-  .searchForm__input {
+  .search-section__form__input {
     height: 56px;
     width: 288px;
     margin-bottom: 0;
   }
 
-  .searchForm__btn {
+  .search-section__form__btn {
     height: 56px;
     width: 288px;
     position: static;

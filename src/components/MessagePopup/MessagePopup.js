@@ -1,5 +1,4 @@
 import '../PopupWithForm/PopupWithForm.css';
-import "./MessagePopup.css";
 import exitIcon from "../../images/exit_icon.svg";
 
 function MessagePopup({ isOpen, onClose, openSignInPopup, title }) {
@@ -26,7 +25,6 @@ function MessagePopup({ isOpen, onClose, openSignInPopup, title }) {
         </button>
         <div className="popup__form">
           <h2 className="popup__form-header">{title}</h2>
-          <div className="popup__bottom-text-wrapper_left">
             <span className="popup__bottom-text">
               <button
                 className="popup__bottom-text popup__bottom-text_link"
@@ -39,7 +37,6 @@ function MessagePopup({ isOpen, onClose, openSignInPopup, title }) {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 

@@ -24,11 +24,11 @@ function NewsCard({
     <li className="news-card">
       { loggedIn ? <><span className="news-card__category">{category}</span>
       <i className="news-card__trash-icon news-card__white-container" onClick={handleDeleteCard}/>
-      <span className="news-card__hover-info news-card__hover-info_trash">Remove from saved</span>
+      <span className="news-card__hover-info news-card__hover-info-trash">Remove from saved</span>
         </>  :
       <>
        <i className={`news-card__save-icon ${saveIconSelected} news-card__white-container`} onClick={handleToggleSaveCard}/> 
-      <span className="news-card__hover-info news-card__hover-info_save">Sign in to save articles</span>
+      <span className="news-card__hover-info news-card__hover-info-save">Sign in to save articles</span>
        </>}
 
       <img className="news-card__img" src={hardCodeDogImg} alt='dog in forest'/>

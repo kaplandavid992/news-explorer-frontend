@@ -1,3 +1,7 @@
+.search-pending {
+  text-align: center;
+}
+
 .search-pending__text {
   font-family: Roboto ,Helvetica, sans-serif;
   font-size: 18px;
@@ -7,6 +11,4 @@
   color: #b6bcbf;
 }
 
-.search-pending {
-  text-align: center;
-}
+

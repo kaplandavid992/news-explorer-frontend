@@ -1,0 +1,14 @@
+.popup__error_email_not-avail {
+    visibility: visible;
+    width: 200px;
+    left: 115px;
+    text-align: center;
+    top: 337px;
+  }
+
+@media screen and (max-width: 570px) {
+    .popup__error_email_not-avail {
+      left: 61px;
+      top: 319px;
+    }
+  }

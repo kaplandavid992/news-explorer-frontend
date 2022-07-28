@@ -3,11 +3,10 @@ import "./SearchPending.css";
 
 function SearchPending() {
   return (
-      <div className="search-pending">
+    <div className="search-pending">
       <Preloader />
-        <span className="search-pending__text">Searching for news...</span>
-      </div>
-    
+      <span className="search-pending__text">Searching for news...</span>
+    </div>
   );
 }
 

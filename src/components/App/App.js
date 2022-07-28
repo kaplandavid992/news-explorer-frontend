@@ -9,7 +9,7 @@ import SavedNews from "../SavedNews/SavedNews";
 import "./App.css";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   const [isSignInPopupOpen, setIsSignInPopupOpen] = useState(false);
   const [isSignUpPopupOpen, setIsSignUpPopupOpen] = useState(false);
   const [isMsgPopupOpen, setIsMsgPopupOpen] = useState(false);
@@ -47,7 +47,7 @@ function App() {
     return () => document.removeEventListener("click", exitClickOutSideModal);
   }, []);
   return (
-    <div className="App">
+    <div className="app">
        <SignUpPopup
         isOpen={isSignUpPopupOpen}
         onClose={closeAllPopups}
