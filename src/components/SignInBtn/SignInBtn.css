@@ -6,6 +6,7 @@
   margin-top: 19px;
   border: 1px solid #ffffff;
   border-radius: 100px;
+  box-sizing: border-box;
   margin-left: 34px;
   font-family: Roboto, Helvetica, sans-serif;
   font-weight: 500;
@@ -34,10 +35,7 @@
     letter-spacing: 0px;
     padding-top: 0;
     padding-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    margin-bottom: 24px;
+    margin:0;
     height: 56px;
   }
 }
