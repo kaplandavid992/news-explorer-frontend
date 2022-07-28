@@ -1,15 +1,14 @@
 import "./MainSearchResults.css";
 import ShowMoreBtn from "../ShowMoreBtn/ShowMoreBtn";
 import NewsCardList from "../NewsCardList/NewsCardList";
-import TitleH2 from "../TitleH2/TitleH2";
 import SearchPending from "../SearchPending/SearchPending";
 import NotFound from "../NotFound/NotFound";
-import { useState } from "react";
+//import { useState } from "react";
 
 function MainSearchResults({loggedIn}) {
   // prop {newsCards}
   const handleShowMore = () => {alert('show more')}
-  const [searchStatus, setSearchStatus] = useState("results");
+  const searchStatus="results"; // setSearch status next stage for hook with api
   // api get search status and update setSearchStatus
   const active = searchStatus ? "main-results-section_active" : "";
   return (
@@ -20,7 +19,7 @@ function MainSearchResults({loggedIn}) {
         <NotFound />
       ) : searchStatus === "results" ? (
         <>
-          <h2 className="main-results-section__h2title">Search results</h2>
+          <h2 className="main-results-section__title">Search results</h2>
           <NewsCardList loggedIn={loggedIn}/>
           <ShowMoreBtn onClick={handleShowMore}/>
         </>

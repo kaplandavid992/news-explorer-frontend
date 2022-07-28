@@ -16,10 +16,11 @@ function SavedNews({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen }
         setIsSignInPopupOpen={setIsSignInPopupOpen}
         anyPopUpOpen={anyPopUpOpen}
       /> 
+      <main>
        <section className="saved-news">
         <div className="saved-news__titles">
           <span className="saved-news__saved-art-title">Saved articles</span>
-          <h2 className="saved-news__h2title">Elise, you have 5 saved articles</h2>
+          <h2 className="saved-news__title">Elise, you have 5 saved articles</h2>
            <p className="saved-news__keywords-title">
             By keywords:
             <span className="saved-news__keywords-title saved-news__keywords-title_content">
@@ -32,6 +33,7 @@ function SavedNews({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen }
       <section className="news-list-wrapper">
         <NewsCardList />
       </section>  
+      </main>
     </>
   );
 }

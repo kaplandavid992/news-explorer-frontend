@@ -8,9 +8,9 @@
   padding-bottom: 80px;
 }
 
-.main-results-section__h2title {
+.main-results-section__title {
   all: unset;
-  font-family: Roboto Slab, Helvetica, sans-serif;
+  font-family: "Roboto Slab", Helvetica, sans-serif;
   font-size: 40px;
   font-weight: 400;
   line-height: 46px;
@@ -28,7 +28,7 @@
     padding: 40px;
   }
 
-  .main-results-section__h2title {
+  .main-results-section__title {
     font-size: 30px;
     line-height: 34px;
     width: 336px;
@@ -41,14 +41,14 @@
     align-items: center;
   }
 
-  .main-results-section__h2title {
+  .main-results-section__title {
     width: 288px;
     text-align: center;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .main-results-section__h2title {
+  .main-results-section__title {
     text-align:left;
   }
 }

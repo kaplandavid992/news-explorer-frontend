@@ -7,8 +7,8 @@ function SearchForm() {
   function onSearchInputChange(e) {
     
     //api send search
-    if(e.target.value.length > 1 && !btnActiveClass){setBtnActiveClass('searchForm__btn_active')}
-    else if(e.target.value.length < 2 && btnActiveClass){setBtnActiveClass('')};
+    if(e.target.value.length > 0 && !btnActiveClass){setBtnActiveClass('searchForm__btn_active')}
+    else if(e.target.value.length < 1 && btnActiveClass){setBtnActiveClass('')};
     setSearch(e.target.value);
   }
 
@@ -19,7 +19,7 @@ function SearchForm() {
   
   return (
     <div className="searchFormSection">
-      <h1 className="searchForm__h1">What's going on in the world?</h1>
+      <h1 className="searchForm__title">What's going on in the world?</h1>
       <span className="searchForm__span">
         Find the latest news on any topic and save them in your personal
         account.

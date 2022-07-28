@@ -62,7 +62,7 @@
 .news-card__hover-info {
   display: none;
   background-color: #ffffff;
-  font-family: Roboto;
+  font-family: Roboto, Helvetica, sans-serif;;
   font-size: 12px;
   font-weight: 500;
   height: 27px;
@@ -112,7 +112,7 @@
 .news-card__paragraph {
   all: unset;
   margin-bottom: 40px;
-  font-family: Roboto;
+  font-family: Roboto, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
@@ -125,7 +125,7 @@
   all: unset;
   margin-bottom: 46px;
   color: #1a1b22;
-  font-family: Roboto Slab, Helvetica, sans-serif;
+  font-family: "Roboto Slab", Helvetica, sans-serif;
   font-size: 26px;
   font-weight: 400;
   line-height: 30px;
@@ -137,7 +137,7 @@
   all: unset;
   margin-bottom: 12px;
   color: #b6bcbf;
-  font-family: Source Sans Pro, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
