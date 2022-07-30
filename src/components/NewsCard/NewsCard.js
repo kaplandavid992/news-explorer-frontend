@@ -2,6 +2,7 @@ import "./NewsCard.css";
 import hardCodeDogImg from "../../images/dogCard.png";
 import MediaSource from "../MediaSource/MediaSource";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 function NewsCard({
   loggedIn,
@@ -11,7 +12,8 @@ function NewsCard({
   mediaSourceName,
   category,
 }) {
-
+  let location = useLocation();
+  const uri = location.pathname;
   const [saveIconSelected, setSaveIconSelected] = useState('');
   const handleToggleSaveCard=()=>{
     !saveIconSelected ? setSaveIconSelected('') : setSaveIconSelected ('news-card__save-icon_selected');
@@ -22,7 +24,7 @@ function NewsCard({
   }
   return (
     <li className="news-card">
-      { loggedIn ? <><span className="news-card__category">{category}</span>
+      { uri === '/saved-news' ? <><span className="news-card__category">{category}</span>
       <i className="news-card__trash-icon news-card__white-container" onClick={handleDeleteCard}/>
       <span className="news-card__hover-info news-card__hover-info-trash">Remove from saved</span>
         </>  :

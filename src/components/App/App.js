@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import SignUpPopup from "../SignUpPopup/SignUpPopup";
 import SignInPopup from "../SignInPopup/SignInPopup";
 import MessagePopup from "../MessagePopup/MessagePopup";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
@@ -9,7 +10,7 @@ import SavedNews from "../SavedNews/SavedNews";
 import "./App.css";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [isSignInPopupOpen, setIsSignInPopupOpen] = useState(false);
   const [isSignUpPopupOpen, setIsSignUpPopupOpen] = useState(false);
   const [isMsgPopupOpen, setIsMsgPopupOpen] = useState(false);
@@ -48,7 +49,7 @@ function App() {
   }, []);
   return (
     <div className="app">
-       <SignUpPopup
+      <SignUpPopup
         isOpen={isSignUpPopupOpen}
         onClose={closeAllPopups}
         onSignUp={setIsMsgPopupOpen}
@@ -80,19 +81,20 @@ function App() {
           }
         />
         <Route
-          exact
           path="/saved-news"
           element={
-            <SavedNews
-              loggedIn={loggedIn}
-              setLoggedIn={setLoggedIn}
-              setIsSignInPopupOpen={setIsSignInPopupOpen}
-              anyPopUpOpen={anyPopUpOpen}
-            />
+            <ProtectedRoute  loggedIn={loggedIn}>
+              <SavedNews
+                loggedIn={loggedIn}
+                setLoggedIn={setLoggedIn}
+                setIsSignInPopupOpen={setIsSignInPopupOpen}
+                anyPopUpOpen={anyPopUpOpen}
+              />
+            </ProtectedRoute>
           }
         />
       </Routes>
-      <Footer />  
+      <Footer />
     </div>
   );
 }
