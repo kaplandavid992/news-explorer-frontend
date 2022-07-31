@@ -1,4 +1,5 @@
 import { useState } from "react";
+import newsApi from "../../utils/NewsApi";
 import "./SearchForm.css";
 
 function SearchForm() {
@@ -14,8 +15,7 @@ function SearchForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    //api send 'search'
-    alert(search);
+    newsApi.getNewsData(search);
   }
   
   return (

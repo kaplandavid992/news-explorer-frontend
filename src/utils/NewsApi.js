@@ -1,64 +1,33 @@
 class NewsApi {
-    constructor({ baseUrl }) {
-      this._baseUrl = baseUrl;
-    }
-  
-    getNewsCards() {
-      return fetch(`${this._baseUrl}/articles`, { headers: this._setHeaders() }).then(
-        this._checkResponse,
-      );
-    }
-  
-    postNewCard({ name, link }) {
-      return fetch(`${this._baseUrl}/cards`, {
-        method: 'POST',
-        headers: this._setHeaders(),
-        body: JSON.stringify({
-          name,
-          link,
-        }),
-      }).then(this._checkResponse);
-    }
-  
-    confirmDelete(cardId) {
-      return fetch(`${this._baseUrl}/cards/${cardId}`, {
-        method: 'DELETE',
-        headers: this._setHeaders(),
-      }).then(this._checkResponse);
-    }
-  
-    changeLikeCardStatus(cardId, isLiked) {
-      return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
-        method: isLiked ? 'PUT' : 'DELETE',
-        headers: this._setHeaders(),
-      }).then(this._checkResponse);
-    }
-  
-    _checkResponse(res) {
-      if (res.ok) {
-        return res.json();
-      } 
-      return Promise.reject(new Error(`Error ${res.status}`));
-    }
-    _setHeaders() {
-      const token = localStorage.getItem('token');
-      return {
-        authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
-      };
-    }
+  constructor({ baseUrl }) {
+    this._baseUrl = baseUrl;
   }
-  
-  const NewsApi = new NewsApi({
-    baseUrl: '',
-  });
-  
-  export default newsApi;
+  getNewsData(searchKey) {
+    return fetch(`${this._baseUrl}?q=${searchKey}&from=${this._sevenDaysAgo()}&to=${this._currentDate()}&pageSize=100&apiKey=5bcf74b8dc734bf48e79424aa27c65a7`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then(this._checkResponce);
+  }
+  _checkResponce = (res) =>
+    res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 
-  
-// # creates an article with the passed
-// # keyword, title, text, date, source, link, and image in the body
-// POST /articles
-
-// # deletes the stored article by _id
-// DELETE /articles/articleId 
+  _currentDate() {
+    const currentDate = new Date().toJSON().slice(0, 10);
+    return currentDate;
+  }
+  _sevenDaysAgo() {
+    const date = new Date();
+    const sevenDaysAgo = new Date(date.setDate(date.getDate() - 7))
+      .toJSON()
+      .slice(0, 10);
+    return sevenDaysAgo;
+  }
+}
+const newsApi = new NewsApi({
+    baseUrl: 'https://nomoreparties.co/news/v2/everything',
+});
+export default newsApi;
