@@ -11,27 +11,30 @@ import SavedNews from "../SavedNews/SavedNews";
 import "./App.css";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({
-    userName: 'Dave',
-    email: 'hhh@hhh.com'
+    userName: '',
+    email: ''
   });
   const [isSignInPopupOpen, setIsSignInPopupOpen] = useState(false);
   const [isSignUpPopupOpen, setIsSignUpPopupOpen] = useState(false);
   const [isMsgPopupOpen, setIsMsgPopupOpen] = useState(false);
 
-  // const handleLogin = (userEmail) => {
-  //   setLoggedIn(true);
-  //   setUserEmail(userEmail);
-  // };
+  const handleLogin = (email, name) => {
+    setLoggedIn(true);
+    setCurrentUser({email, userName: name});
+  };
 
-  // const handleLogout = () => {
-  //   setLoggedIn(false);
-  //   setUserEmail("");
-  //   localStorage.removeItem("token");
-  //   history.push("/signin");
-  //   return true;
-  // };
+  const handleLogout = () => {
+    setLoggedIn(false);
+    setCurrentUser({
+      email:'',
+      userName:''
+    })
+    localStorage.removeItem("token");
+    // history.push("/signin");
+    return true;
+  };
 
   function anyPopUpOpen() {
     const popups = [isSignInPopupOpen, isSignUpPopupOpen, isMsgPopupOpen];
@@ -75,6 +78,7 @@ function App() {
         openSignInPopup={setIsSignInPopupOpen}
       />
       <SignInPopup
+        handleLogin={handleLogin}
         isOpen={isSignInPopupOpen}
         onClose={closeAllPopups}
         onSignIn={null}
@@ -93,6 +97,7 @@ function App() {
           element={
             <Main
               loggedIn={loggedIn}
+              logout={handleLogout}
               setLoggedIn={setLoggedIn}
               setIsSignInPopupOpen={setIsSignInPopupOpen}
               anyPopUpOpen={anyPopUpOpen}

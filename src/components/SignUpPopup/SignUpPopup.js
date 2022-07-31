@@ -32,9 +32,9 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
       .catch((err) => {
         console.log(err);
       })
-      .finally(() => {
-        console.log('f');
-      });
+      // .finally(() => {
+      //   console.log('f');
+      // });
   }
 
   return (

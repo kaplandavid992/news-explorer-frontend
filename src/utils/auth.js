@@ -32,7 +32,7 @@ export const authorize = (password, email) => {
   return customFetch(path, method, headers, data);
 };
 
-export const getContent = (token) => 
+export const getUser = (token) => 
 fetch(`${BASE_URL}/users/me`, {
   method: 'GET',
   headers: {

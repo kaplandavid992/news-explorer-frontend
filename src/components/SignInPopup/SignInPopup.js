@@ -1,12 +1,11 @@
 import './SignInPopup.css';
 import { useState } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
-// import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
+import * as auth from "../../utils/auth";
 
-function SignInPopup({ isOpen, onClose, openSignUpPopup }) { //onSignin --add
+function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) { //onSignin --add
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-//   const currentUser = useContext(CurrentUserContext);
 
   function onEmailChange(e) {
     setEmail(e.target.value);
@@ -16,19 +15,40 @@ function SignInPopup({ isOpen, onClose, openSignUpPopup }) { //onSignin --add
     setPassword(e.target.value);
   }
 
+  function resetForm(){
+    setEmail("");
+    setPassword("");
+  };
+
+
   function handleSubmit(e) {
     e.preventDefault();
-    alert(
-      email,
-      password
-    );
+    if (!email || !password) {
+      return;
+    }
+    auth
+      .authorize(password, email)
+      .then((data) => {
+        if (data) {
+          localStorage.setItem("token", data.token);
+          auth.getUser(data.token).then((user)=>{
+            const email = user.data.email;
+            const name = user.data.name;
+             handleLogin(email, name);
+          })
+          
+          // history.push("/saved-news");
+          resetForm();
+          onClose();
+          return data;
+        }  
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      // .finally(() => 
+      // });
   }
-
-//   useEffect(() => {
-//     setEmail(currentUser.email);
-//     setPassword(currentUser.password);
-//     setUsername(currentUser.username);
-//   }, [currentUser]);
 
   return (
     <PopupWithForm
