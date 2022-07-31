@@ -4,16 +4,34 @@ import SignInPopup from "../SignInPopup/SignInPopup";
 import MessagePopup from "../MessagePopup/MessagePopup";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import { useEffect, useState } from "react";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
 import "./App.css";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
+  const [currentUser, setCurrentUser] = useState({
+    userName: 'Dave',
+    email: 'hhh@hhh.com'
+  });
   const [isSignInPopupOpen, setIsSignInPopupOpen] = useState(false);
   const [isSignUpPopupOpen, setIsSignUpPopupOpen] = useState(false);
   const [isMsgPopupOpen, setIsMsgPopupOpen] = useState(false);
+
+  // const handleLogin = (userEmail) => {
+  //   setLoggedIn(true);
+  //   setUserEmail(userEmail);
+  // };
+
+  // const handleLogout = () => {
+  //   setLoggedIn(false);
+  //   setUserEmail("");
+  //   localStorage.removeItem("token");
+  //   history.push("/signin");
+  //   return true;
+  // };
 
   function anyPopUpOpen() {
     const popups = [isSignInPopupOpen, isSignUpPopupOpen, isMsgPopupOpen];
@@ -48,6 +66,7 @@ function App() {
     return () => document.removeEventListener("click", exitClickOutSideModal);
   }, []);
   return (
+    <CurrentUserContext.Provider value={currentUser}>
     <div className="app">
       <SignUpPopup
         isOpen={isSignUpPopupOpen}
@@ -96,6 +115,7 @@ function App() {
       </Routes>
       <Footer />
     </div>
+    </CurrentUserContext.Provider>
   );
 }
 

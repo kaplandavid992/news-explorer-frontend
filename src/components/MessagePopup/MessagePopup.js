@@ -27,8 +27,8 @@ function MessagePopup({ isOpen, onClose, openSignInPopup, title }) {
           <h2 className="popup__form-header">{title}</h2>
             <span className="popup__bottom-text">
               <button
-                className="popup__bottom-text popup__bottom-text_link"
-                
+                className="popup__bottom-text popup__bottom-text_link
+                popup__bottom-text_type_link"
                 onClick={closeCurrentOpenSignInPopup}
               >
                 Sign in
