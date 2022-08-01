@@ -1,6 +1,7 @@
 .news-card {
   width: 400px;
   position: relative;
+  cursor: pointer;
 }
 
 .news-card__white-container {

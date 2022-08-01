@@ -8,6 +8,16 @@ class MainApi {
       { headers: this._setHeaders(), }).then(this._checkResponse);
     }
   
+    saveArticle({  keyword, title, text, date, source, link, image }) {
+      return fetch(`${this._baseUrl}/articles`, {
+        method: 'POST',
+        headers: this._setHeaders(),
+        body: JSON.stringify({
+          keyword, title, text, date, source, link, image
+        }),
+      }).then(this._checkResponse);
+    }
+
     _checkResponse(res) {
       if (res.ok) {
         return res.json();

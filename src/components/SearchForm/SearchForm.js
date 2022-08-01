@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./SearchForm.css";
 
-function SearchForm({handleSubmit}) {
-  const [search, setSearch] = useState('');
+function SearchForm({handleSubmit, search, setSearch}) {
   const [btnActiveClass, setBtnActiveClass] = useState('');
   function onSearchInputChange(e) {
     

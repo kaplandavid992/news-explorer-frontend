@@ -6,8 +6,7 @@ import NotFound from "../NotFound/NotFound";
 
 //import { useState } from "react";
 
-function MainSearchResults({loggedIn, searchStatus, articleData}) {
-  // prop {newsCards}
+function MainSearchResults({ searchStatus, articleData, searchKey, loggedIn}) {
   const handleShowMore = () => {alert('show more')}
   
   const active = searchStatus ? "main-results-section_active" : "";
@@ -20,7 +19,7 @@ function MainSearchResults({loggedIn, searchStatus, articleData}) {
       ) : searchStatus === "results" ? (
         <>
           <h2 className="main-results-section__title">Search results</h2>
-          <NewsCardList articleData={articleData}/>
+          <NewsCardList articleData={articleData} searchKey={searchKey} loggedIn={loggedIn}/>
           <ShowMoreBtn onClick={handleShowMore}/>
         </>
       ) : null}

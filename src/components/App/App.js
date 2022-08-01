@@ -20,6 +20,7 @@ function App() {
   const [isSignUpPopupOpen, setIsSignUpPopupOpen] = useState(false);
   const [isMsgPopupOpen, setIsMsgPopupOpen] = useState(false);
   const [articleData, setArticleData] = useState({});
+  const [search, setSearch] = useState('');
 
   const handleLogin = (email, name) => {
     setLoggedIn(true);
@@ -97,6 +98,8 @@ function App() {
           path="/"
           element={
             <Main
+              search={search}
+              setSearch={setSearch}
               loggedIn={loggedIn}
               logout={handleLogout}
               setLoggedIn={setLoggedIn}
@@ -116,6 +119,7 @@ function App() {
                 setLoggedIn={setLoggedIn}
                 setIsSignInPopupOpen={setIsSignInPopupOpen}
                 anyPopUpOpen={anyPopUpOpen}
+                searchKey={search}
               />
             </ProtectedRoute>
           }

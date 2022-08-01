@@ -3,9 +3,12 @@ import NewsCardList from "../NewsCardList/NewsCardList";
 import Header from "../Header/Header";
 import { useNavigate } from "react-router-dom";
 
-function SavedNews({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen }) {
+function SavedNews({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen,
+searchKey }) {
   const navigate = useNavigate();
    if(!loggedIn){navigate('/') };
+
+   //const articleDbData = ; // get saved news cards list from db
 
   return (
     <>
@@ -31,7 +34,7 @@ function SavedNews({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen }
         </div>
       </section>
       <section className="news-list-wrapper">
-        <NewsCardList />
+        {/* <NewsCardList articleData={articleDbData} searchKey={searchKey}/> */}
       </section>  
       </main>
     </>

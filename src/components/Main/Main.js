@@ -6,14 +6,15 @@ import { useState } from "react";
 import newsApi from "../../utils/NewsApi";
 import "./Main.css";
 
-function Main({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen,
+function Main({ search, setSearch, loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen,
 setArticleData, articleData
 }) {
   const [searchStatus, setSearchStatus] = useState("");
-  function handleSubmit(e,search) {
+ 
+  function handleSubmit(e,searchKey) {
     e.preventDefault();
     setSearchStatus('pending');
-    newsApi.getNewsData(search).then((data)=>{
+    newsApi.getNewsData(searchKey).then((data)=>{
       setArticleData(Array.from(data.articles));
       data.articles.length === 0  ? setSearchStatus('not found')
       : setSearchStatus('results');
@@ -28,8 +29,9 @@ setArticleData, articleData
         setIsSignInPopupOpen={setIsSignInPopupOpen}
         anyPopUpOpen={anyPopUpOpen}
       />
-      <SearchForm handleSubmit={handleSubmit}/>
+      <SearchForm handleSubmit={handleSubmit} search={search} setSearch={setSearch}/>
       <MainSearchResults 
+        searchKey={search}
         loggedIn={loggedIn} 
         searchStatus={searchStatus} 
         articleData={articleData}/>

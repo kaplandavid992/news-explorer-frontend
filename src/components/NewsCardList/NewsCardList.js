@@ -2,8 +2,7 @@ import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
 import convertDateFormat from "../../utils/convertDateFormat";
 
-function NewsCardList({ articleData }) {
-  // prop items amonut returned
+function NewsCardList({ articleData, searchKey, loggedIn }) {
   const mobileTopMargin =
     window.location.pathname === "/"
       ? "news-list__top-margin-mobile-home"
@@ -11,14 +10,17 @@ function NewsCardList({ articleData }) {
 
   return (
     <ul className={`news-list ${mobileTopMargin}`}>
-      {articleData.map((article) => (
+      {articleData.slice(0, 3).map((article) => (
         <NewsCard
+          loggedIn={loggedIn}
           imgSrc={article.urlToImage}
           date={convertDateFormat(article.publishedAt)}
           titleText={article.title}
           paragraphText={article.content}
           mediaSourceName={article.source.name}
-          category="Nature"
+          category={searchKey}
+          articleUrl={article.url}
+          key={article.id}
         />
       ))}
     </ul>
