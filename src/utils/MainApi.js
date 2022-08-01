@@ -9,11 +9,12 @@ class MainApi {
     }
   
     saveArticle({  keyword, title, text, date, source, link, image }) {
+      
       return fetch(`${this._baseUrl}/articles`, {
         method: 'POST',
         headers: this._setHeaders(),
         body: JSON.stringify({
-          keyword, title, text, date, source, link, image
+          keyword, title, text, date, source, link, image 
         }),
       }).then(this._checkResponse);
     }
@@ -29,6 +30,7 @@ class MainApi {
       return {
         authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
+      Accept: "application/json",
       };
     }
   }

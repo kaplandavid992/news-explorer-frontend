@@ -20,18 +20,20 @@ function NewsCard({
   const [saveIconSelected, setSaveIconSelected] = useState("");
   const handleSaveCard = (e) => {
     e.stopPropagation();
-    // const obj={
-    //   keyword: category,
-    //   title: titleText,
-    //   text: paragraphText,
-    //   date: date,
-    //   source: mediaSourceName,
-    //   link: articleUrl,
-    //   image: imgSrc,
-    // }
-    // mainApi.saveArticle(obj).then(()=>{});
-     setSaveIconSelected("news-card__save-icon_selected");
-    alert("dlicked");
+    const obj={
+      keyword: category,
+      title: titleText,
+      text: paragraphText,
+      date: date,
+      source: mediaSourceName,
+      link: articleUrl,
+      image: imgSrc,
+    }
+    console.log(obj);
+    mainApi.saveArticle(obj).then((res)=>{
+      alert(res);
+      setSaveIconSelected("news-card__save-icon_selected");
+    });
   };
   
   const handleDeleteCard = () => {

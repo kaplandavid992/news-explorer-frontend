@@ -4,8 +4,6 @@ import NewsCardList from "../NewsCardList/NewsCardList";
 import SearchPending from "../SearchPending/SearchPending";
 import NotFound from "../NotFound/NotFound";
 
-//import { useState } from "react";
-
 function MainSearchResults({ searchStatus, articleData, searchKey, loggedIn}) {
   const handleShowMore = () => {alert('show more')}
   
