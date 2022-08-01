@@ -1,8 +1,7 @@
 import { useState } from "react";
-import newsApi from "../../utils/NewsApi";
 import "./SearchForm.css";
 
-function SearchForm() {
+function SearchForm({handleSubmit}) {
   const [search, setSearch] = useState('');
   const [btnActiveClass, setBtnActiveClass] = useState('');
   function onSearchInputChange(e) {
@@ -13,11 +12,6 @@ function SearchForm() {
     setSearch(e.target.value);
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    newsApi.getNewsData(search);
-  }
-  
   return (
     <section className="search-section">
       <h1 className="search-section__title">What's going on in the world?</h1>
@@ -25,8 +19,7 @@ function SearchForm() {
         Find the latest news on any topic and save them in your personal
         account.
       </p>
-
-      <form className="search-section__form" onSubmit={handleSubmit}>
+      <form className="search-section__form" onSubmit={(e)=>{handleSubmit(e,search)}}>
         <input className="search-section__form__input" placeholder="Enter topic" onChange={onSearchInputChange}/>
         <button className={`search-section__form__btn ${btnActiveClass}`} type="submit">
           Search

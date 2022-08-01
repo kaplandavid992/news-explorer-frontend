@@ -1,16 +1,15 @@
 import "./NewsCard.css";
-import hardCodeDogImg from "../../images/dogCard.png";
 import MediaSource from "../MediaSource/MediaSource";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 function NewsCard({
-  loggedIn,
   date,
   titleText,
   paragraphText,
   mediaSourceName,
   category,
+  imgSrc
 }) {
   let location = useLocation();
   const uri = location.pathname;
@@ -33,14 +32,13 @@ function NewsCard({
       <span className="news-card__hover-info news-card__hover-info-save">Sign in to save articles</span>
        </>}
 
-      <img className="news-card__img" src={hardCodeDogImg} alt='dog in forest'/>
+      <img className="news-card__img" src={imgSrc} alt='related artcile visual'/>
       <article className="news-card__text-block">
         <time className="news-card__date">{date}</time>
         <h3 className="news-card__title">{titleText}</h3>
         <p className="news-card__paragraph">{paragraphText}</p>
         <MediaSource name={mediaSourceName} />
       </article>
-      
     </li>
   );
 }

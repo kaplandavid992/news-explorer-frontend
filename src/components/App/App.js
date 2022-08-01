@@ -19,6 +19,7 @@ function App() {
   const [isSignInPopupOpen, setIsSignInPopupOpen] = useState(false);
   const [isSignUpPopupOpen, setIsSignUpPopupOpen] = useState(false);
   const [isMsgPopupOpen, setIsMsgPopupOpen] = useState(false);
+  const [articleData, setArticleData] = useState({});
 
   const handleLogin = (email, name) => {
     setLoggedIn(true);
@@ -101,6 +102,8 @@ function App() {
               setLoggedIn={setLoggedIn}
               setIsSignInPopupOpen={setIsSignInPopupOpen}
               anyPopUpOpen={anyPopUpOpen}
+              setArticleData={setArticleData}
+              articleData={articleData}
             />
           }
         />

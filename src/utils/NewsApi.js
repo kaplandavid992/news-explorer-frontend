@@ -3,11 +3,15 @@ class NewsApi {
     this._baseUrl = baseUrl;
   }
   getNewsData(searchKey) {
-    return fetch(`${this._baseUrl}?q=${searchKey}&from=${this._sevenDaysAgo()}&to=${this._currentDate()}&pageSize=100&apiKey=5bcf74b8dc734bf48e79424aa27c65a7`,
+    return fetch(
+      `${
+        this._baseUrl
+      }?q=${searchKey}&from=${this._sevenDaysAgo()}&to=${this._currentDate()}&pageSize=100&apiKey=5bcf74b8dc734bf48e79424aa27c65a7`,
       {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
       }
     ).then(this._checkResponce);
@@ -28,6 +32,6 @@ class NewsApi {
   }
 }
 const newsApi = new NewsApi({
-    baseUrl: 'https://nomoreparties.co/news/v2/everything',
+  baseUrl: "https://nomoreparties.co/news/v2/everything",
 });
 export default newsApi;
