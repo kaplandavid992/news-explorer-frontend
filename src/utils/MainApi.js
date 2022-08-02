@@ -7,6 +7,11 @@ class MainApi {
       return fetch(`${this._baseUrl}/users/me`, 
       { headers: this._setHeaders(), }).then(this._checkResponse);
     }
+
+    getSavedArticles() {
+      return fetch(`${this._baseUrl}/articles`, 
+      { headers: this._setHeaders(), }).then(this._checkResponse);
+    }
   
     saveArticle({  keyword, title, text, date, source, link, image }) {
       
@@ -19,6 +24,13 @@ class MainApi {
       }).then(this._checkResponse);
     }
 
+    deleteArticle(newsCardId) {
+      return fetch(`${this._baseUrl}/articles/${newsCardId}`, {
+        method: 'DELETE',
+        headers: this._setHeaders(),
+      }).then(this._checkResponse);
+    }
+
     _checkResponse(res) {
       if (res.ok) {
         return res.json();
@@ -27,6 +39,7 @@ class MainApi {
     }
     _setHeaders() {
       const token = localStorage.getItem('token');
+      console.log(token);
       return {
         authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',

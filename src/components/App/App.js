@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
+import mainApi from "../../utils/MainApi";
 import SavedNews from "../SavedNews/SavedNews";
 import "./App.css";
 
@@ -20,6 +21,7 @@ function App() {
   const [isSignUpPopupOpen, setIsSignUpPopupOpen] = useState(false);
   const [isMsgPopupOpen, setIsMsgPopupOpen] = useState(false);
   const [articleData, setArticleData] = useState({});
+  const [articleDbData, setArticleDbData] = useState({});
   const [search, setSearch] = useState('');
 
   const handleLogin = (email, name) => {
@@ -49,6 +51,10 @@ function App() {
     setIsSignUpPopupOpen(false);
     setIsMsgPopupOpen(false);
   }
+
+  useEffect(()=>{
+   mainApi.getSavedArticles().then((data)=>{setArticleDbData(data)});
+   },[]);
 
   useEffect(() => {
     const exitEsc = (e) => {
@@ -115,6 +121,7 @@ function App() {
           element={
             <ProtectedRoute  loggedIn={loggedIn}>
               <SavedNews
+                articleDbData={articleDbData}
                 loggedIn={loggedIn}
                 setLoggedIn={setLoggedIn}
                 setIsSignInPopupOpen={setIsSignInPopupOpen}

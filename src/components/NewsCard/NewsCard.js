@@ -13,7 +13,7 @@ function NewsCard({
   category,
   imgSrc,
   articleUrl,
-  key
+  uniqueVal
 }) {
   let location = useLocation();
   const uri = location.pathname;
@@ -29,24 +29,30 @@ function NewsCard({
       link: articleUrl,
       image: imgSrc,
     }
-    console.log(obj);
-    mainApi.saveArticle(obj).then((res)=>{
-      alert(res);
+    mainApi.saveArticle(obj).then(()=>{
       setSaveIconSelected("news-card__save-icon_selected");
     });
   };
   
-  const handleDeleteCard = () => {
-    alert("delete clicked");
+  const handleDeleteArticle = (e) => {
+    e.stopPropagation();
+    mainApi.deleteArticle(uniqueVal).then(() => {
+      // setNewsCards(articles.filter((article) => article._id !== articleId));
+      console.log('del');
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   };
+
   return (
-    <li className="news-card" onClick={(() => { window.location = articleUrl; })} key={key}>
+    <li className="news-card" onClick={(() => { window.location = articleUrl; })} key={uniqueVal}>
       {uri === "/saved-news" ? (
         <>
            <span className="news-card__category">{category}</span> 
           <i
             className="news-card__trash-icon news-card__white-container"
-            onClick={handleDeleteCard}
+            onClick={handleDeleteArticle}
           />
           <span className="news-card__hover-info news-card__hover-info-trash">
             Remove from saved
