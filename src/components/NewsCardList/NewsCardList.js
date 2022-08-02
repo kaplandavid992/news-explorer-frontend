@@ -23,7 +23,7 @@ function NewsCardList({ articleData, searchKey, loggedIn }) {
           titleText={article.title}
           paragraphText={article.content ? article.content : article.text }
           mediaSourceName={article.source.name ? article.source.name : article.source}
-          category={searchKey ? searchKey : article.keyword}
+          category={article.searchKey ? article.searchKey : article.keyword}
           articleUrl={article.url ? article.url : article.link}
           uniqueVal={article.url ? article.url : article._id}
         />
