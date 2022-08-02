@@ -18,6 +18,11 @@ export default function popularKeyWords(articleDbData) {
     Object.keys(sortable).length - 2,
   ];
 
-  const stringWithData = resArr[1] ? `${resArr[0]}, ${resArr[1]}, and ${resArr[2]} other `: resArr[0]; 
+  const stringWithData =
+    resArr[1] && resArr[2] > 0
+      ? `${resArr[0]}, ${resArr[1]}, and ${resArr[2]} other `
+      : resArr[1] && resArr[2] === 0
+      ? `${resArr[0]}, ${resArr[1]}`
+      : resArr[0];
   return stringWithData;
 }

@@ -4,7 +4,7 @@ import Header from "../Header/Header";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import  popularKeyWords  from "../../utils/popularKeyWords";
+import popularKeyWords from "../../utils/popularKeyWords";
 
 function SavedNews({
   articleDbData,
@@ -19,7 +19,6 @@ function SavedNews({
   if (!loggedIn) {
     navigate("/");
   }
-
   const topKeyWordsDataString = popularKeyWords(articleDbData);
 
   return (
