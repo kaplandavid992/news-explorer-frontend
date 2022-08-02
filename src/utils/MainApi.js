@@ -39,7 +39,6 @@ class MainApi {
     }
     _setHeaders() {
       const token = localStorage.getItem('token');
-      console.log(token);
       return {
         authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
