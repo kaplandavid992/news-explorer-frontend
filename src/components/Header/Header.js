@@ -8,7 +8,7 @@ import exitMenuLightTheme from '../../images/close.svg';
 
 import "./Header.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import {  useState } from "react";
 
 function Header({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen, theme }) {
   const [expandedMenu, setExpandedMenu] = useState(false);
@@ -29,7 +29,7 @@ function Header({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen, the
   const remainderLight = theme === 'light' ? 'header__right-group_links_vertical-remainder-light':'';
   const menuIcon = theme === 'light' ? menuLightTheme : menu;
   const exitIcon = theme === 'light' ?  exitMenuLightTheme : exitMenu;
-  
+
   return (
     <>
       <header className={`header ${headerExpandedClass} ${headerLightBg}`}>

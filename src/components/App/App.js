@@ -8,33 +8,34 @@ import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 import mainApi from "../../utils/MainApi";
+import * as auth from "../../utils/auth";
 import SavedNews from "../SavedNews/SavedNews";
 import "./App.css";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({
-    userName: '',
-    email: ''
+    userName: "",
+    email: "",
   });
   const [isSignInPopupOpen, setIsSignInPopupOpen] = useState(false);
   const [isSignUpPopupOpen, setIsSignUpPopupOpen] = useState(false);
   const [isMsgPopupOpen, setIsMsgPopupOpen] = useState(false);
   const [articleData, setArticleData] = useState({});
   const [articleDbData, setArticleDbData] = useState({});
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
 
   const handleLogin = (email, name) => {
     setLoggedIn(true);
-    setCurrentUser({email, userName: name});
+    setCurrentUser({ email, userName: name });
   };
 
   const handleLogout = () => {
     setLoggedIn(false);
     setCurrentUser({
-      email:'',
-      userName:''
-    })
+      email: "",
+      userName: "",
+    });
     localStorage.removeItem("token");
     // history.push("/signin");
     return true;
@@ -52,9 +53,25 @@ function App() {
     setIsMsgPopupOpen(false);
   }
 
-  useEffect(()=>{
-   mainApi.getSavedArticles().then((data)=>{setArticleDbData(data)});
-   },[]);
+  useEffect(() => {
+    const jwt = localStorage.getItem("token");
+    if (jwt) {
+      auth
+        .getUser(jwt)
+        .then((res) => {
+          setLoggedIn(true);
+          setCurrentUser({userName:res.data.name, email:res.data.email});
+        })
+        .catch(console.log);
+    }
+  }, []);
+
+  useEffect(() => {
+    loggedIn &&
+      mainApi.getSavedArticles().then((data) => {
+        setArticleDbData(data);
+      });
+  }, [loggedIn]);
 
   useEffect(() => {
     const exitEsc = (e) => {
@@ -78,62 +95,63 @@ function App() {
   }, []);
   return (
     <CurrentUserContext.Provider value={currentUser}>
-    <div className="app">
-      <SignUpPopup
-        isOpen={isSignUpPopupOpen}
-        onClose={closeAllPopups}
-        onSignUp={setIsMsgPopupOpen}
-        openSignInPopup={setIsSignInPopupOpen}
-      />
-      <SignInPopup
-        handleLogin={handleLogin}
-        isOpen={isSignInPopupOpen}
-        onClose={closeAllPopups}
-        onSignIn={null}
-        openSignUpPopup={setIsSignUpPopupOpen}
-      />
-      <MessagePopup
-        isOpen={isMsgPopupOpen}
-        onClose={closeAllPopups}
-        title="Registration successfully completed!"
-        openSignInPopup={setIsSignInPopupOpen}
-      />
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <Main
-              search={search}
-              setSearch={setSearch}
-              loggedIn={loggedIn}
-              logout={handleLogout}
-              setLoggedIn={setLoggedIn}
-              setIsSignInPopupOpen={setIsSignInPopupOpen}
-              anyPopUpOpen={anyPopUpOpen}
-              setArticleData={setArticleData}
-              articleData={articleData}
-            />
-          }
+      <div className="app">
+        <SignUpPopup
+          isOpen={isSignUpPopupOpen}
+          onClose={closeAllPopups}
+          onSignUp={setIsMsgPopupOpen}
+          openSignInPopup={setIsSignInPopupOpen}
         />
-        <Route
-          path="/saved-news"
-          element={
-            <ProtectedRoute  loggedIn={loggedIn}>
-              <SavedNews
-                articleDbData={articleDbData}
+        <SignInPopup
+          handleLogin={handleLogin}
+          isOpen={isSignInPopupOpen}
+          onClose={closeAllPopups}
+          onSignIn={null}
+          openSignUpPopup={setIsSignUpPopupOpen}
+        />
+        <MessagePopup
+          isOpen={isMsgPopupOpen}
+          onClose={closeAllPopups}
+          title="Registration successfully completed!"
+          openSignInPopup={setIsSignInPopupOpen}
+        />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <Main
+                search={search}
+                setSearch={setSearch}
                 loggedIn={loggedIn}
+                logout={handleLogout}
                 setLoggedIn={setLoggedIn}
                 setIsSignInPopupOpen={setIsSignInPopupOpen}
                 anyPopUpOpen={anyPopUpOpen}
-                searchKey={search}
+                setArticleData={setArticleData}
+                articleData={articleData}
               />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
-      <Footer />
-    </div>
+            }
+          />
+          <Route
+            path="/saved-news"
+            element={
+              <ProtectedRoute loggedIn={loggedIn}>
+                <SavedNews
+                  articleDbData={articleDbData}
+                  setArticleDbData={setArticleDbData}
+                  loggedIn={loggedIn}
+                  setLoggedIn={setLoggedIn}
+                  setIsSignInPopupOpen={setIsSignInPopupOpen}
+                  anyPopUpOpen={anyPopUpOpen}
+                  searchKey={search}
+                />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+        <Footer />
+      </div>
     </CurrentUserContext.Provider>
   );
 }

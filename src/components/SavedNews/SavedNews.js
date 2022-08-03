@@ -1,12 +1,14 @@
 import "./SavedNews.css";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import Header from "../Header/Header";
+import mainApi from "../../utils/MainApi";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import popularKeyWords from "../../utils/popularKeyWords";
 
 function SavedNews({
+  setArticleDbData,
   articleDbData,
   loggedIn,
   setLoggedIn,
@@ -20,6 +22,9 @@ function SavedNews({
     navigate("/");
   }
   const topKeyWordsDataString = popularKeyWords(articleDbData);
+  useEffect(() => {
+    mainApi.getSavedArticles().then((data) => setArticleDbData(data));
+  }, [articleDbData,setArticleDbData]);
 
   return (
     <>
@@ -52,6 +57,7 @@ function SavedNews({
         <section className="news-list-wrapper">
           <NewsCardList
             articleData={articleDbData}
+            setArticleDbData={setArticleDbData}
             searchKey={searchKey}
             loggedIn={loggedIn}
           />

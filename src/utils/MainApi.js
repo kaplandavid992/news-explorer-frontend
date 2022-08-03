@@ -14,7 +14,6 @@ class MainApi {
     }
   
     saveArticle({  keyword, title, text, date, source, link, image }) {
-      
       return fetch(`${this._baseUrl}/articles`, {
         method: 'POST',
         headers: this._setHeaders(),
@@ -39,6 +38,7 @@ class MainApi {
     }
     _setHeaders() {
       const token = localStorage.getItem('token');
+      console.log(token);
       return {
         authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',

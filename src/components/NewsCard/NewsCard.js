@@ -5,6 +5,8 @@ import { useLocation } from "react-router-dom";
 import mainApi from "../../utils/MainApi";
 
 function NewsCard({
+  articleData,
+  setArticleDbData,
   loggedIn,
   date,
   titleText,
@@ -15,6 +17,7 @@ function NewsCard({
   articleUrl,
   uniqueVal
 }) {
+
   let location = useLocation();
   const uri = location.pathname;
   const [saveIconSelected, setSaveIconSelected] = useState("");
@@ -37,8 +40,7 @@ function NewsCard({
   const handleDeleteArticle = (e) => {
     e.stopPropagation();
     mainApi.deleteArticle(uniqueVal).then(() => {
-      // setNewsCards(articles.filter((article) => article._id !== articleId));
-      console.log('del');
+      setArticleDbData(articleData.filter((article) => article._id !== uniqueVal));
     })
     .catch((err) => {
       console.log(err);
