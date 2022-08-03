@@ -1,9 +1,8 @@
 import "./SavedNews.css";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import Header from "../Header/Header";
-import mainApi from "../../utils/MainApi";
 import { useNavigate } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import popularKeyWords from "../../utils/popularKeyWords";
 
@@ -22,9 +21,6 @@ function SavedNews({
     navigate("/");
   }
   const topKeyWordsDataString = popularKeyWords(articleDbData);
-  useEffect(() => {
-    mainApi.getSavedArticles().then((data) => setArticleDbData(data));
-  }, [articleDbData,setArticleDbData]);
 
   return (
     <>

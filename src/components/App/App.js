@@ -17,6 +17,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({
     userName: "",
     email: "",
+    owner:""
   });
   const [isSignInPopupOpen, setIsSignInPopupOpen] = useState(false);
   const [isSignUpPopupOpen, setIsSignUpPopupOpen] = useState(false);
@@ -25,9 +26,9 @@ function App() {
   const [articleDbData, setArticleDbData] = useState({});
   const [search, setSearch] = useState("");
 
-  const handleLogin = (email, name) => {
+  const handleLogin = (email, name, owner) => {
     setLoggedIn(true);
-    setCurrentUser({ email, userName: name });
+    setCurrentUser({ email, userName: name, owner:owner });
   };
 
   const handleLogout = () => {
@@ -35,9 +36,9 @@ function App() {
     setCurrentUser({
       email: "",
       userName: "",
+      owner:""
     });
     localStorage.removeItem("token");
-    // history.push("/signin");
     return true;
   };
 
@@ -60,7 +61,7 @@ function App() {
         .getUser(jwt)
         .then((res) => {
           setLoggedIn(true);
-          setCurrentUser({userName:res.data.name, email:res.data.email});
+          setCurrentUser({userName:res.data.name, email:res.data.email, owner:res.data._id});
         })
         .catch(console.log);
     }
@@ -69,9 +70,10 @@ function App() {
   useEffect(() => {
     loggedIn &&
       mainApi.getSavedArticles().then((data) => {
-        setArticleDbData(data);
+        const userSavedArticles = data.filter(article => article.owner === currentUser.owner);
+        setArticleDbData(userSavedArticles);
       });
-  }, [loggedIn]);
+  }, [loggedIn, currentUser.owner]);
 
   useEffect(() => {
     const exitEsc = (e) => {

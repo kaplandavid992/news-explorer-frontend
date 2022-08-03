@@ -34,10 +34,9 @@ function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) { //onSi
           auth.getUser(data.token).then((user)=>{
             const email = user.data.email;
             const name = user.data.name;
-             handleLogin(email, name);
+            const owner = user.data._id;
+             handleLogin(email, name, owner);
           })
-          
-          // history.push("/saved-news");
           resetForm();
           onClose();
           return data;

@@ -26,7 +26,7 @@ function NewsCardList({ articleData, loggedIn, setArticleDbData, searchKey }) {
           mediaSourceName={
             article.source.name ? article.source.name : article.source
           }
-          category={ article.keyword ? article.keyword : null }
+          category={article.keyword ? article.keyword : searchKey}
           articleUrl={article.url ? article.url : article.link}
           uniqueVal={article.url ? article.url : article._id}
         />

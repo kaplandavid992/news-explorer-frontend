@@ -20,7 +20,9 @@ function Header({ loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen, the
 
   const handleLogOut = () => {
     setLoggedIn(false);
+    localStorage.removeItem("token");
     setIsSignInPopupOpen(true);
+    return true;
   }
 
   const headerLightBg = theme === 'light'  ? 'header_background_light' :'';
