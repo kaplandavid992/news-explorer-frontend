@@ -14,11 +14,12 @@ function MainSearchResults({ searchStatus, articleData, searchKey, loggedIn }) {
 
   const displayShowMore = sliceEndIndex === articleData.length ? false : true;
   const handleShowMore = () => {
+    
     articleData.length - sliceEndIndex > 3
       ? setSliceEndIndex(sliceEndIndex + 3)
       : setSliceEndIndex(articleData.length);
   };
-   console.log(sliceEndIndex);
+   
   const active = searchStatus ? "main-results-section_active" : "";
   return (
     <section className={`main-results-section ${active}`}>

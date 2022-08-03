@@ -7,9 +7,7 @@ function NewsCardList({ articleData, loggedIn, setArticleDbData, searchKey, slic
     window.location.pathname === "/"
       ? "news-list__top-margin-mobile-home"
       : "news-list__top-margin-mobile-savedNews";
-    
-      // console.log(sliceEndIndex);
-
+  
   return (
     <ul className={`news-list ${mobileTopMargin}`}>
       {articleData.slice(0, sliceEndIndex).map((article) => (
