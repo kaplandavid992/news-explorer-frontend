@@ -13,6 +13,11 @@
   cursor: pointer;
   margin-left: auto;
   margin-right: auto;
+  display: none;
+}
+
+.show-more-btn_displayed {
+  display: block;
 }
 
 .show-more-btn:hover {
