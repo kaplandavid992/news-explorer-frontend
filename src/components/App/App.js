@@ -16,18 +16,18 @@ import "./App.css";
 
 function App() {
 
-  const formValidators = {};
-const enableValidation = (settings) => {
-  const formList = Array.from(document.querySelectorAll(settings.formSelector));
-  formList.forEach((formElement) => {
-    const validator = new FormValidator(settings, formElement);
-    const formName = formElement.getAttribute("name");
-    formValidators[formName] = validator;
-    validator.enableValidation();
-  });
-};
+//   const formValidators = {};
+// const enableValidation = (settings) => {
+//   const formList = Array.from(document.querySelectorAll(settings.formSelector));
+//   formList.forEach((formElement) => {
+//     const validator = new FormValidator(settings, formElement);
+//     const formName = formElement.getAttribute("name");
+//     formValidators[formName] = validator;
+//     validator.enableValidation();
+//   });
+// };
 
-enableValidation(settings);
+// enableValidation(settings);
 // SignInPopup.setEventListeners();
 // SignUpPopup.setEventListeners();
 

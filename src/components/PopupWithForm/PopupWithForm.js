@@ -3,7 +3,8 @@ import React from 'react';
 import './PopupWithForm.css';
    
 function PopupWithForm({
-      isOpen,
+      activeSubmit,
+  isOpen,
       name,
       onClose,
       title,
@@ -13,7 +14,7 @@ function PopupWithForm({
       openOtherSignPopup
     }) {
       const isOpenClass = isOpen ? "popup_active" : "";
-      const submitBtnActiveClass = false ? 'popup__form-submit-btn_active' :''; // inputs valid
+      const submitBtnActiveClass = activeSubmit ? 'popup__form-submit-btn_active' :''; 
       const closeOpenOpenOtherSignPopup = () => {
         onClose();
         openOtherSignPopup(true);

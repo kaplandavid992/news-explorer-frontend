@@ -77,6 +77,7 @@
   text-align: center;
   width: 360px;
   margin-bottom: 16px;
+  margin-top: 39px;
   cursor: not-allowed; 
 }
 
@@ -133,6 +134,7 @@
 
   .popup__form-submit-btn {
     width: 288px;
+    margin-top: 23px;
   }
 
   .popup {
