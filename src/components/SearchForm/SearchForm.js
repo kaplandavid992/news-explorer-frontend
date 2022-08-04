@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./SearchForm.css";
+import "../PopupWithForm/PopupWithForm.css"; //for validation
 
 function SearchForm({handleSubmit, search, setSearch}) {
   const [btnActiveClass, setBtnActiveClass] = useState('');
@@ -18,7 +19,7 @@ function SearchForm({handleSubmit, search, setSearch}) {
         Find the latest news on any topic and save them in your personal
         account.
       </p>
-      <form className="search-section__form"  onSubmit={(e)=>{handleSubmit(e,search)}}>
+      <form className="search-section__form"  onSubmit={(e)=>{handleSubmit(e,search)}}> 
         <input className="search-section__form__input" placeholder="Enter topic" onChange={onSearchInputChange}/>
         <button className={`search-section__form__btn ${btnActiveClass}`} type="submit">
           Search

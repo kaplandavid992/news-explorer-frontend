@@ -3,7 +3,7 @@ import { useState } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import * as auth from "../../utils/auth";
 
-function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) { //onSignin --add
+function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) { 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

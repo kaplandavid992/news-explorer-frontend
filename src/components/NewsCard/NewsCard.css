@@ -41,8 +41,13 @@
   background-image: url("../../images/saveIconSelected.svg");
 }
 
+
 .news-card__save-icon:hover {
   background-image: url("../../images/saveArtIconBlack.svg");
+}
+
+.news-card__save-icon_selected:hover {
+  background-image: url("../../images/saveIconSelected.svg");
 }
 
 .news-card__category {
