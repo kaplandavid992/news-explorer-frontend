@@ -101,7 +101,7 @@ function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) {
       </label>
       <input
         id="loginEmail"
-        type="text"
+        type="email"
         className="popup__form-input"
         placeholder="Enter email"
         name="form__email"
@@ -110,7 +110,7 @@ function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) {
         minLength="3"
         onChange={onEmailChange}
       />
-      <p className="popup__form-error" id="inputEmail-error">
+      <p className="popup__form-error" id="inputEma-error">
         {emailError}
       </p>
 
@@ -128,7 +128,7 @@ function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) {
         value={password}
         onChange={onPasswordChange}
       />
-      <p className="popup__form-error" id="inputPassword-error">
+      <p className="popup__form-error" id="inputPass-error">
         {passwordError}
       </p>
     </PopupWithForm>

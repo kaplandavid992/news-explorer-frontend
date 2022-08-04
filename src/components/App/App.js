@@ -10,28 +10,10 @@ import Main from "../Main/Main";
 import mainApi from "../../utils/MainApi";
 import * as auth from "../../utils/auth";
 import SavedNews from "../SavedNews/SavedNews";
-import FormValidator from "../../utils/FormValidator";
-import settings from "../../utils/constants";
+
 import "./App.css";
 
 function App() {
-
-//   const formValidators = {};
-// const enableValidation = (settings) => {
-//   const formList = Array.from(document.querySelectorAll(settings.formSelector));
-//   formList.forEach((formElement) => {
-//     const validator = new FormValidator(settings, formElement);
-//     const formName = formElement.getAttribute("name");
-//     formValidators[formName] = validator;
-//     validator.enableValidation();
-//   });
-// };
-
-// enableValidation(settings);
-// SignInPopup.setEventListeners();
-// SignUpPopup.setEventListeners();
-
-
 
 
   const [loggedIn, setLoggedIn] = useState(false);

@@ -3,22 +3,80 @@ import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import "../SignInPopup/SignInPopup.css";
 import "../SignUpPopup/SignUpPopup.css";
 import * as auth from "../../utils/auth";
+import validation from "../../utils/validate";
 
 function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [submitErrorMsg, setSubmitErrorMsg] = useState("");
+  let activeSubmit=false;
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [nameError, setNameError] = useState("");
+  if(email && password && name && emailError ==="" && passwordError==="" && nameError===""){
+    activeSubmit=true;
+  }
+  
   
   function onEmailChange(e) {
-    setEmail(e.target.value);
+    const currentEmailInput = e.target.value;
+    setEmail(currentEmailInput);
+    if (
+      currentEmailInput.length > 0 &&
+      !validation(currentEmailInput, "email")
+    ) {
+      setEmailError("Provide a valid email address");
+    } else if (
+      (currentEmailInput.length > 0 &&
+        validation(currentEmailInput, "password")) ||
+      currentEmailInput.length === 0
+    ) {
+      setEmailError("");
+    }
+
   }
 
   function onPasswordChange(e) {
-    setPassword(e.target.value);
+    const currentPasswordInput = e.target.value;
+    setPassword(currentPasswordInput);
+    if (
+      currentPasswordInput.length > 0 &&
+      !validation(currentPasswordInput, "password")
+    ) {
+      setPasswordError("Password must consist of at least 8 characters");
+    } else if (
+      (currentPasswordInput.length > 0 &&
+        validation(currentPasswordInput, "password")) ||
+      currentPasswordInput.length === 0
+    ) {
+      setPasswordError("");
+    }
   }
 
-  function onNameChange(e) {
-    setName(e.target.value);
+  function onNameChange(e){
+    const currentNameInput = e.target.value;
+    setName(currentNameInput);
+    if (
+      currentNameInput.length > 0 &&
+      !validation(currentNameInput, "name")
+    ) {
+      setNameError("Name must have at least 2 characters");
+    } else if (
+      (currentNameInput.length > 0 &&
+        validation(currentNameInput, "name")) ||
+      currentNameInput.length === 0
+    ) {
+      setNameError("");
+    }
+  }
+
+  
+
+  function resetForm() {
+    setEmail("");
+    setPassword("");
+    setName("");
   }
 
   function handleSubmit(e) {
@@ -28,17 +86,23 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
       .then(()=>{
         onClose();
         onSignUp(true);
+        resetForm();
       })
       .catch((err) => {
         console.log(err);
+        if(err ==='Error: Error 409')
+        {setSubmitErrorMsg('This email is not available')}
+        else {setSubmitErrorMsg('Problem with the server try again')}
+        const inputList = Array.from(document.getElementsByClassName('popup__form-input'));
+        inputList.map((input) =>
+        { input.addEventListener('keypress',()=>{setSubmitErrorMsg('')}) }
+        )
       })
-      // .finally(() => {
-      //   console.log('f');
-      // });
   }
 
   return (
     <PopupWithForm
+      activeSubmit={activeSubmit}
       onSubmit={handleSubmit}
       isOpen={isOpen}
       onClose={onClose}
@@ -52,7 +116,7 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
       </label>
       <input
         id="signinEmail"
-        type="text"
+        type="email"
         className="popup__form-input"
         placeholder="Enter email"
         name="form__email"
@@ -60,7 +124,7 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
         minLength="3"
         onChange={onEmailChange}
       />
-      <p className="popup__form-error" id="inputEmail-error" />
+      <p className="popup__form-error" id="inputEmail-error">{emailError}</p>
 
       <label htmlFor="signinPassword" className="popup__form-label">
         Password
@@ -75,7 +139,7 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
         minLength="8"
         onChange={onPasswordChange}
       />
-      <p className="popup__form-error" id="inputPassword-error" />
+      <p className="popup__form-error" id="inputPassword-error" >{passwordError}</p>
 
       <label htmlFor="signinUsername" className="popup__form-label">
         Username
@@ -90,13 +154,13 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
         minLength="2"
         onChange={onNameChange}
       />
-      <p className="popup__form-error" id="inputUsername-error" />
+      <p className="popup__form-error" id="inputUsername-error" >{nameError}</p>
 
       <p
         className="popup__form-error popup__error_email_not-avail"
         id="inputUsername-error"
       >
-        This email is not available
+         {submitErrorMsg}
       </p>
     </PopupWithForm>
   );
