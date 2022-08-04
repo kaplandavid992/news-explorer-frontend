@@ -46,14 +46,15 @@ function PopupWithForm({
               <button
                 className={`popup__form-submit-btn ${submitBtnActiveClass}`}
                 type="submit"
-                
+                disabled={!activeSubmit}
                 aria-label=""
               >
                 {buttonText}
               </button>
               <div className="popup__bottom-text-wrapper">
               <span className="popup__bottom-text">or <button className="popup__bottom-text popup__bottom-text_type_link" 
-              onClick={()=>{
+              onClick={(e)=>{
+                e.stopPropagation();
                 closeOpenOpenOtherSignPopup()}}>
                 Sign { buttonText.includes('up') ? 'in' : 'up'}</button>
               </span>
