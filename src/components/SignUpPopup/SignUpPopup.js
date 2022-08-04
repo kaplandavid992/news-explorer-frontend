@@ -56,7 +56,6 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
         className="popup__form-input"
         placeholder="Enter email"
         name="form__email"
-        defaultValue={null}
         required
         minLength="3"
         onChange={onEmailChange}

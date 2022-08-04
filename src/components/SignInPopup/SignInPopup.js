@@ -67,7 +67,7 @@ function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) { //onSi
           className="popup__form-input"
           placeholder="Enter email"
           name="form__email"
-          defaultValue={null}
+          value={email}
           required
           minLength="3"
           onChange={onEmailChange}
@@ -84,6 +84,7 @@ function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) { //onSi
           name="form__password"
           required
           minLength="8"
+          value={password}
           onChange={onPasswordChange}
         />
         <p className="popup__form-error" id="inputPassword-error" />

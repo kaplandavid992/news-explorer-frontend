@@ -77,7 +77,7 @@
   text-align: center;
   width: 360px;
   margin-bottom: 16px;
-  /* cursor: not-allowed; */
+  cursor: not-allowed; 
 }
 
 .popup__form-submit-btn_active {
