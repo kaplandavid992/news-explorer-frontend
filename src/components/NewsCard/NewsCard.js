@@ -50,10 +50,11 @@ function NewsCard({
     } else {
       e.stopPropagation();
       mainApi.getSavedArticles().then((updatedArticles)=> {
+        console.log(updatedArticles);
         const newsCardId = getCardId(updatedArticles);
         mainApi.deleteArticle(newsCardId).then(() => {
           setSaveIconSelected("");
-          getArticles();
+          // getArticles();
         }).catch((err) => {
           console.log(err);
         });
@@ -82,7 +83,7 @@ function NewsCard({
     if(articleDbData.some(newsCard => newsCard.title === titleText)){
       setSaveIconSelected("news-card__save-icon_selected")
     }}
-  });
+  },[articleDbData]);
 
   return (
     <li
