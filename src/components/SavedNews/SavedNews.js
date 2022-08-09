@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import popularKeyWords from "../../utils/popularKeyWords";
-import mainApi from "../../utils/MainApi";
 
 function SavedNews({
   setArticleDbData,
@@ -15,21 +14,24 @@ function SavedNews({
   setIsSignInPopupOpen,
   anyPopUpOpen,
   searchKey,
+  getArticles
 }) {
   const currentUser = useContext(CurrentUserContext);
   const navigate = useNavigate();
   if (!loggedIn) {
     navigate("/");
   }
-  const topKeyWordsDataString = popularKeyWords(articleDbData);
+ 
+  const topKeyWordsDataString = popularKeyWords(Array.from(articleDbData));
 
-  useEffect(() => {
-    loggedIn &&
-      mainApi.getSavedArticles().then((data) => {
-        const userSavedArticles = data.filter(article => article.owner === currentUser.owner);
-        setArticleDbData(userSavedArticles);
-      });
-  }, [loggedIn, currentUser.owner]);
+  
+  // useEffect(() => {
+  //   loggedIn &&
+  //     mainApi.getSavedArticles().then((data) => {
+  //       const userSavedArticles = data.filter(article => article.owner === currentUser.owner);
+  //       setArticleDbData(userSavedArticles);
+  //     });
+  // }, [loggedIn, currentUser.owner]);
 
   return (
     <>
@@ -61,6 +63,7 @@ function SavedNews({
         </section>
         <section className="news-list-wrapper">
           <NewsCardList
+            getArticles={getArticles}
             articleData={articleDbData}
             setArticleDbData={setArticleDbData}
             searchKey={searchKey}

@@ -5,8 +5,6 @@ import "../PopupWithForm/PopupWithForm.css"; //for validation
 function SearchForm({handleSubmit, search, setSearch}) {
   const [btnActiveClass, setBtnActiveClass] = useState('');
   function onSearchInputChange(e) {
-    
-    //api send search
     if(e.target.value.length > 0 && !btnActiveClass){setBtnActiveClass('search-section__form__btn_active')}
     else if(e.target.value.length < 1 && btnActiveClass){setBtnActiveClass('')};
     setSearch(e.target.value);

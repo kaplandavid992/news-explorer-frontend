@@ -119,7 +119,7 @@
 
 .news-card__paragraph {
   all: unset;
-  margin-bottom: 40px;
+  margin-bottom: 18px;
   font-family: Roboto, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -129,10 +129,12 @@
   color: #1a1b22;
   overflow: hidden;
     text-overflow: ellipsis;
+    height: 110px;
 }
 
 .news-card__title {
   all: unset;
+  height: 60px;
   margin-bottom: 46px;
   color: #1a1b22;
   font-family: "Roboto Slab", Helvetica, sans-serif;
@@ -143,7 +145,7 @@
   text-align: left;
   overflow: hidden;
     text-overflow: ellipsis;
-}
+    white-space:initial}
 
 .news-card__date {
   all: unset;

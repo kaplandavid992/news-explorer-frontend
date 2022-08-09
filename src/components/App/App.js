@@ -14,8 +14,6 @@ import SavedNews from "../SavedNews/SavedNews";
 import "./App.css";
 
 function App() {
-
-
   const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({
     userName: "",
@@ -57,6 +55,14 @@ function App() {
     setIsMsgPopupOpen(false);
   }
 
+  function getArticles(){
+    loggedIn &&
+      mainApi.getSavedArticles().then((articles) => {
+        const userSavedArticles = articles.filter(article => article.owner === currentUser.owner);
+        setArticleDbData(userSavedArticles);
+      });
+  }
+
   useEffect(() => {
     const jwt = localStorage.getItem("token");
     if (jwt) {
@@ -71,11 +77,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    loggedIn &&
-      mainApi.getSavedArticles().then((data) => {
-        const userSavedArticles = data.filter(article => article.owner === currentUser.owner);
-        setArticleDbData(userSavedArticles);
-      });
+    getArticles()
   }, [loggedIn, currentUser.owner]);
 
   useEffect(() => {
@@ -135,6 +137,8 @@ function App() {
                 anyPopUpOpen={anyPopUpOpen}
                 setArticleData={setArticleData}
                 articleData={articleData}
+                articleDbData={articleDbData}
+                getArticles={getArticles}
               />
             }
           />
@@ -150,6 +154,7 @@ function App() {
                   setIsSignInPopupOpen={setIsSignInPopupOpen}
                   anyPopUpOpen={anyPopUpOpen}
                   searchKey={search}
+                  getArticles={getArticles}
                 />
               </ProtectedRoute>
             }

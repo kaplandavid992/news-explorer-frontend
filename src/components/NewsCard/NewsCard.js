@@ -1,10 +1,11 @@
 import "./NewsCard.css";
 import MediaSource from "../MediaSource/MediaSource";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import mainApi from "../../utils/MainApi";
 
 function NewsCard({
+  articleDbData,
   articleData,
   setArticleDbData,
   loggedIn,
@@ -15,43 +16,85 @@ function NewsCard({
   category,
   imgSrc,
   articleUrl,
-  uniqueVal
+  uniqueVal,
+  getArticles
 }) {
-
   let location = useLocation();
   const uri = location.pathname;
   const [saveIconSelected, setSaveIconSelected] = useState("");
+  function getCardId(updatedArticleData){
+     const itemMatched = updatedArticleData.find(newsCard => newsCard.title === titleText);
+     console.log(titleText);
+     console.log(typeof(updatedArticleData));
+     return itemMatched._id;
+  }
+
   const handleSaveCard = (e) => {
-    e.stopPropagation();
-    const obj={
-      keyword: category,
-      title: titleText,
-      text: paragraphText,
-      date: date,
-      source: mediaSourceName,
-      link: articleUrl,
-      image: imgSrc,
+    if (!saveIconSelected) {
+      e.stopPropagation();
+      const obj = {
+        keyword: category,
+        title: titleText,
+        text: paragraphText,
+        date: date,
+        source: mediaSourceName,
+        link: articleUrl,
+        image: imgSrc,
+      };
+      mainApi.saveArticle(obj).then(() => {
+        setSaveIconSelected("news-card__save-icon_selected");
+       getArticles();
+      }).catch((err) => {
+        console.log(err);
+      });
+    } else {
+      e.stopPropagation();
+      mainApi.getSavedArticles().then((updatedArticles)=> {
+        const newsCardId = getCardId(updatedArticles);
+        mainApi.deleteArticle(newsCardId).then(() => {
+          setSaveIconSelected("");
+          getArticles();
+        }).catch((err) => {
+          console.log(err);
+        });
+      }).catch((err) => {
+        console.log(err);
+      });
     }
-    mainApi.saveArticle(obj).then(()=>{
-      setSaveIconSelected("news-card__save-icon_selected");
-    });
-  };
-  
-  const handleDeleteArticle = (e) => {
-    e.stopPropagation();
-    mainApi.deleteArticle(uniqueVal).then(() => {
-      setArticleDbData(articleData.filter((article) => article._id !== uniqueVal));
-    })
-    .catch((err) => {
-      console.log(err);
-    });
   };
 
+  const handleDeleteArticle = (e) => {
+    e.stopPropagation();
+    mainApi
+      .deleteArticle(uniqueVal)
+      .then(() => {
+        setArticleDbData(
+          articleData.filter((article) => article._id !== uniqueVal)
+        );
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(()=>{
+    if(uri === '/'){
+    if(articleDbData.some(newsCard => newsCard.title === titleText)){
+      setSaveIconSelected("news-card__save-icon_selected")
+    }}
+  });
+
   return (
-    <li className="news-card" onClick={(() => { window.location = articleUrl; })} key={uniqueVal}>
+    <li
+      className="news-card"
+      onClick={() => {
+        window.location = articleUrl;
+      }}
+      key={uniqueVal}
+    >
       {uri === "/saved-news" ? (
         <>
-           <span className="news-card__category">{category}</span> 
+          <span className="news-card__category">{category}</span>
           <i
             className="news-card__trash-icon news-card__white-container"
             onClick={handleDeleteArticle}
@@ -66,9 +109,11 @@ function NewsCard({
             className={`news-card__save-icon ${saveIconSelected} news-card__white-container`}
             onClick={handleSaveCard}
           />
-          {!loggedIn ? (<span className="news-card__hover-info news-card__hover-info-save">
-            Sign in to save articles
-          </span>) :null }
+          {!loggedIn ? (
+            <span className="news-card__hover-info news-card__hover-info-save">
+              Sign in to save articles
+            </span>
+          ) : null}
         </>
       )}
 

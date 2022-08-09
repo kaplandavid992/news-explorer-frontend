@@ -2,16 +2,29 @@ import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
 import convertDateFormat from "../../utils/convertDateFormat";
 
-function NewsCardList({ articleData, loggedIn, setArticleDbData, searchKey, sliceEndIndex}) {
+function 
+NewsCardList({
+  articleData,
+  loggedIn,
+  setArticleDbData,
+  searchKey,
+  sliceEndIndex,
+  articleDbData,
+  getArticles
+}) {
   const mobileTopMargin =
     window.location.pathname === "/"
       ? "news-list__top-margin-mobile-home"
       : "news-list__top-margin-mobile-savedNews";
-  
+
   return (
     <ul className={`news-list ${mobileTopMargin}`}>
-      {articleData.slice(0, sliceEndIndex).map((article) => (
+      
+      {articleData.slice(0, sliceEndIndex).map((article) =>
+       (
         <NewsCard
+          getArticles={getArticles}
+          articleDbData={articleDbData}
           articleData={articleData}
           setArticleDbData={setArticleDbData}
           loggedIn={loggedIn}
@@ -30,7 +43,8 @@ function NewsCardList({ articleData, loggedIn, setArticleDbData, searchKey, slic
           articleUrl={article.url ? article.url : article.link}
           uniqueVal={article.url ? article.url : article._id}
         />
-      ))}
+      )
+      )}
     </ul>
   );
 }

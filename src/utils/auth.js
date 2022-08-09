@@ -1,5 +1,5 @@
-const BASE_URL = 'http://localhost:4000';
-
+//const BASE_URL = 'https://api.david992.students.nomoredomainssbs.ru';
+ const BASE_URL = 'http://localhost:4000';
 const headers = {
   Accept: 'application/json',
   'Content-Type': 'application/json',
