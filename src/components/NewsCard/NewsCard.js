@@ -24,8 +24,6 @@ function NewsCard({
   const [saveIconSelected, setSaveIconSelected] = useState("");
   function getCardId(updatedArticleData){
      const itemMatched = updatedArticleData.find(newsCard => newsCard.title === titleText);
-     console.log(titleText);
-     console.log(typeof(updatedArticleData));
      return itemMatched._id;
   }
 
