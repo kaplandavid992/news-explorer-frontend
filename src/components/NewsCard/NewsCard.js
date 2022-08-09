@@ -54,7 +54,7 @@ function NewsCard({
         const newsCardId = getCardId(updatedArticles);
         mainApi.deleteArticle(newsCardId).then(() => {
           setSaveIconSelected("");
-          // getArticles();
+          getArticles();
         }).catch((err) => {
           console.log(err);
         });
