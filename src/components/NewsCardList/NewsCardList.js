@@ -23,9 +23,10 @@ NewsCardList({
       {articleData.slice(0, sliceEndIndex).map((article) =>
        (
         <NewsCard
+          key={article.url ? article.url : article._id}
           getArticles={getArticles}
           articleDbData={articleDbData}
-          articleData={articleData}
+          articleData={articleData} 
           setArticleDbData={setArticleDbData}
           loggedIn={loggedIn}
           imgSrc={article.urlToImage ? article.urlToImage : article.image}

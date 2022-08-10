@@ -17,7 +17,7 @@ function NewsCard({
   imgSrc,
   articleUrl,
   uniqueVal,
-  getArticles
+  getArticles,
 }) {
   let location = useLocation();
   const uri = location.pathname;
@@ -76,11 +76,11 @@ function NewsCard({
   };
 
   useEffect(()=>{
-    if(uri === '/'){
+    if(uri === '/' && loggedIn ){
     if(articleDbData.some(newsCard => newsCard.title === titleText)){
       setSaveIconSelected("news-card__save-icon_selected")
     }}
-  },[articleDbData]);
+  },[articleDbData, loggedIn, titleText, uri]);
 
   return (
     <li
@@ -88,7 +88,6 @@ function NewsCard({
       onClick={() => {
         window.location = articleUrl;
       }}
-      key={uniqueVal}
     >
       {uri === "/saved-news" ? (
         <>

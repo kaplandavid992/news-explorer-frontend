@@ -23,8 +23,8 @@ function App() {
   const [isSignInPopupOpen, setIsSignInPopupOpen] = useState(false);
   const [isSignUpPopupOpen, setIsSignUpPopupOpen] = useState(false);
   const [isMsgPopupOpen, setIsMsgPopupOpen] = useState(false);
-  const [articleData, setArticleData] = useState({});
-  const [articleDbData, setArticleDbData] = useState({});
+  const [articleData, setArticleData] = useState([]);
+  const [articleDbData, setArticleDbData] = useState([]);
   const [search, setSearch] = useState("");
 
   const handleLogin = (email, name, owner) => {
