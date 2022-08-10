@@ -27,7 +27,7 @@ function NewsCard({
      return itemMatched._id;
   }
 
-  const handleSaveCard = (e) => {
+  function handleSaveCard(e){
     if (!saveIconSelected) {
       e.stopPropagation();
       const obj = {
@@ -61,7 +61,7 @@ function NewsCard({
     }
   };
 
-  const handleDeleteArticle = (e) => {
+  function handleDeleteArticle(e){
     e.stopPropagation();
     mainApi
       .deleteArticle(uniqueVal)
