@@ -48,7 +48,6 @@ function NewsCard({
     } else {
       e.stopPropagation();
       mainApi.getSavedArticles().then((updatedArticles)=> {
-        console.log(updatedArticles);
         const newsCardId = getCardId(updatedArticles);
         mainApi.deleteArticle(newsCardId).then(() => {
           setSaveIconSelected("");
