@@ -18,7 +18,7 @@ function SearchForm({handleSubmit, search, setSearch}) {
         account.
       </p>
       <form className="search-section__form"  onSubmit={(e)=>{handleSubmit(e,search)}}> 
-        <input className="search-section__form__input" placeholder="Enter topic" onChange={onSearchInputChange}/>
+        <input className="search-section__form__input" value={search} placeholder="Enter topic" onChange={onSearchInputChange}/>
         <button className={`search-section__form__btn ${btnActiveClass}`} type="submit">
           Search
         </button>

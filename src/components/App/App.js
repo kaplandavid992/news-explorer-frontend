@@ -25,7 +25,7 @@ function App() {
   const [isMsgPopupOpen, setIsMsgPopupOpen] = useState(false);
   const [articleData, setArticleData] = useState([]);
   const [articleDbData, setArticleDbData] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
 
   const handleLogin = (email, name, owner) => {
     setLoggedIn(true);

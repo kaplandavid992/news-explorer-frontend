@@ -72,7 +72,7 @@ function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) {
             const name = user.data.name;
             const owner = user.data._id;
             handleLogin(email, name, owner);
-          });
+          }).catch(console.log);
           resetForm();
           onClose();
           return data;
@@ -81,8 +81,6 @@ function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) {
       .catch((err) => {
         console.log(err);
       });
-    // .finally(() =>
-    // });
   }
 
   return (

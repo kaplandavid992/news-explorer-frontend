@@ -14,24 +14,15 @@ function SavedNews({
   setIsSignInPopupOpen,
   anyPopUpOpen,
   searchKey,
-  getArticles
+  getArticles,
 }) {
   const currentUser = useContext(CurrentUserContext);
   const navigate = useNavigate();
   if (!loggedIn) {
     navigate("/");
   }
- 
-  const topKeyWordsDataString = popularKeyWords(Array.from(articleDbData));
 
-  
-  // useEffect(() => {
-  //   loggedIn &&
-  //     mainApi.getSavedArticles().then((data) => {
-  //       const userSavedArticles = data.filter(article => article.owner === currentUser.owner);
-  //       setArticleDbData(userSavedArticles);
-  //     });
-  // }, [loggedIn, currentUser.owner]);
+  const topKeyWordsDataString = popularKeyWords(Array.from(articleDbData));
 
   return (
     <>

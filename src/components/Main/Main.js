@@ -18,7 +18,7 @@ setArticleData, articleData, articleDbData, getArticles
       setArticleData(Array.from(data.articles));
       data.articles.length === 0  ? setSearchStatus('not found')
       : setSearchStatus('results');
-    })
+    }).catch(console.log);
   }
   return (
     <main className="main">
