@@ -11,7 +11,7 @@ NewsCardList({
   sliceEndIndex,
   articleDbData,
   getArticles,
-  setIsSignUpPopupOpen
+  setIsSignInPopupOpen
 }) {
   const mobileTopMargin =
     window.location.pathname === "/"
@@ -24,7 +24,7 @@ NewsCardList({
       {articleData.slice(0, sliceEndIndex).map((article) =>
        (
         <NewsCard
-          setIsSignUpPopupOpen={setIsSignUpPopupOpen}
+          setIsSignInPopupOpen={setIsSignInPopupOpen}
           key={article.url ? article.url : article._id}
           getArticles={getArticles}
           articleDbData={articleDbData}

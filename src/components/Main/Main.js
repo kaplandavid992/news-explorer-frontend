@@ -7,7 +7,7 @@ import newsApi from "../../utils/NewsApi";
 import "./Main.css";
 
 function Main({ search, setSearch, loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen,
-setArticleData, articleData, articleDbData, getArticles, setIsSignUpPopupOpen
+setArticleData, articleData, articleDbData, getArticles, 
 }) {
   const [searchStatus, setSearchStatus] = useState("");
  
@@ -37,7 +37,7 @@ setArticleData, articleData, articleDbData, getArticles, setIsSignUpPopupOpen
         searchStatus={searchStatus} 
         articleData={articleData}
         getArticles={getArticles}
-        setIsSignUpPopupOpen={setIsSignUpPopupOpen}
+        setIsSignInPopupOpen={setIsSignInPopupOpen}
         />
       <About />
     </main>

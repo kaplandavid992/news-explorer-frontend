@@ -18,7 +18,7 @@ function NewsCard({
   articleUrl,
   uniqueVal,
   getArticles,
-  setIsSignUpPopupOpen
+  setIsSignInPopupOpen
 }) {
   let location = useLocation();
   const uri = location.pathname;
@@ -30,7 +30,7 @@ function NewsCard({
 
   function handleSaveCard(e){
     e.stopPropagation();
-    if(!loggedIn){ setIsSignUpPopupOpen(true); return} 
+    if(!loggedIn){ setIsSignInPopupOpen(true); return} 
     if (!saveIconSelected) {
       const obj = {
         keyword: category,
