@@ -18,6 +18,7 @@ function NewsCard({
   articleUrl,
   uniqueVal,
   getArticles,
+  setIsSignUpPopupOpen
 }) {
   let location = useLocation();
   const uri = location.pathname;
@@ -28,8 +29,9 @@ function NewsCard({
   }
 
   function handleSaveCard(e){
+    e.stopPropagation();
+    if(!loggedIn){ setIsSignUpPopupOpen(true); return} 
     if (!saveIconSelected) {
-      e.stopPropagation();
       const obj = {
         keyword: category,
         title: titleText,
@@ -46,7 +48,6 @@ function NewsCard({
         console.log(err);
       });
     } else {
-      e.stopPropagation();
       mainApi.getSavedArticles().then((updatedArticles)=> {
         const newsCardId = getCardId(updatedArticles);
         mainApi.deleteArticle(newsCardId).then(() => {

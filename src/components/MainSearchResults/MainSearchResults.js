@@ -5,7 +5,7 @@ import SearchPending from "../SearchPending/SearchPending";
 import NotFound from "../NotFound/NotFound";
 import { useEffect, useState } from "react";
 
-function MainSearchResults({ searchStatus, articleData,articleDbData, searchKey, loggedIn, getArticles }) {
+function MainSearchResults({ setIsSignUpPopupOpen, searchStatus, articleData,articleDbData, searchKey, loggedIn, getArticles }) {
   const [sliceEndIndex, setSliceEndIndex] = useState(0);
   useEffect(()=>{
     const initialValForSliceEnd = articleData.length > 3 ? 3 : articleData.length;
@@ -31,6 +31,7 @@ function MainSearchResults({ searchStatus, articleData,articleDbData, searchKey,
         <>
           <h2 className="main-results-section__title">Search results</h2>
           <NewsCardList
+            setIsSignUpPopupOpen={setIsSignUpPopupOpen}
             getArticles={getArticles}
             articleDbData={articleDbData}
             articleData={articleData}
