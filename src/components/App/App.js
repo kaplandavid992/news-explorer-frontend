@@ -134,6 +134,7 @@ function App() {
                 logout={handleLogout}
                 setLoggedIn={setLoggedIn}
                 setIsSignInPopupOpen={setIsSignInPopupOpen}
+                setIsSignUpPopupOpen={setIsSignUpPopupOpen}
                 anyPopUpOpen={anyPopUpOpen}
                 setArticleData={setArticleData}
                 articleData={articleData}

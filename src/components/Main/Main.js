@@ -6,8 +6,8 @@ import { useState } from "react";
 import newsApi from "../../utils/NewsApi";
 import "./Main.css";
 
-function Main({ search, setSearch, loggedIn, setLoggedIn, setIsSignInPopupOpen, anyPopUpOpen,
-setArticleData, articleData, articleDbData, getArticles, 
+function Main({ search, setSearch, loggedIn, setLoggedIn, setIsSignUpPopupOpen, anyPopUpOpen,
+setArticleData, articleData, articleDbData, getArticles, setIsSignInPopupOpen
 }) {
   const [searchStatus, setSearchStatus] = useState("");
  
@@ -37,7 +37,7 @@ setArticleData, articleData, articleDbData, getArticles,
         searchStatus={searchStatus} 
         articleData={articleData}
         getArticles={getArticles}
-        setIsSignInPopupOpen={setIsSignInPopupOpen}
+        setIsSignUpPopupOpen={setIsSignUpPopupOpen}
         />
       <About />
     </main>
