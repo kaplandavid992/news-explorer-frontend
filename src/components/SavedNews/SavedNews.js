@@ -17,11 +17,6 @@ function SavedNews({
   getArticles,
 }) {
   const currentUser = useContext(CurrentUserContext);
-  const navigate = useNavigate();
-  if (!loggedIn) {
-    navigate("/");
-  }
-
   const topKeyWordsDataString = popularKeyWords(Array.from(articleDbData));
 
   return (

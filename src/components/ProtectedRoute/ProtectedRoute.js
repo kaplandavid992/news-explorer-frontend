@@ -1,9 +1,12 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 
-function ProtectedRoute ({ children, loggedIn, ...props }) {
+function ProtectedRoute ({ children, loggedIn, setIsSignInPopupOpen }) {
   return (
-         loggedIn ? children : <Navigate to={"/"} /> 
+         loggedIn ? children : <>
+         <Navigate to={"/"}/>
+         {setIsSignInPopupOpen(true)}
+         </>   
   );
 }
 
