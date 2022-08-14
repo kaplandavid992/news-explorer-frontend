@@ -1,0 +1,63 @@
+.log-out-btn {
+  all: unset;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  width: fit-content;
+  height: 48px; 
+  margin-left: 32px;
+  margin-top: 19px;
+  align-items: center; 
+  padding-left: 19px;
+  padding-right: 17.59px;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  box-sizing: border-box;
+  font-family: Roboto, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  position: relative;
+  color: #ffffff;
+}
+
+.log-out-btn_light {
+  border-color: #d1d2d6;
+  color: #1a1b22;
+}
+
+.log-out-btn_light:hover {
+  border-color: #1a1b22;
+}
+
+.space-filler {
+  height: 1px;
+  background-color: inherit;
+  width: 19px;
+}
+
+@media screen and (max-width: 815px) {
+  .log-out-btn {
+    font-size: 16px;
+    letter-spacing: 0px;
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 15.59px;
+    margin-top: 14px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    margin-left: 16px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .log-out-btn {
+    font-size: 18px;
+    width: 257.4px;
+    margin-top: 0;
+    height: 56px;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,59 @@
+
+.popup__form-error {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.21;
+  color: #ff0000;
+  visibility: visible;
+  position: absolute;
+  margin-top: 5px;
+  font-family: Inter, Helvetica, sans-serif;
+}
+
+.popup__form-label {
+  font-family: Inter, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #2f71e5;
+  display: block;
+  margin-top: 31px;
+}
+
+.popup__form-input {
+  all: unset;
+  height: 26px;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.3);
+  color: #000000;
+  width: 100%;
+  font-family: Inter, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0;
+  text-align: left;
+  padding-bottom: 11px;
+  padding-top: 8px;
+}
+
+.popup__form-input:first-of-type {
+  padding-bottom: 10px;
+}
+
+
+
+.popup__form-input::placeholder {
+  color: #000000;
+  opacity: 0.2;
+  font-size: 14px;
+  line-height: 1.21;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.popup__form-label:first-of-type {
+  margin-top: 0;
+}
+
