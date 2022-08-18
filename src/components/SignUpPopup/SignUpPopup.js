@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import "../SignInPopup/SignInPopup.css";
 import "../SignUpPopup/SignUpPopup.css";
@@ -14,6 +14,9 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [nameError, setNameError] = useState("");
+  const inputEmail = useRef(null);
+  const inputPassword = useRef(null);
+  const inputName = useRef(null);
   if (
     email &&
     password &&
@@ -94,9 +97,11 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
         } else {
           setSubmitErrorMsg("Problem with the server try again");
         }
-        const inputList = Array.from(
-          document.getElementsByClassName("popup__form-input")
-        );
+        const inputList = [];
+        inputList.push(inputEmail.current);
+        inputList.push(inputPassword.current);
+        inputList.push(inputName.current);
+        
         inputList.map((input) => {
           input.addEventListener("keypress", () => {
             setSubmitErrorMsg("");
@@ -130,6 +135,7 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
         minLength="3"
         value={email}
         onChange={onEmailChange}
+        ref={inputEmail}
       />
       <p className="popup__form-error" id="inputEmail-error">
         {emailError}
@@ -148,6 +154,7 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
         minLength="8"
         value={password}
         onChange={onPasswordChange}
+        ref={inputPassword}
       />
       <p className="popup__form-error" id="inputPassword-error">
         {passwordError}
@@ -166,6 +173,7 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
         minLength="2"
         value={name}
         onChange={onNameChange}
+        ref={inputName}
       />
       <p className="popup__form-error" id="inputUsername-error">
         {nameError}
