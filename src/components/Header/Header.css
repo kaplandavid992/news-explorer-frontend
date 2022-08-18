@@ -48,11 +48,19 @@
   padding-bottom: 26px;
 }
 
+.header__logo:hover {
+  opacity: 0.75;
+  color: #ffffffee;
+}
+
 .header__logo_light {
   color: #1A1B22;
 }
 
-
+.header__logo_light:hover{
+  color: #1A1B22;
+  opacity: .75;
+}
 
 @media screen and (max-width: 815px) {
   .header {

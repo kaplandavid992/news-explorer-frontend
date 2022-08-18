@@ -22,7 +22,10 @@
   justify-content: space-between;
   position: relative;
   height: 100%;
-  
+}
+.header-nav-link__wrapper:hover {
+  opacity: 0.75;
+  color: #ffffffee;
 }
 
 @media screen and (max-width: 815px) {
@@ -39,7 +42,7 @@
 @media screen and (max-width: 570px) {
   .header-nav-link {
     line-height: 56px;
-    padding:0 !important;
+    padding: 0 !important;
     text-align: center;
   }
 

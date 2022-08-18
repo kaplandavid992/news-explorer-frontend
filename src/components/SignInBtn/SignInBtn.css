@@ -17,6 +17,11 @@
   color: #ffffff;
 }
 
+.sign-in-btn:hover {
+  opacity: 0.75;
+  color: #ffffffee;
+}
+
 @media screen and (max-width: 815px) {
   .sign-in-btn {
     font-size: 16px;

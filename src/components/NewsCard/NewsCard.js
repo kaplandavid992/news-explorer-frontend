@@ -23,6 +23,7 @@ function NewsCard({
   let location = useLocation();
   const uri = location.pathname;
   const [saveIconSelected, setSaveIconSelected] = useState("");
+  const filteredText = paragraphText.split("[+").shift();
   function getCardId(updatedArticleData){
      const itemMatched = updatedArticleData.find(newsCard => newsCard.title === titleText);
      return itemMatched._id;
@@ -123,7 +124,7 @@ function NewsCard({
       <article className="news-card__text-block">
         <time className="news-card__date">{date}</time>
         <h3 className="news-card__title">{titleText}</h3>
-        <p className="news-card__paragraph">{paragraphText}</p>
+        <p className="news-card__paragraph">{filteredText}</p>
         <MediaSource name={mediaSourceName} />
       </article>
     </li>
