@@ -133,7 +133,7 @@
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 }
-
+ 
 .news-card__title {
   all: unset;
   margin-bottom: 46px;
@@ -223,14 +223,14 @@
     color: #1a1b22;
     font-size: 22px;
     line-height: 24px;
-     min-height: 74px;
-      white-space: initial; 
+    min-height: 74px;
+    white-space: initial;
   }
 }
 
 @media screen and (max-width: 570px) {
   .news-card__title {
-    -webkit-line-clamp:2;
+    -webkit-line-clamp: 2;
     overflow: hidden;
     min-height: 48px;
   }
