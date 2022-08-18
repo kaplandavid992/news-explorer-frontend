@@ -91,8 +91,7 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
         resetForm();
       })
       .catch((err) => {
-        console.log(err);
-        if (err === "Error: Error 409") {
+        if (err.message === "Error 409") {
           setSubmitErrorMsg("This email is not available");
         } else {
           setSubmitErrorMsg("Problem with the server try again");
