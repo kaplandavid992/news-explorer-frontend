@@ -136,7 +136,6 @@
  
 
 .news-card__title {
-  all: unset;
   margin-bottom: 46px;
   color: #1a1b22;
   font-family: "Roboto Slab", Helvetica, sans-serif;
@@ -151,6 +150,7 @@
   line-height: 30px;
   letter-spacing: 0px;
   text-align: left;
+  min-height: 60px;
 }
 
 .news-card__date {
