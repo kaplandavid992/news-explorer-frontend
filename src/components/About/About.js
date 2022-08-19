@@ -8,11 +8,8 @@ function About() {
       <article className="about__text-block">
         <h2 className="about__title">About the author</h2>
         <p className="about__paragraph">
-          My name is David Kaplan, I'm a Full Stack Web Developer. Graduate of Practicum by Yandex Web Development program. 
-          The course was an 8-month (2022) intensive program designed to train talents to be successful Web Developers.
-          Coursework Includes: HTML, CSS, JavaScript, React/Redux, MongoDB, NodeJS.
-          The course curriculum included an interactive platform, projects, 
-          live coding and Q&A sessions, soft skills and interview preperation. 
+          My name is David Kaplan, I'm a Full Stack Web Developer. 
+          Graduate of Practicum by Yandex Web Development program (2022).  
           As a passionate Developer, independent learner,
           and problem solver I beilieve I can bring great value 
           to your work place, feel

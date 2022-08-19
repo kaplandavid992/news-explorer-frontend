@@ -136,10 +136,8 @@
  
 
 .news-card__title {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
   all: unset;
+  display: -webkit-box;
   margin-bottom: 46px;
   color: #1a1b22;
   font-family: "Roboto Slab", Helvetica, sans-serif;
@@ -148,6 +146,8 @@
   line-height: 30px;
   letter-spacing: 0px;
   text-align: left;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: initial;
