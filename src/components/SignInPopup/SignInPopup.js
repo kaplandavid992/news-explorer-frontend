@@ -9,11 +9,12 @@ function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!values.email || !values.password) {
+    const { email, password } = values;
+    if (!email || !password) {
       return;
     }
     auth
-      .authorize(values.password, values.email)
+      .authorize(password, email)
       .then((data) => {
         if (data) {
           localStorage.setItem("token", data.token);
