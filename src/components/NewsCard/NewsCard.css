@@ -233,7 +233,7 @@
   .news-card__title {
     -webkit-line-clamp: 2;
     overflow: hidden;
-    min-height: 48px;
+    min-height: 49px;
   }
 
   .news-card {
