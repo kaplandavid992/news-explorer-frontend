@@ -1,78 +1,31 @@
 import "./SignInPopup.css";
-import { useState } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import * as auth from "../../utils/auth";
-import validation from "../../utils/validate";
+import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 
 function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  let activeSubmit=false;
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-  if(email && password && emailError ==="" && passwordError===""){
-    activeSubmit=true;
-  }
-
-
-  function onEmailChange(e) {
-    const currentEmailInput = e.target.value;
-    setEmail(currentEmailInput);
-    if (
-      currentEmailInput.length > 0 &&
-      !validation(currentEmailInput, "email")
-    ) {
-      setEmailError("Provide a valid email address");
-    } else if (
-      (currentEmailInput.length > 0 &&
-        validation(currentEmailInput, "password")) ||
-      currentEmailInput.length === 0
-    ) {
-      setEmailError("");
-    }
-  }
-
-  function onPasswordChange(e) {
-    const currentPasswordInput = e.target.value;
-    setPassword(currentPasswordInput);
-    if (
-      currentPasswordInput.length > 0 &&
-      !validation(currentPasswordInput, "password")
-    ) {
-      setPasswordError("Password must consist of at least 8 characters");
-    } else if (
-      (currentPasswordInput.length > 0 &&
-        validation(currentPasswordInput, "password")) ||
-      currentPasswordInput.length === 0
-    ) {
-      setPasswordError("");
-    }
-  }
-
-  
-
-  function resetForm() {
-    setEmail("");
-    setPassword("");
-  }
+  const { values, handleChange, errors, isValid, resetForm } =
+    useFormAndValidation();
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!email || !password) {
+    if (!values.email || !values.password) {
       return;
     }
     auth
-      .authorize(password, email)
+      .authorize(values.password, values.email)
       .then((data) => {
         if (data) {
           localStorage.setItem("token", data.token);
-          auth.getUser(data.token).then((user) => {
-            const email = user.data.email;
-            const name = user.data.name;
-            const owner = user.data._id;
-            handleLogin(email, name, owner);
-          }).catch(console.log);
+          auth
+            .getUser(data.token)
+            .then((user) => {
+              const email = user.data.email;
+              const name = user.data.name;
+              const owner = user.data._id;
+              handleLogin(email, name, owner);
+            })
+            .catch(console.log);
           resetForm();
           onClose();
           return data;
@@ -85,7 +38,7 @@ function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) {
 
   return (
     <PopupWithForm
-      activeSubmit={activeSubmit}
+      activeSubmit={isValid}
       onSubmit={handleSubmit}
       isOpen={isOpen}
       onClose={onClose}
@@ -102,14 +55,14 @@ function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) {
         type="email"
         className="popup__form-input"
         placeholder="Enter email"
-        name="form__email"
-        value={email}
+        name="email"
+        value={values.email}
         required
         minLength="3"
-        onChange={onEmailChange}
+        onChange={handleChange}
       />
       <p className="popup__form-error" id="inputEma-error">
-        {emailError}
+        {errors.email}
       </p>
 
       <label htmlFor="loginPassword" className="popup__form-label">
@@ -120,14 +73,14 @@ function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) {
         type="password"
         className="popup__form-input"
         placeholder="Enter password"
-        name="form__password"
+        name="password"
         required
         minLength="8"
-        value={password}
-        onChange={onPasswordChange}
+        value={values.password}
+        onChange={handleChange}
       />
       <p className="popup__form-error" id="inputPass-error">
-        {passwordError}
+        {errors.password}
       </p>
     </PopupWithForm>
   );
