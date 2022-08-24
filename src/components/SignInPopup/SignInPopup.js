@@ -1,9 +1,8 @@
 import "./SignInPopup.css";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
-import * as auth from "../../utils/auth";
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 
-function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) {
+function SignInPopup({ isOpen, onClose, openSignUpPopup, authLogin }) {
   const { values, handleChange, errors, isValid, resetForm } =
     useFormAndValidation();
 
@@ -13,28 +12,7 @@ function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) {
     if (!email || !password) {
       return;
     }
-    auth
-      .authorize(password, email)
-      .then((data) => {
-        if (data) {
-          localStorage.setItem("token", data.token);
-          auth
-            .getUser(data.token)
-            .then((user) => {
-              const email = user.data.email;
-              const name = user.data.name;
-              const owner = user.data._id;
-              handleLogin(email, name, owner);
-            })
-            .catch(console.log);
-          resetForm();
-          onClose();
-          return data;
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    authLogin(password, email, resetForm);
   }
 
   return (
@@ -57,7 +35,6 @@ function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) {
         className="popup__form-input"
         placeholder="Enter email"
         name="email"
-        value={values.email}
         required
         minLength="3"
         onChange={handleChange}
@@ -77,7 +54,6 @@ function SignInPopup({ isOpen, onClose, openSignUpPopup, handleLogin }) {
         name="password"
         required
         minLength="8"
-        value={values.password}
         onChange={handleChange}
       />
       <p className="popup__form-error" id="inputPass-error">

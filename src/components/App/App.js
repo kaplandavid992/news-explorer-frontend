@@ -27,12 +27,12 @@ function App() {
   const [articleDbData, setArticleDbData] = useState([]);
   const [search, setSearch] = useState('');
 
-  const handleLogin = (email, name, owner) => {
+  function handleLogin(email, name, owner){
     setLoggedIn(true);
     setCurrentUser({ email, userName: name, owner:owner });
   };
-
-  const handleLogout = () => {
+  
+  function handleLogout(){
     setLoggedIn(false);
     setCurrentUser({
       email: "",
@@ -55,7 +55,45 @@ function App() {
     setIsMsgPopupOpen(false);
   }
 
-  function getArticles(){
+  function authLogin(password,email,resetForm){
+    auth
+      .authorize(password, email)
+      .then((data) => {
+        if (data) {
+          localStorage.setItem("token", data.token);
+          auth
+            .getUser(data.token)
+            .then((user) => {
+              const email = user.data.email;
+              const name = user.data.name;
+              const owner = user.data._id;
+              handleLogin(email, name, owner);
+            })
+            .catch(console.log);
+          resetForm();
+          closeAllPopups();
+          return data;
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  function authRegister(password, email, name, resetForm, handleRegisterError){
+    auth
+      .register(password, email, name)
+      .then(() => {
+        closeAllPopups();
+        setIsMsgPopupOpen(true);
+        resetForm();
+      })
+      .catch((err) => {
+        handleRegisterError(err);
+      });
+  }
+
+  function getArticles(){ 
     loggedIn &&
       mainApi.getSavedArticles().then((articles) => {
         const userSavedArticles = articles.filter(article => article.owner === currentUser.owner);
@@ -106,10 +144,11 @@ function App() {
         <SignUpPopup
           isOpen={isSignUpPopupOpen}
           onClose={closeAllPopups}
-          onSignUp={setIsMsgPopupOpen}
+          authRegister={authRegister}
           openSignInPopup={setIsSignInPopupOpen}
         />
         <SignInPopup
+          authLogin={authLogin}
           handleLogin={handleLogin}
           isOpen={isSignInPopupOpen}
           onClose={closeAllPopups}

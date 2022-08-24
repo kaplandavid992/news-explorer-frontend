@@ -2,10 +2,9 @@ import { useState, useRef } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import "../SignInPopup/SignInPopup.css";
 import "../SignUpPopup/SignUpPopup.css";
-import * as auth from "../../utils/auth";
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 
-function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
+function SignUpPopup({ isOpen, onClose, openSignInPopup, authRegister }) {
   const { values, handleChange, errors, isValid, resetForm } =
     useFormAndValidation();
 
@@ -14,34 +13,29 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
   const inputPassword = useRef(null);
   const inputName = useRef(null);
 
+  function handleRegisterError(err) {
+    if (err.message === "Error 409") {
+      setSubmitErrorMsg("This email is not available");
+    } else {
+      setSubmitErrorMsg("Problem with the server try again");
+    }
+    const inputList = [];
+    inputList.push(inputEmail.current);
+    inputList.push(inputPassword.current);
+    inputList.push(inputName.current);
+
+    inputList.map((input) => {
+      input.addEventListener("keypress", () => {
+        setSubmitErrorMsg("");
+      });
+      return true;
+    });
+  }
+
   function handleSubmit(e) {
     const { password, email, name } = values;
     e.preventDefault();
-    auth
-      .register(password, email, name)
-      .then(() => {
-        onClose();
-        onSignUp(true);
-        resetForm();
-      })
-      .catch((err) => {
-        if (err.message === "Error 409") {
-          setSubmitErrorMsg("This email is not available");
-        } else {
-          setSubmitErrorMsg("Problem with the server try again");
-        }
-        const inputList = [];
-        inputList.push(inputEmail.current);
-        inputList.push(inputPassword.current);
-        inputList.push(inputName.current);
-
-        inputList.map((input) => {
-          input.addEventListener("keypress", () => {
-            setSubmitErrorMsg("");
-          });
-          return true;
-        });
-      });
+    authRegister(password, email, name, resetForm, handleRegisterError);
   }
 
   return (
@@ -66,7 +60,6 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
         name="email"
         required
         minLength="3"
-        value={values.email}
         onChange={handleChange}
         ref={inputEmail}
       />
@@ -85,7 +78,6 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
         name="password"
         required
         minLength="8"
-        value={values.password}
         onChange={handleChange}
         ref={inputPassword}
       />
@@ -104,7 +96,6 @@ function SignUpPopup({ isOpen, onClose, onSignUp, openSignInPopup }) {
         name="name"
         required
         minLength="2"
-        value={values.name}
         onChange={handleChange}
         ref={inputName}
       />
