@@ -13,6 +13,7 @@
 
 .news-card__trash-icon {
   background-image: url("../../images/trashIcon.svg");
+  background-size: 19px;
   background-repeat: no-repeat;
   background-position: 13px 11px;
   width: 18px;
@@ -26,6 +27,8 @@
   background-image: url("../../images/trashIconBlack.svg");
 }
 
+
+
 .news-card__save-icon {
   background-image: url("../../images/saveArtIcon.svg");
   background-repeat: no-repeat;
@@ -37,17 +40,29 @@
   left: 336px;
 }
 
-.news-card__save-icon_selected {
-  background-image: url("../../images/saveIconSelected.svg");
-}
-
 .news-card__save-icon:hover {
   background-image: url("../../images/saveArtIconBlack.svg");
 }
 
+
+.news-card__save-icon_selected {
+  background-image: url("../../images/saveIconSelected.svg");
+}
+
+
 .news-card__save-icon_selected:hover {
   background-image: url("../../images/saveIconSelected.svg");
 }
+
+.news-card__save-icon_loading {
+  background-image: url("../../images/roundLoader.gif");
+  background-size: 19px;
+  background-position: 11.2px 11px;
+}
+
+.news-card__save-icon_loading:hover {
+  background-image: url("../../images/roundLoader.gif");
+} 
 
 .news-card__category {
   background-color: #ffffff;

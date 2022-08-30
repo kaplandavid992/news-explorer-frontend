@@ -18,20 +18,34 @@ function NewsCard({
   articleUrl,
   uniqueVal,
   getArticles,
-  setIsSignUpPopupOpen
+  setIsSignUpPopupOpen,
 }) {
   let location = useLocation();
   const uri = location.pathname;
   const [saveIconSelected, setSaveIconSelected] = useState("");
   const filteredText = paragraphText.split("[+").shift();
-  function getCardId(updatedArticleData){
-     const itemMatched = updatedArticleData.find(newsCard => newsCard.title === titleText);
-     return itemMatched._id;
+  function getCardId(updatedArticleData) {
+    const itemMatched = updatedArticleData.find(
+      (newsCard) => newsCard.title === titleText
+    );
+    return itemMatched._id;
   }
 
-  function handleSaveCard(e){
+  const loader = (e) => {
+    e.target.classList.add("news-card__save-icon_loading");
+  };
+
+  const removeLoader = (e) => {
+    e.target.classList.remove("news-card__save-icon_loading");
+  };
+
+  function handleSaveCard(e) {
     e.stopPropagation();
-    if(!loggedIn){ setIsSignUpPopupOpen(true); return} 
+    loader(e);
+    if (!loggedIn) {
+      setIsSignUpPopupOpen(true);
+      return;
+    }
     if (!saveIconSelected) {
       const obj = {
         keyword: category,
@@ -42,29 +56,43 @@ function NewsCard({
         link: articleUrl,
         image: imgSrc,
       };
-      mainApi.saveArticle(obj).then(() => {
-        setSaveIconSelected("news-card__save-icon_selected");
-       getArticles();
-      }).catch((err) => {
-        console.log(err);
-      });
-    } else {
-      mainApi.getSavedArticles().then((updatedArticles)=> {
-        const newsCardId = getCardId(updatedArticles);
-        mainApi.deleteArticle(newsCardId).then(() => {
-          setSaveIconSelected("");
+
+      mainApi
+        .saveArticle(obj)
+        .then(() => {
+          removeLoader(e);
+          setSaveIconSelected("news-card__save-icon_selected");
           getArticles();
-        }).catch((err) => {
+        })
+        .catch((err) => {
           console.log(err);
         });
-      }).catch((err) => {
-        console.log(err);
-      });
+    } else {
+      mainApi
+        .getSavedArticles()
+        .then((updatedArticles) => {
+          const newsCardId = getCardId(updatedArticles);
+          mainApi
+            .deleteArticle(newsCardId)
+            .then(() => {
+              removeLoader(e);
+              setSaveIconSelected("");
+              getArticles();
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
-  };
+  }
 
-  function handleDeleteArticle(e){
+  function handleDeleteArticle(e) {
     e.stopPropagation();
+    loader(e);
+
     mainApi
       .deleteArticle(uniqueVal)
       .then(() => {
@@ -75,14 +103,15 @@ function NewsCard({
       .catch((err) => {
         console.log(err);
       });
-  };
+  }
 
-  useEffect(()=>{
-    if(uri === '/' && loggedIn ){
-    if(articleDbData.some(newsCard => newsCard.title === titleText)){
-      setSaveIconSelected("news-card__save-icon_selected")
-    }}
-  },[articleDbData, loggedIn, titleText, uri]);
+  useEffect(() => {
+    if (uri === "/" && loggedIn) {
+      if (articleDbData.some((newsCard) => newsCard.title === titleText)) {
+        setSaveIconSelected("news-card__save-icon_selected");
+      }
+    }
+  }, [articleDbData, loggedIn, titleText, uri]);
 
   return (
     <li
@@ -105,7 +134,7 @@ function NewsCard({
       ) : (
         <>
           <i
-            className={`news-card__save-icon ${saveIconSelected} news-card__white-container`}
+            className={`news-card__save-icon  news-card__white-container ${saveIconSelected}`}
             onClick={handleSaveCard}
           />
           {!loggedIn ? (
