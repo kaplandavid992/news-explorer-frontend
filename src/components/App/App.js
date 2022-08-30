@@ -55,7 +55,7 @@ function App() {
     setIsMsgPopupOpen(false);
   }
 
-  function authLogin(password,email,resetForm){
+  function authLogin(password,email,resetForm, setIsSubmitting){
     auth
       .authorize(password, email)
       .then((data) => {
@@ -71,6 +71,7 @@ function App() {
             })
             .catch(console.log);
           resetForm();
+          setIsSubmitting(false);
           closeAllPopups();
           return data;
         }
@@ -80,12 +81,13 @@ function App() {
       });
   }
 
-  function authRegister(password, email, name, resetForm, handleRegisterError){
+  function authRegister(password, email, name, resetForm, handleRegisterError, setIsSubmitting){
     auth
       .register(password, email, name)
       .then(() => {
         closeAllPopups();
         setIsMsgPopupOpen(true);
+        setIsSubmitting(false);
         resetForm();
       })
       .catch((err) => {

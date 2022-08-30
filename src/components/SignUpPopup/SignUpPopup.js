@@ -7,7 +7,7 @@ import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 function SignUpPopup({ isOpen, onClose, openSignInPopup, authRegister }) {
   const { values, handleChange, errors, isValid, resetForm } =
     useFormAndValidation();
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitErrorMsg, setSubmitErrorMsg] = useState("");
   const inputEmail = useRef(null);
   const inputPassword = useRef(null);
@@ -33,13 +33,15 @@ function SignUpPopup({ isOpen, onClose, openSignInPopup, authRegister }) {
   }
 
   function handleSubmit(e) {
+    setIsSubmitting(true);
     const { password, email, name } = values;
     e.preventDefault();
-    authRegister(password, email, name, resetForm, handleRegisterError);
+    authRegister(password, email, name, resetForm, handleRegisterError, setIsSubmitting);
   }
 
   return (
     <PopupWithForm
+      isSubmitting={isSubmitting}
       activeSubmit={isValid}
       onSubmit={handleSubmit}
       isOpen={isOpen}

@@ -1,22 +1,26 @@
 import "./SignInPopup.css";
+import { useState } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 
 function SignInPopup({ isOpen, onClose, openSignUpPopup, authLogin }) {
   const { values, handleChange, errors, isValid, resetForm } =
     useFormAndValidation();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
+    setIsSubmitting(true);
     const { email, password } = values;
     if (!email || !password) {
       return;
     }
-    authLogin(password, email, resetForm);
+    authLogin(password, email, resetForm, setIsSubmitting);
   }
 
   return (
     <PopupWithForm
+      isSubmitting={isSubmitting}
       activeSubmit={isValid}
       onSubmit={handleSubmit}
       isOpen={isOpen}

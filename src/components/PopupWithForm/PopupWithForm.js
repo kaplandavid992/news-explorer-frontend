@@ -12,7 +12,9 @@ function PopupWithForm({
   buttonText,
   onSubmit,
   openOtherSignPopup,
+  isSubmitting
 }) {
+  
   const isOpenClass = isOpen ? "popup_active" : "";
   const submitBtnActiveClass = activeSubmit
     ? "popup__form-submit-btn_active"
@@ -51,7 +53,7 @@ function PopupWithForm({
             disabled={!activeSubmit}
             aria-label=""
           >
-            {buttonText}
+            {isSubmitting ? 'Processing...' : buttonText}
           </button>
           <div className="popup__bottom-text-wrapper">
             <span className="popup__bottom-text">
