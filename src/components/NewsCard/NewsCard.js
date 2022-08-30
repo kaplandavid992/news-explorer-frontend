@@ -41,11 +41,12 @@ function NewsCard({
 
   function handleSaveCard(e) {
     e.stopPropagation();
-    loader(e);
+    
     if (!loggedIn) {
       setIsSignUpPopupOpen(true);
       return;
     }
+    loader(e);
     if (!saveIconSelected) {
       const obj = {
         keyword: category,
@@ -92,7 +93,6 @@ function NewsCard({
   function handleDeleteArticle(e) {
     e.stopPropagation();
     loader(e);
-
     mainApi
       .deleteArticle(uniqueVal)
       .then(() => {
