@@ -47,7 +47,7 @@ class MainApi {
   }
   
   const mainApi = new MainApi({
-    baseUrl: 'https://api.david992.students.nomoredomainssbs.ru',
+    baseUrl: 'https://api.kplnnew.students.nomoredomainssbs.ru',
   });
   
   export default mainApi;
