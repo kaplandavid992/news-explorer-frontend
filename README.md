@@ -7,6 +7,6 @@ Developed using React JS, MongoDb and Express.
 
 Link to the site : 
 
-https://kplnnew.students.nomoredomainssbs.ru/
+https://news.webdevdav.com
 
-https://www.kplnnew.students.nomoredomainssbs.ru/
+https://www.news.webdevdav.com/
