@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./SearchForm.css";
 import "../PopupWithForm/PopupWithForm.css"; //for validation
 
-function SearchForm({handleSubmit, search, setSearch}) {
+function SearchForm({handleSubmit, search, setSearch, expanded}) {
   const [btnActiveClass, setBtnActiveClass] = useState('');
   function onSearchInputChange(e) {
     if(e.target.value.length > 0 && !btnActiveClass){setBtnActiveClass('search-section__form__btn_active')}

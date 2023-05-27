@@ -44,6 +44,7 @@ function Header({
 
   return (
     <>
+    <div className="headerwrap">
       <header className={`header ${headerExpandedClass} ${headerLightBg}`}>
         <Link
           to="/"
@@ -97,6 +98,7 @@ function Header({
           />
         </div>
       </header>
+      </div>
 
       {expandedMenu ? (
         <div

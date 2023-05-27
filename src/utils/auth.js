@@ -1,4 +1,4 @@
-const BASE_URL = "https://api.kplnnew.students.nomoredomainssbs.ru";
+const BASE_URL = "https://api.news.webdevdav.com";
 
 const headers = {
   Accept: "application/json",

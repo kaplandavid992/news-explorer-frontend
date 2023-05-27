@@ -7,6 +7,11 @@
   height: 80px;
 }
 
+.headerwrap {
+  position: relative;
+  height: 57px;
+}
+
 .header_layout_vertical {
   display: none;
   background-color: #1a1b22;
@@ -22,7 +27,7 @@
 }
 
 .header__right-group_links_vertical {
-  display: hidden;
+  display: hidden; 
 }
 
 .header_background_light {
@@ -83,6 +88,7 @@
     height: 56px;
     padding-left: 0;
     padding-right: 0;
+  
   }
 
   .header_layout_vertical {
@@ -122,7 +128,6 @@
     position: fixed;
     width: 100%;
     background-color: #1a1b22;
-    margin-top: 57px;
     padding-left: 0;
     padding-right: 0;
     padding-top: 16px;
